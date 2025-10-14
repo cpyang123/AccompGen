@@ -1,0 +1,27 @@
+X:1
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=60
+M:6/8
+K:Ab
+V:1 treble nm="Soprano"
+V:2 treble nm="Alto"
+V:3 treble-8 nm="Tenor"
+V:4 bass nm="Bass"
+[V:1]"^Andante" E|[V:2]E|[V:3]E|[V:4]E,|
+[V:1]c2 B A2 G|[V:2]E2 D C2 =E|[V:3]A2 G A2 B|[V:4]A,,2 E, F,2 C,|
+[V:1]B2 A F2 F|[V:2]F2 F D2 D|[V:3]A2 A A2 A|[V:4]D,2 D, D,2 D,|
+[V:1]E2 A (GA) B|[V:2]C2 E (EF) G|[V:3]A2 c d2 d|[V:4]E,2 E, E,2 E,|
+[V:1]A3 z2 E|[V:2]A3 z2 E|[V:3]c3 z2 c|[V:4]A,,3 z2 A,|
+[V:1]c2 B A2 G|[V:2]E2 D C2 =E|[V:3]e2 G A2 B|[V:4]A,2 E, F,2 C,|
+[V:1]B2 A F2 F|[V:2]F2 F D2 D|[V:3]A2 A A2 A|[V:4]D,2 D, D,2 D,|
+[V:1](EA) c (ed) B|[V:2]C2 E G2 G|[V:3]A2 A B2 d|[V:4]E,2 E, E,2 E,|
+[V:1]A3 z2 c|[V:2]A3 z2 E|[V:3]c3 z2 A|[V:4]A,,3 z2 A,|
+[V:1]d2 c B2 B|[V:2]F2 E E2 E|[V:3]B2 A G2 G|[V:4]G,2 A, E,2 E,|
+[V:1]!>(! (c2!>)! B) A2 A|[V:2]!>(! =E3!>)! F2 F|[V:3]!>(! (A2!>)! G) A2 c|[V:4]!>(! C,3!>)! F,2 F,|
+[V:1]=A2 A (B>c) B|[V:2]_G2 G F2 F|[V:3]e2 e d2 d|[V:4]C,2 C, D,2 D,|
+[V:1]A3 G2!f! e|[V:2]E3- E2!f! G|[V:3](c3 B2)!f! d|[V:4]E,3- E,2!f! E,|
+[V:1]e2 c A2 G|[V:2]A2 E E2 =E|[V:3]c2 c c2 A|[V:4]A,2 A, A,2 C,|
+[V:1]!>(! (B2!>)! A) F2 F|[V:2]!>(! F3!>)! D2 D|[V:3]!>(! A3!>)! A2 A|[V:4]!>(! D,3!>)! D,2 D,|
+[V:1](EA) c (ed) B|[V:2]C2 E G2 G|[V:3]A2 A B2 d|[V:4]E,2 E, E,2 E,|
+[V:1]A3 z2|][V:2]A3 z2|][V:3]c3 z2|][V:4]A,,3 z2|]

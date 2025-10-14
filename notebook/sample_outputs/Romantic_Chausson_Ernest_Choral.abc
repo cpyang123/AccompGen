@@ -1,0 +1,46 @@
+X:1
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=60
+M:6/8
+K:G
+V:1 treble nm="S"
+V:2 treble nm="A"
+V:3 treble-8 nm="T"
+V:4 bass nm="B"
+[V:1]"^Andante con moto"!p! D|[V:2]!p! D|[V:3]!p! d|[V:4]!p! D|
+[V:1]d2 ^A (Bc) e|[V:2]G2 F G2 G|[V:3]B2 c (de) c|[V:4]G,2 G, G,2 G,|
+[V:1](dB) c d2 e|[V:2]G2 F G2 G|[V:3]B2 c B2 c|[V:4]G,2 G, G,2 C,|
+[V:1]d2 A (Bd) c|[V:2]F2 F G2 F|[V:3]c2 c (BG) A|[V:4]D,2 D, D,2 D,|
+[V:1]B3- B z d|[V:2]G3- G z F|[V:3]B2 d (gd) c|[V:4]G,3- G, z A,|
+[V:1]g2 ^c (ed) B|[V:2]G2 G G2 G|[V:3]B2 ^A (AB) d|[V:4]G,2 G, G,2 G,|
+[V:1](d^c) e d2 B|[V:2]G2 G G2 G|[V:3]B2 ^A B2 d|[V:4]G,2 G, G,2 G,|
+[V:1]A2 d (ef) e|[V:2]F2 F G2 G|[V:3]d2 d ^c2 c|[V:4]A,2 A, A,2 A,|
+[V:1]d3- d z!p! d|[V:2]F3- F z!p! F|[V:3]d2!p! A d2 d|[V:4]D,3- D, z!p! D,|
+[V:1](ec) B A2 ^A|[V:2]F2 F F2 F|[V:3]A2 d d2 d|[V:4](C,A,,) B,, C,2 ^C,|
+[V:1]B2 e d2 d|[V:2]G2 G G2 G|[V:3](dG) ^A (Bd) B|[V:4]D,2 ^C, D,2 D,|
+[V:1](fe) d (dc) A|[V:2]F2 F F2 F|[V:3]A2 d d2 d|[V:4](D,C,) B,, (B,,A,,) C,|
+[V:1]B3- B z!mf! B|[V:2]F3- F z!mf! F|[V:3]^d2 F B2!mf! d|[V:4]B,,3- B,, z!mf! A,|
+[V:1]e2 f g2 f|[V:2]B2 A G2 A|[V:3]e2 ^d e2 d|[V:4]G,2 F, E,2 F,|
+[V:1](ed) c B2!p! B|[V:2]B2 A G2!p! G|[V:3]e2 e e2!p! e|[V:4]G,2 A, B,2!p! B,,|
+[V:1]"^rall."[Q:1/4=50] B2 A G2 A|[V:2]"^rall." G2 G G2 G|[V:3]"^rall." e2 e e2 e|[V:4]"^rall." C,2 C, ^C,2 C,|
+[V:1]!fermata!B3- B z"^a tempo"[Q:1/4=60]!pp! B|[V:2]!fermata!F3- F z!pp! A|[V:3]!fermata!^d3- d z!pp! d|[V:4]!fermata!B,,3- B,, z!pp! B,,|
+[V:1]g2 ^d (fe) B|[V:2]G2 A G2 G|[V:3]e2 B B2 e|[V:4]C,2 D, E,2 G,|
+[V:1][Q:1/4=50]"^rall." (dc) A G2||[V:2]"^rall." F2 F G2||[V:3]"^rall." d2 c B2||[V:4]"^rall." D,2 D, G,2||
+[V:1]"^a tempo"[Q:1/4=60] z|[V:2]"^a tempo" z|[V:3]"^a tempo" D|[V:4]"^a tempo" D,|
+[V:1]z2 z z2 c|[V:2]z2 z z2 G|[V:3]d2 ^A (Bc) e|[V:4]G,2 F, G,2 G,|
+[V:1]B2 f g2 z|[V:2]G2 c B2 z|[V:3](dB) c d2 e|[V:4]G,2 F, G,2 C,|
+[V:1]z2 d d2 F|[V:2]z2 F (GB,) C|[V:3]d2 A (Bd) c|[V:4]D,2 D, D,2 D,|
+[V:1]G2 B d2 d|[V:2]B,2 D G2 F|[V:3]B3- B z d|[V:4]G,3- G, z A,|
+[V:1]g2 ^c (ed) B|[V:2]G2 G G2 G|[V:3]B2 ^A (AB) d|[V:4]G,2 G, G,2 G,|
+[V:1](d^c) e d2 B|[V:2]G2 G G2 G|[V:3]B2 ^A B2 d|[V:4]G,2 G, G,2 G,|
+[V:1]A2 d (ef) e|[V:2]F2 F G2 G|[V:3]d2 d ^c2 c|[V:4]A,2 A, A,2 A,|
+[V:1]d3- d z!p! d|[V:2]F3- F z!p! F|[V:3]d2!p! A d2 d|[V:4]D,3- D, z!p! D,|
+[V:1](ec) B A2 ^A|[V:2]F2 F F2 F|[V:3]A2 d d2 d|[V:4](C,A,,) B,, C,2 ^C,|
+[V:1]B2 e d2 d|[V:2]G2 G G2 G|[V:3](dG) ^A (Bd) B|[V:4]D,2 ^C, D,2 D,|
+[V:1](fe) d (dc) A|[V:2]F2 F F2 F|[V:3]A2 d d2 d|[V:4](D,C,) B,, (B,,A,,) C,|
+[V:1]B3- B z!mf! B|[V:2]F3- F z!mf! F|[V:3]^d2 F B2!mf! d|[V:4]B,,3- B,, z!mf! A,|
+[V:1]e2 f g2 f|[V:2]B2 A G2 A|[V:3]e2 ^d e2 d|[V:4]G,2 F, E,2 F,|
+[V:1]"^dim." (ed) c B2!pp![Q:1/4=50] B|[V:2]"^dim." B2 A G2!pp! G|[V:3]"^dim." e2 e e2!pp! e|[V:4]"^dim." G,2 A, B,2!pp! B,,|
+[V:1]"^rall."[Q:1/4=45] B2 A G2 A|[V:2]"^rall." G2 G G2 G|[V:3]"^rall." e2 e e2 e|[V:4]"^rall." C,2 C, ^C,2 C,|
+[V:1]!fermata!B3- B z|][V:2]!fermata!F3- F z|][V:3]!fermata!^d3- d z|][V:4]!fermata!B,,3- B,, z|]

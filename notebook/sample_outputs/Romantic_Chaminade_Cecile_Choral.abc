@@ -1,0 +1,46 @@
+X:1
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=60
+M:2/4
+K:G
+V:1 treble nm="S"
+V:2 treble nm="A"
+V:3 treble-8 nm="T"
+V:4 bass nm="B"
+[V:1]"^Andante"!pp! B|[V:2]!pp! G|[V:3]!pp! d|[V:4]!pp! G,|
+[V:1]d>B dB|[V:2]G>G GG|[V:3]d>d dd|[V:4]B,>G, B,G,|
+[V:1]A2 d z/ d/|[V:2]F2 F z/ F/|[V:3]d2 d z/ d/|[V:4]D2 B, z/ B,/|
+[V:1]G>G B!<(!G|[V:2]E>E G!<(!E|[V:3]e>e e!<(!e|[V:4]C>C G,!<(!C|
+[V:1]A2!<)! z A|[V:2]F2!<)! z F|[V:3]d2!<)! z d|[V:4]D2!<)! z D|
+[V:1]!<(! B>B ^c>!<)!c|[V:2]!<(! G>G ^A>!<)!A|[V:3]!<(! d>e g>!<)!g|[V:4]!<(! G,>E, E>!<)!E|
+[V:1]!>(! (ed)!>)! (^cB)|[V:2]!>(! B2!>)! G2|[V:3]!>(! f2!>)! (ed)|[V:4]!>(! D2!>)! E,2|
+[V:1]B>^A A^c|[V:2]F>F FF|[V:3]d>^c ce|[V:4]F,>F, F,F,|
+[V:1]B2 z||[V:2]F2 z||[V:3]d2 z||[V:4]B,2 z||
+[V:1]!pp! B|[V:2]!pp! F|[V:3]!pp! d|[V:4]!pp! B,|
+[V:1]B>B BB|[V:2]G>G GE|[V:3]e>e eB|[V:4]E,>E, E,G,|
+[V:1]A2 d z/ d/|[V:2]F2 F z/ F/|[V:3]d2 d z/ B/|[V:4]D,2 B, z/ B,/|
+[V:1]G>G B!<(!G|[V:2]E>E G!<(!E|[V:3]e>e e!<(!B|[V:4]C>C G,!<(!C|
+[V:1]A2!<)! z A|[V:2]F2!<)! z F|[V:3]d2!<)! z d|[V:4]D2!<)! z D|
+[V:1]!<(! B>B ^c!<)!c|[V:2]!<(! G>G ^A!<)!A|[V:3]!<(! d>e g!<)!g|[V:4]!<(! G,>E, E!<)!E|
+[V:1]!>(! (ed)!>)! (^cB)|[V:2]!>(! B2!>)! G2|[V:3]!>(! f2!>)! (ed)|[V:4]!>(! D2!>)! E,2|
+[V:1]B>^A A^c|[V:2]F>F FF|[V:3]d>^c ce|[V:4]F,>F, F,F,|
+[V:1]B2 z||[V:2]F2 z||[V:3]d2 z||[V:4]B,2 z||
+[V:1][M:4/4]!pp! A|[V:2][M:4/4]!pp! G|[V:3][M:4/4]!pp! e|[V:4][M:4/4]!pp! ^C|
+[V:1]!<(! A2 d2!<)!!>(! f3!>)! d|[V:2]!<(! F2 F2!<)!!>(! A3!>)! F|[V:3]!<(! d2 d2!<)!!>(! d3!>)! d|[V:4]!<(! D2 A,2!<)!!>(! F,3!>)! D,|
+[V:1]B2 d2 d2 z d|[V:2]G2 G2 F2 z F|[V:3]d2 B2 d2 z d|[V:4]G,2 B,2 D2 z B,|
+[V:1]!<(! ^G2 G>!<)!G!>(! (d2!>)! c)!fermata!B|[V:2]!<(! E2 E>!<)!E!>(! E3!>)! E|[V:3]!<(! d2 d>!<)!d!>(! B3!>)! d|[V:4]!<(! B,2 E,>!<)!E,!>(! ^G,3!>)! G,|
+[V:1](A2 c2) B2 z!pp! B|[V:2](E2 A2) ^G2 z!pp! G|[V:3](c2 e2) e2 z!pp! e|[V:4](A,2 C,2) E,2 z!pp! E,|
+[V:1]"^cresc." ^c>c cc d2 d2|[V:2]"^cresc." G>G GG F2 F2|[V:3]"^cresc." e>e ee d2 d2|[V:4]"^cresc." A,>A, A,A, B,2 B,2|
+[V:1]e2 e2 f2 z!pp! f|[V:2]G2 G2 F2 z!pp! A|[V:3]^c2 c2 d2 z!pp! d|[V:4]A,2 A,2 D2 z!pp! D,|
+[V:1]g4 B2 e2|[V:2]G4 G2 G2|[V:3]d4 e2 B2|[V:4]B,4 G,2 G,2|
+[V:1](d4 ^c2) BB|[V:2]G6 GG|[V:3](e4 A2) ee|[V:4](A,4 E2) DD|
+[V:1]!<(! (A2 d2)!<)!!>(! f2 e2!>)!|[V:2]!<(! G4!<)!!>(! G2 G2!>)!|[V:3]!<(! e4!<)!!>(! ^c2 c2!>)!|[V:4]!<(! (^C2 B,2)!<)!!>(! A,2 A,2!>)!|
+[V:1](e4 d2) z!pp! d|[V:2]G6 z!pp! F|[V:3](^c4 d2) z!pp! d|[V:4]A,6 z!pp! B,|
+[V:1][M:2/4] G>G BG|[V:2][M:2/4] E>E GE|[V:3][M:2/4] e>e ee|[V:4][M:2/4] C>C G,C|
+[V:1]A2 c z|[V:2]F2 A z|[V:3]d2 e z|[V:4]D2 A, z|
+[V:1]"^cresc." B z/ B/ dB|[V:2]"^cresc." G z/ G/ GG|[V:3]"^cresc." d z/ d/ de|[V:4]"^cresc." B, z/ B,/ G,E,|
+[V:1]!f! (e2 g2)|[V:2]!f! (G2 c2)|[V:3]!f! (c2 e2)|[V:4]!f! (C,2 C2)|
+[V:1]d2 z!pp! d|[V:2]B2 z!pp! G|[V:3]g2 z!pp! B|[V:4]D2 z!pp! D,|
+[V:1]"^rall."[Q:1/4=50] c>c B!<(!A!<)!|[V:2]"^rall." F>F F!<(!F!<)!|[V:3]"^rall." A>A d!<(!c!<)!|[V:4]"^rall." D,>D, D,!<(!D,!<)!|
+[V:1]!>(! !fermata!G2- G!>)!|][V:2]!>(! (!fermata!D2 D-)!>)!|][V:3]!>(! (!fermata!B2 B-)!>)!|][V:4]!>(! (!fermata!G,2 G,-)!>)!|]

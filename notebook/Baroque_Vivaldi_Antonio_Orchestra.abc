@@ -1,0 +1,41 @@
+X:1
+%%score 1 [ 2 3 4 5 ]
+L:1/8
+Q:1/4=60
+M:4/4
+K:G
+V:1 treble nm="Violino solo" snm="Vln. solo"
+V:2 treble nm="Violino I" snm="Vln. I"
+V:3 treble nm="Violino II" snm="Vln. II"
+V:4 alto nm="Viola" snm="Vla."
+V:5 bass nm="Basso Continuo" snm="B.C."
+[V:1]"^Andante" b/e/Te b/e/Te c'/^d/Td c'/d/Td|[V:2]g2 z2 a2 z2|[V:3]e2 z2 f2 z2|[V:4]B2 z2 A2 z2|[V:5]E,2 z2 E,2 z2|
+[V:1]ba/g/ fe ^de z b|[V:2]g2 c'a fg z g|[V:3]e2 ef ^de z e|[V:4]B2 Ac FE z B|[V:5]E,2 A,A,, B,,E, z E,|
+[V:1](c'/a/)(^g/a/) (c'/a/)(g/a/) b/=g/f/g/ (b/g/)(f/g/)|[V:2]eeee dddd|[V:3]cccc BBBB|[V:4]AAAA DDDD|[V:5]A,A,A,A, G,G,G,G,|
+[V:1](a/f/)(e/f/) (a/f/)(e/f/) ge z b|[V:2]^dddd e2 z g|[V:3]BBBB B2 z e|[V:4]FFFF E2 z B|[V:5]F,F,F,F, E,2 z E,|
+[V:1](c'/d'/c'/)d'/ Tc'2 (b/c'/b/)c'/ Tb2|[V:2](a/b/a/)b/ Ta2 (g/a/g/)a/ Tg2|[V:3]eeff ddee|[V:4]AAAA BBBB|[V:5]A,A,D,D, G,G,C,C,|
+[V:1](a/b/a/)b/ Ta2 (g/b/a/)g/ (a/g/f/)e/|[V:2](f/g/f/)g/ Tf2 e2 z2|[V:3]ccdd B2 z2|[V:4]AAAA G2 z2|[V:5]F,F,B,,B,, E,2 z2|
+[V:1](b/d'/c'/)b/ (c'/b/)a/g/ (a/d'/c'/)b/ (c'/b/)a/g/|[V:2]g2 z2 a2 z2|[V:3]d2 z2 f2 z2|[V:4]G2 z2 d2 z2|[V:5]G,2 z2 D,2 z2|
+[V:1]g'(f'/e'/) d'c' b/(a/g/a/) df|[V:2]b2 af gggf|[V:3]g2 ed dedd|[V:4]d2 cF BcAA|[V:5]G,2 CD G,C,D,D,,|
+[V:1]g2 z b ^g/e/e (g/e/)e|[V:2]g2 z2 ^g2 z2|[V:3]d2 z2 d2 z2|[V:4]B2 z2 B2 z2|[V:5]G,,2 z2 E,2 z2|
+[V:1]be d'c'/b/ c'/b/a z a|[V:2]^g2 bg a2 z a|[V:3]d2 ee e2 z e|[V:4]B2 BB c2 z c|[V:5]E,2 ^G,E, A,2 z A,|
+[V:1](^d'/e'/f'/)d'/ (b/^c'/d'/)b/ (e'/f'/g'/)e'/ (b/c'/d'/)b/|[V:2]ffff gggg|[V:3]^dddd eeee|[V:4]BBBB BBBB|[V:5]B,B,B,B, B,B,B,B,|
+[V:1](f'/g'/a'/)f'/ (b/^c'/^d'/)b/ (g'/f'/e'/)=d'/ =c'/b/a/g/|[V:2]aaaa g2 z e|[V:3]^dddd e2 z B|[V:4]BBBB B2 z G|[V:5]B,B,B,B, E,2 z E,|
+[V:1]c'be'd' c'b z b|[V:2]e2 bb ag z g|[V:3]A2 ee e2 z e|[V:4]E2 EE E2 z E|[V:5]A,2 ^G,G, A,E, z E,|
+[V:1](c'/a/)(g/f/) (b/g/)(f/e/) a3 b|[V:2]e2 e2 ^d3 e|[V:3]c2 B2 A3 G|[V:4]E2 E2 F3 E|[V:5]A,2 G,2 F,3 E,|
+[V:1]gf/e/ T^d>e !fermata!e4|][V:2]e2 T^d2 !fermata!e4|][V:3]B2 B2 !fermata!B4|][V:4]E2 F2 !fermata!^G4|][V:5]E,2 B,,2 !fermata!E,,4|]
+[V:1][M:12/8]"^II. Allegro" eBe fBf gfe z ba|[V:2][M:12/8] g2 z f2 z e2 z f2 z|[V:3][M:12/8] e2 z ^d2 z B2 z d2 z|[V:4][M:12/8] B2 z B2 z G2 z B2 z|[V:5][M:12/8] E,2 z B,,2 z E,2 z B,,2 z|
+[V:1]gfe gbe' ^d'^c'b z ba|[V:2]g2 z b2 z b2 z f2 z|[V:3]e2 z e2 z f2 z ^d2 z|[V:4]B2 z B2 z B2 z B2 z|[V:5]E,2 z E,2 z B,,2 z B,,2 z|
+[V:1](^g/a/b)e d'c'b c'ba z a=g|[V:2]^g2 z g2 z a2 z a2 z|[V:3]e2 z e2 z e2 z e2 z|[V:4]B2 z B2 z c2 z c2 z|[V:5]E,2 z E,2 z A,,2 z A,,2 z|
+[V:1](f/g/a)d c'ba bag z bb|[V:2]f2 z f2 z g2 z g2 z|[V:3]d2 z d2 z d2 z d2 z|[V:4]A2 z A2 z B2 z B2 z|[V:5]D,2 z D,2 z G,,2 z G,,2 z|
+[V:1](b^c')d' (d'c')b (^ab)c' (c'b)a|[V:2]f2 z f2 z g2 z f2 z|[V:3]d2 z d2 z e2 z ^c2 z|[V:4]B2 z B2 z ^c2 z ^A2 z|[V:5]D,2 z D,2 z E,2 z F,2 z|
+[V:1](b^c')d' (d'c')b ^afb c'ba|[V:2]f2 z f2 z f2 z f2 z|[V:3]d2 z d2 z ^c2 z c2 z|[V:4]B2 z B2 z ^A2 z A2 z|[V:5]B,,2 z B,,2 z F,2 z F,2 z|
+[V:1]bfb ^c'fc' d'3 z d'c'|[V:2]f2 z f2 z f2 z f2 z|[V:3]d2 z ^c2 z d2 z d2 z|[V:4]B2 z ^A2 z B2 z B2 z|[V:5]B,,2 z F,2 z B,,2 z B,,2 z|
+[V:1]bag fba gfe z e'd'|[V:2]f2 z f2 z g2 z g2 z|[V:3]d2 z ^d2 z e2 z e2 z|[V:4]B2 z B2 z B2 z B2 z|[V:5]B,,2 z B,,2 z E,2 z E,2 z|
+[V:1]c'ba gc'b ^a^gf b=a=g|[V:2]g2 z ^g2 z f2 z f2 z|[V:3]e2 z e2 z ^c2 z ^d2 z|[V:4]c2 z ^c2 z ^A2 z B2 z|[V:5]E,2 z E,2 z E,2 z ^D,2 z|
+[V:1]gfe Be^d e3 z e'd'|[V:2]e2 z ^d2 z e2 z g2 z|[V:3]B2 z B2 z B2 z e2 z|[V:4]G2 z F2 z G2 z B2 z|[V:5]E,2 z B,2 z E,2 z E,2 z|
+[V:1]c'ba gc'b ^a^gf b=a=g|[V:2]g2 z ^g2 z f2 z f2 z|[V:3]e2 z e2 z ^c2 z ^d2 z|[V:4]c2 z ^c2 z ^A2 z B2 z|[V:5]E,2 z E,2 z E,2 z ^D,2 z|
+[V:1]gfe Be^d e2 z b2 z|[V:2]e2 z ^d2 z e2 z g2 z|[V:3]B2 z B2 z B2 z e2 z|[V:4]G2 z F2 z G2 z B2 z|[V:5]E,2 z B,2 z E,2 z E,2 z|
+[V:1]g2 z e2 z B2 z b2 z|[V:2]b2 z g2 z e2 z g2 z|[V:3]g2 z e2 z B2 z e2 z|[V:4]e2 z B2 z G2 z B2 z|[V:5]E,2 z E,2 z E,2 z E,2 z|
+[V:1]g2 z e2 z B6-|[V:2]b2 z g2 z e6-|[V:3]g2 z e2 z B6-|[V:4]e2 z B2 z G6-|[V:5]E,2 z E,2 z E,6-|
+[V:1]B6 z6|][V:2]e6 z6|][V:3]B6 z6|][V:4]G6 z6|][V:5]E,6 z6|]

@@ -1,0 +1,36 @@
+X:1
+%%score 1 2 3
+L:1/8
+M:4/4
+K:G
+V:1 treble nm="Violino 1"
+V:2 treble nm="Violino 2"
+V:3 bass nm="Organo"
+[V:1]"^Allegro" gd ga/g/ f2 z a|[V:2]z4 dA de/d/|[V:3]G,A,B,G, D,E,F,D,|
+[V:1]b/d'/c'/d'/ b/d'/c'/b/ a2 z a|[V:2]B2 z g f/a/g/a/ f/a/g/f/|[V:3]G,A,B,C DEFD|
+[V:1]b/d'/c'/d'/ g/b/a/b/ e2 z a|[V:2]e2 z f g/b/a/b/ e/g/f/e/|[V:3]GG,F,D, E,D,^C,A,,|
+[V:1]f/a/g/a/ f/a/g/f/ e/a/g/a/ e/a/g/a/|[V:2]d2 z d ^c2 z c|[V:3]D,E,F,D, A,B,^CA,|
+[V:1]f/a/g/a/ d/f/e/d/ ^cA z a|[V:2]d2 z f e/a/g/a/ e/a/g/a/|[V:3]DD,F,D, A,B,^CA,|
+[V:1]a/f/g/a/ d/a/g/a/ b/g/f/g/ d/b/a/b/|[V:2]f2 z f d2 z d|[V:3]DD,F,D, G,A,B,G,|
+[V:1]^c'/a/g/a/ e/c'/b/c'/ d'/b/a/b/ f/d'/c'/d'/|[V:2]a2 z e f2 z f|[V:3]A,B,^CA, B,CDB,|
+[V:1]b/d'/^c'/d'/ b/e'/d'/e'/ c'a z a|[V:2]d2 z g e/a/g/a/ e/a/g/a/|[V:3]G,A,B,G, A,B,^CA,|
+[V:1]d'/a/f/a/ d'/^c'/b/a/ b/g/e/g/ c'/b/a/g/|[V:2]f2 z f g2 z g|[V:3]DD,F,D, E,F,G,E,|
+[V:1]a/f/d/f/ b/a/g/f/ g/e/^c/e/ a/g/f/e/|[V:2]f2 z f e2 z e|[V:3]F,D,G,G,, ^C,A,,F,D,|
+[V:1]f/d/e/f/ g/f/e/d/ ^cA z a|[V:2]d2 z b e2 z f|[V:3]B,A,B,G, A,B,^CA,|
+[V:1](b/^c'/d'/)d/ e>d d4::[V:2]d3 ^c d4::[V:3]B,G,A,A,, D,4::
+[V:1]dA de/d/ ^c2 z e|[V:2]z4 AE AB/A/|[V:3]D,E,F,D, A,,B,,^C,A,,|
+[V:1]f/a/g/a/ f/a/g/f/ e2 z a|[V:2]F2 z d ^c/e/d/e/ c/e/d/c/|[V:3]D,E,F,G, A,B,^CA,|
+[V:1]f/a/g/a/ f/a/g/f/ gB e2-|[V:2]d2 z ^d e2 z B|[V:3]DCB,B,, E,F,G,E,|
+[V:1]e2 ^d2 e2 z/ b/a/b/|[V:2](c/B/)(A/G/) FB GE B2-|[V:3]A,F,B,B,, E,F,G,E,|
+[V:1]^c'/e/f/g/ a/c'/b/c'/ b/d/e/f/ g/b/a/b/|[V:2]B2 A4 G2-|[V:3]A,G,F,D, G,F,E,^C,|
+[V:1]a/^c/d/e/ f/a/g/a/ g/B/c/d/ e/g/f/g/|[V:2]G2 F4 E2-|[V:3]F,E,D,B,, E,D,^C,A,,|
+[V:1]f/A/B/^c/ d/f/e/d/ cA z a|[V:2]E2 D2 E2 z e|[V:3]D,E,F,G, A,B,^CA,|
+[V:1](a/g/)(f/g/) e>d d2 z d'|[V:2]Add^c d2 z a|[V:3]DG,A,A,, D,E,F,D,|
+[V:1](d'/c'/)(b/c'/) a>g g2 z b|[V:2]dggf g2 z d|[V:3]G,CDD, G,A,B,G,|
+[V:1](b/a/)(g/a/) f>e e2 z g|[V:2]Bee^d e2 z B|[V:3]E,A,B,B,, E,F,G,E,|
+[V:1](g/f/)(e/f/) d>c BG z d|[V:2]EAAA G2 z d|[V:3]C,A,,D,D,, G,,A,,B,,G,,|
+[V:1]e/g/f/g/ e/g/f/e/ d/g/f/g/ d/g/f/g/|[V:2]c2 z c B2 z B|[V:3]C,D,E,C, G,A,B,G,|
+[V:1]e/a/g/a/ e/a/g/a/ f/b/a/b/ f/b/a/b/|[V:2]c2 z c d2 z d|[V:3]C,D,E,C, D,E,F,D,|
+[V:1]g/c'/b/c'/ g/c'/b/c'/ ad z a|[V:2]e2 z e f2 z d|[V:3]E,F,G,E, D,E,F,D,|
+[V:1]b/g/d/g/ b/a/g/f/ e/c/A/c/ f/e/d/c/|[V:2]d2 z B c2 z c|[V:3]G,G,B,G, A,B,CA,|
+[V:1]d/B/G/B/ e/d/c/B/ A4:|[V:2]B2 z g f4:|[V:3]B,G,CC, D,4:|

@@ -1,0 +1,33 @@
+%%score 1 { ( 2 3 ) | ( 4 5 ) }
+L:1/8
+Q:1/4=124
+M:6/8
+K:C
+V:1 treble nm="Chant\nVoice"
+V:2 treble nm="Piano"
+V:3 treble 
+V:4 bass 
+V:5 bass 
+[V:1]"^Assez vif" z6|[V:2]!p!!<(! cde geg!<)!|[V:3][CEG] z z [B,EG] z z|[V:4]z6|[V:5]x6|
+[V:1]z6|[V:2]!>(! d6!>)!|[V:3][^Fc]3 [=FB]3|[V:4][A,,A,] z z [G,,G,] z z|[V:5]x6|
+[V:1]z6|:[V:2]c z z!p! [G,CE] z z|:[V:3][Ec] x x x x x|:[V:4][C,,C,] z z [C,,C,] z z|:[V:5]x6|:
+[V:1]z2 z z z (C|[V:2][G,CE] z z [G,CE] z z|[V:3]x6|[V:4][C,,C,] z z [C,,C,] z z|[V:5]x6|
+[V:1]C D E G E G|[V:2][G,CE] z z [G,CE] z z|[V:3]x6|[V:4][C,,C,] z z [B,,,B,,] z z|[V:5]x6|
+[V:1]A d B G2) (G|[V:2][^F,CD] z z [G,B,D] z z|[V:3]x6|[V:4][A,,,A,,] z z [G,,,G,,] z z|[V:5]x6|
+[V:1]F A c E G E|[V:2][A,C=F] z z [G,CE] z z|[V:3]x6|[V:4][D,,D,] z z [G,,,G,,] z z|[V:5]x6|
+[V:1]D3 C2) (C|[V:2][I:staff +1] ([=F,B,D]3 [E,C])[I:staff -1] x x|[V:3]x6|[V:4]([G,,,G,,]3 [C,,C,]) z z|[V:5]x6|
+[V:1]C D E G E G|[V:2][G,CE] z z [G,CG] z z|[V:3]x6|[V:4][C,,C,] z z [E,,E,] z z|[V:5]x6|
+[V:1]A d B G2) (G|[V:2][A,CA] z z [B,DG] z z|[V:3]x6|[V:4][F,,F,] z z .[F,,F,]2 .[E,,E,]|[V:5]x6|
+[V:1]F A c E G E|[V:2][A,CF] z z [G,CE] z z|[V:3]x6|[V:4][D,,D,] z z [G,,,G,,] z z|[V:5]x6|
+[V:1]D3 C2) (c|[V:2][I:staff +1] ([F,B,D]3 [E,C])[I:staff -1] x x|[V:3]x6|[V:4]([G,,,G,,]3 [C,,C,]) z z|[V:5]x6|
+[V:1]c2 A A2 c|[V:2]z6|[V:3]x6|[V:4][G,C] z z [A,C] z z|[V:5][E,,E,] x x [F,,F,] x x|
+[V:1]c2 G G2) (G|[V:2]z2 z [G,CE] z z|[V:3]x6|[V:4][_A,CD] z z [E,,E,] z z|[V:5][F,,F,] x x x2 x|
+[V:1]F G A D E F|[V:2][=A,CF] z z [G,DF] z z|[V:3]x6|[V:4][=A,,,=A,,] z z [B,,,B,,] z z|[V:5]x6|
+[V:1]E G E C2) (c|[V:2][G,CE] z z [G,C] z z|[V:3]x6|[V:4][C,,C,] z z [E,,E,] z z|[V:5]x6|
+[V:1]c2 A A2 c|[V:2][G,C] z z [A,C] z z|[V:3]x6|[V:4][E,,E,] z z [F,,F,] z z|[V:5]x6|
+[V:1]c2 E E2) (E|[V:2][A,C^D]2 E !>![^G,CE] z z|[V:3]x6|[V:4][F,,,F,,] z z !>![E,,,E,,] z z|[V:5]x6|
+[V:1]D E F G A B|[V:2][A,C=D] z z [=G,B,F] z z|[V:3]x6|[V:4][F,,,F,,] z z [D,,D,] z z|[V:5]x6|
+[V:1]c3- c) z z|[V:2][G,CE] z z[I:staff +1] !>![C,-^F,_A,C-]3|[V:3]x6|[V:4][C,,C,] z z [D,,,D,,]3|[V:5]x6|
+[V:1]z6:|11[V:2][I:staff -1] [G,CE]3- [G,CE] z z:|[V:3]x6:|[V:4][C,E,G,C] z z [C,,C,] z z:|[V:5][C,,,C,,] x x x2 x:|
+[V:1]c3- c z z||[V:2][G,CE] z z x2 x|[V:3]x6|[V:4][C,,C,] z z !>![C,-^F,_A,C-]3|[V:5]x3 [D,,,D,,]3|
+[V:1]z6|][V:2][CEG]3-!f! [CEG] z z|][V:3]x6|][V:4][C,E,G,C] z z[I:staff -1] [cegc'][I:staff +1] x x|][V:5][C,,,C,,] x x x2 x|]

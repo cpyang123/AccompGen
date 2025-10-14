@@ -1,0 +1,57 @@
+X:1
+%%score 1 { ( 2 4 ) | ( 3 5 ) }
+L:1/8
+Q:1/4=92
+M:6/8
+K:G
+V:1 treble nm="Singstimme\nVoice"
+V:2 treble nm="Pianoforte"
+V:4 treble 
+V:3 bass 
+V:5 bass 
+[V:1]"^Andante" z|[V:2]!p! B|[V:3]z1|[V:4]x1|[V:5]x1|
+[V:1]z6|[V:2](GFE) (c/B/A/G/F/E/)|[V:3]E,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]z6|[V:2]{E} ^D2 E (F/G/A)A|[V:3]F,2 z ^D,2 z|[V:4]x6|[V:5]x6|
+[V:1]z6|[V:2]{A} G2 F (G/A/B)B|[V:3]E,2 z G,,2 z|[V:4]x6|[V:5]x6|
+[V:1]z6|[V:2](c/B/A/G/F/E/) ^D/(f/g/f/e/^d/)|[V:3]A,,2 z B,,2 z|[V:4]x6|[V:5]x6|
+[V:1]z6|[V:2]e(d/c/B/A/) GTF>E|[V:3]C,2 A,, B,,2 B,,|[V:4]x6|[V:5]x6|
+[V:1]z2 z z2 B|[V:2]E(G/F/E/^D/) E2 z|[V:3]E,2 B,, E,,2 z|[V:4]x6|[V:5]x6|
+[V:1]GF E c/B/A/G/ F/E/|[V:2]z/ G,/B,/E/B,/G,/ z/ G,/B,/E/B,/G,/|[V:3]E,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]{E} ^D2 E F/G/A A|[V:2]z/ A,/B,/F/B,/A,/ z/ A,/B,/F/B,/A,/|[V:3]F,2 z ^D,2 z|[V:4]x6|[V:5]x6|
+[V:1]{A} G2 F G/A/B B|[V:2]z/ G,/B,/E/B,/G,/ z/ G,/B,/E/B,/G,/|[V:3]E,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]c/B/A/G/ F/E/ ^D2 B|[V:2]z/ A,/C/F/C/A,/ z/ B,/^D/F/D/B,/|[V:3]A,,2 z B,,2 z|[V:4]x6|[V:5]x6|
+[V:1]^d2 d e2 B|[V:2]z/ B,/^D/F/D/B,/ z/ B,/E/G/E/B,/|[V:3]A,2 z G,2 z|[V:4]x6|[V:5]x6|
+[V:1]{d} c2 c B2 B|[V:2]z/ C/E/A/E/C/ z/ B,/E/G/E/B,/|[V:3]A,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]^d2 d e>B G/E/|[V:2]z/ B,/^D/F/D/B,/ z/ B,/E/G/E/B,/|[V:3]A,,2 z G,,2 z|[V:4]x6|[V:5]x6|
+[V:1](=FA) c ^D2 B|[V:2]z/ C/=F/A/F/C/ z/ B,/^D/^F/D/B,/|[V:3]A,,2 z B,,2 z|[V:4]x6|[V:5]x6|
+[V:1]c2 c cB A|[V:2]z/ C/F/A/F/C/ z/ C/F/A/F/C/|[V:3]^D,2 z D,2 z|[V:4]x6|[V:5]x6|
+[V:1]GF E E2 B|[V:2]z/ B,/E/G/E/B,/ z/ B,/E/G/E/B,/|[V:3]E,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]e2 e d^c B|[V:2]z/ B,/E/B/E/B,/ z/ B,/D/B/D/B,/|[V:3]G,2 z ^E,2 z|[V:4]x6|[V:5]x6|
+[V:1]^A2 B ^c2 z|[V:2]z/ ^C/F/^A/F/C/ z/ C/F/A/F/C/|[V:3]F,2 z F,2 z|[V:4]x6|[V:5]x6|
+[V:1]z2 z z2 B|[V:2]B/F/E/D/^C/B,/ TC2 z|[V:3]D,2 E, F,2 z|[V:4]x6|[V:5]x6|
+[V:1]{B} ^A2 A B/^c/d B|[V:2]z/ ^C/F/^A/F/C/ z/ D/F/B/F/D/|[V:3]F,2 z F,2 z|[V:4]x6|[V:5]x6|
+[V:1]{B} ^A2 A B/^c/d B|[V:2]z/ ^C/F/^A/F/C/ z/ D/F/B/F/D/|[V:3]F,2 z F,2 z|[V:4]x6|[V:5]x6|
+[V:1]{B} ^A2 B ^c/B/A/G/ F/E/|[V:2]z/ ^C/F/^A/F/C/ z/ C/E/A/E/C/|[V:3]F,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]DF ^A B2 d|[V:2]z/ B,/D/F/E/^C/ z/ B,/D/F/D/B,/|[V:3]D,2 F, B,,2 z|[V:4]x6|[V:5]x6|
+[V:1]^c2 F d2 B/^G/|[V:2]z/ ^C/F/^c/F/C/ z/ D/^G/B/G/D/|[V:3]A,,2 z B,,2 z|[V:4]x6|[V:5]x6|
+[V:1]F2 ^G F2 z|[V:2]z/ ^C/F/A/^E/^G/ [A,CF]2 c|[V:3]^C,2 C,, F,,2 z|[V:4]x6|[V:5]x6|
+[V:1]z6|[V:2](BA^G) (e/d/^c/B/A/G/)|[V:3]^G,2 z G,2 z|[V:4]x6|[V:5]x6|
+[V:1]z6|[V:2]{^G} F2 G (A/B/^c)c|[V:3]A,2 z ^D,2 z|[V:4]x6|[V:5]x6|
+[V:1]z6|[V:2]{^c} B2 A (B/c/d)d|[V:3]E,2 z ^G,,2 z|[V:4]x6|[V:5]x6|
+[V:1]z6|[V:2](^c/B/A/^G/F/E/) ^D/(^a/b/a/g/f/)|[V:3]A,,2 z ^D,2 z|[V:4]x6|[V:5]x6|
+[V:1]z2 z z2 B|[V:2]^g(f/e/^d/e/) GTF>E|[V:3]E,2 A, B,2 B,,|[V:4]x6|[V:5]x6|
+[V:1]GF E c/B/A/G/ F/E/|[V:2]E/G,/B,/E/B,/G,/ z/ G,/B,/E/B,/G,/|[V:3]E,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]{E} ^D2 E F/G/A A|[V:2]z/ A,/B,/F/B,/A,/ z/ A,/B,/F/B,/A,/|[V:3]F,2 z ^D,2 z|[V:4]x6|[V:5]x6|
+[V:1]{A} G2 F G/A/B B|[V:2]z/ G,/B,/E/B,/G,/ z/ G,/B,/E/B,/G,/|[V:3]E,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]c/B/A/G/ F/E/ ^D2 B|[V:2]z/ A,/C/F/C/A,/ z/ B,/^D/F/D/B,/|[V:3]A,,2 z B,,2 z|[V:4]x6|[V:5]x6|
+[V:1]^d2 d e2 B|[V:2]z/ B,/^D/F/D/B,/ z/ B,/E/G/E/B,/|[V:3]A,2 z G,2 z|[V:4]x6|[V:5]x6|
+[V:1]{d} c2 c B2 B|[V:2]z/ C/E/A/E/C/ z/ B,/E/G/E/B,/|[V:3]A,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]^A2 A B>=A G/F/|[V:2]z/ ^C/E/^A/E/C/ z/ B,/F/=A/F/B,/|[V:3]E,2 z ^D,2 z|[V:4]x6|[V:5]x6|
+[V:1]G2 ^A B2 B|[V:2]z/ B,/E/G/E/^A,/ z/ B,/^D/F/D/B,/|[V:3]E,2 C, B,,2 z|[V:4]x6|[V:5]x6|
+[V:1]^d2 d e2 B|[V:2]z/ B,/^D/F/D/B,/ z/ B,/E/G/E/B,/|[V:3]A,2 z G,2 z|[V:4]x6|[V:5]x6|
+[V:1]{d} c2 c B2 B|[V:2]z/ C/E/A/E/C/ z/ B,/E/G/E/B,/|[V:3]A,2 z E,2 z|[V:4]x6|[V:5]x6|
+[V:1]^d2 d e>B G/E/|[V:2]z/ B,/^D/F/D/B,/ z/ B,/E/G/E/B,/|[V:3]A,,2 z G,,2 z|[V:4]x6|[V:5]x6|
+[V:1](=FA) c ^D3-|[V:2]z/ C/=F/A/F/C/ ^D2 ^f|[V:3]A,,2 z B,,2 [A,B,^D]|[V:4]x6|[V:5]x6|
+[V:1]DE F GA B|[V:2]g2 ^d e2 B|[V:3][G,B,E]2 [F,A,B,] [E,G,B,]2 G,,|[V:4]x6|[V:5]x6|
+[V:1]cB A B2 z|[V:2]cBA B2 ^D|[V:3]A,,B,,C, B,,2 B,,|[V:4]x3 GFA,|[V:5]x6|
+[V:1]!fermata!z6|][V:2]E3- !fermata!E2 z|][V:3]E,2 B,, !fermata!E,,2 z|][V:4]G,B,G, x2 x|][V:5]E,B,,G,, x2 x|]

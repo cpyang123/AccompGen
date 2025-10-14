@@ -1,0 +1,56 @@
+X:1
+%%score [ ( 1 2 ) ( 3 4 ) ]
+L:1/8
+Q:1/4=60
+M:6/8
+K:Eb
+V:1 treble nm="S\nA"
+V:2 treble 
+V:3 bass nm="T\nB"
+V:4 bass 
+[V:1]"^Andante non troppo" z|[V:2]x1|[V:3]!p! z|[V:4](B,,|
+[V:1]z6|[V:2]x6|[V:3]z (G,B, EG) z|[V:4]!<(! E,,B,,E, G,B,)!<)! z|
+[V:1]z2 z z2!p! G|[V:2]x6|[V:3]z (G,B, EG) z|[V:4]!p! (E,,B,,E, G,B,) z|
+[V:1]B2 E G2 B,|[V:2]x6|[V:3]z (G,B, EG) z|[V:4](E,,B,,E, G,B,) z|
+[V:1]C3- CFA|[V:2]x6|[V:3]z (A,,C, F,A,) z|[V:4](E,,F,,A,, C,F,) z|
+[V:1]!<(! c2 e!<)! d2 f|[V:2]x6|[V:3]z (F,A,) z (A,D)|[V:4](E,,B,,F,) (E,,B,,F,)|
+[V:1]!>(! (B2 G)!>)! E z z|[V:2]x6|[V:3]z (G,B, EG) z|[V:4](E,,B,,E, G,B,) z|
+[V:1]GF E!<(! G2 c!<)!|[V:2]x6|[V:3]z (E,G, CE) z|[V:4](C,,G,,C, E,G,) z|
+[V:1]!>(! (=A2 G)!>)! F2 z|[V:2]x6|[V:3]z (=A,,C, F,=A,) z|[V:4](F,,,C,,F,, =A,,C,) z|
+[V:1]!p! GF!<(! E F2!<)! c|[V:2]x6|[V:3]z (E,G, CE) z|[V:4](C,,G,,C, E,G,) z|
+[V:1]!>(! (=A2 G)!>)! F2!mf! F|[V:2]x6|[V:3]z (=A,,C, F,=A,) z|[V:4](F,,,C,,F,, =A,,C,) z|
+[V:1]B3- BA _G|[V:2]x6|[V:3]z (_G,B, _D_G) z|[V:4](_D,,B,,_D, _G,B,) z|
+[V:1]_d3- d2 =d|[V:2]x6|[V:3]z (F,A, _DF) z|[V:4](_C,,A,,_D, F,A,) z|
+[V:1]e2!<(! B _G2 A!<)!|[V:2]x6|[V:3]z (E,_G, B,E) z|[V:4](B,,,_G,,B,, E,_G,) z|
+[V:1]!>(! B3-!>)! B z!p! B|[V:2]x6|[V:3]z (D,F, B,D) z|[V:4](B,,,F,,B,, D,F,) z|
+[V:1]c2 G A>G F|[V:2]x6|[V:3]z (G,C) z (CF)|[V:4](=E,,C,=E,) (F,,C,A,)|
+[V:1]B2 F!<(! G2 G!<)!|[V:2]x6|[V:3]z (F,B,) z (B,E)|[V:4](D,,B,,D,) (E,,B,,G,)|
+[V:1]!>(! c3-!>)! c =A F|[V:2]x6|[V:3]z (G,C FC=A,)|[V:4](=A,,,=A,,C, =A,F,C,)|
+[V:1]!<(! (e6-!<)!|[V:2]x6|[V:3]z (G,C GEC)|[V:4](=A,,,=A,,C, CG,E,)|
+[V:1]!>(! e3!>)! d2) c|[V:2]x6|[V:3]z (A,D AFA,)|[V:4](B,,,B,,F, DB,F,)|
+[V:1]"^dim." (B2 G) (A2 C)|[V:2]x6|[V:3]z (G,B,) z (E,A,)|[V:4](E,,B,,E,) (A,,,F,,C,)|
+[V:1]"^dim." E3 F3|[V:2]x6|[V:3]z (G,B, DB,A,)|[V:4](B,,,B,,E, A,F,D,)|
+[V:1]!pp! G3- G z z|[V:2]x6|[V:3]z (G,B, EGB,)|[V:4]!pp! (E,,B,,E, G,B,E,)|
+[V:1]!pp!"^dolce" (_c3 B2) z|[V:2]x6|[V:3]([EA]3 [DF]2) z|[V:4](A,_CE A,B,D)|
+[V:1](_c3 B2) z|[V:2]x6|[V:3]([EA]3 [DF]2) z|[V:4](A,_CE A,B,D)|
+[V:1]e3- (ed) c|[V:2]x6|[V:3]([EA]6|[V:4](A,_CE A,CE)|
+[V:1](d3 A2) A|[V:2]x6|[V:3][FA]3) [DF]2 z|[V:4](A,B,D A,B,D)|
+[V:1]"^cresc." (__B3 A3)|[V:2]x6|[V:3]([_D_G]3 [CE]2) z|[V:4](_G,__B,_D G,A,C)|
+[V:1](__B3 A2) z|[V:2]x6|[V:3]([_D_G]3 [CE]2) z|[V:4](_G,__B,_D G,A,C)|
+[V:1]_d3- (dc) B|[V:2]x6|[V:3]([_D_G]6|[V:4](_G,__B,_D G,B,D)|
+[V:1]!>(! (c3!>)! _G2) G|[V:2]x6|[V:3][E_G]3) [CE]2 z|[V:4](_G,A,C G,A,C)|
+[V:1]"^cresc." G3 A2 A|[V:2]x6|[V:3]"_cresc." ([B,_F]3 [_CE]2) z|[V:4](_F,_G,B, E,G,_C)|
+[V:1]_d3 _c2 c|[V:2]x6|[V:3]([_FB]3 [EA]2) z|[V:4](G,B,_D A,_CE)|
+[V:1]B3 _c2 c|[V:2]x6|[V:3]([_DG]3 [__EA]2) z|[V:4](G,B,_D A,_C__E)|
+[V:1]!f! (_f6-|[V:2]x6|[V:3]!f! ([_F__B_d]6|[V:4]([__B,,,__B,,]_D,_F, __B,_D_F)|
+[V:1]"^dim." f3 __e3)|[V:2]x6|[V:3][_G__B]6)|[V:4](__E,,__B,,__E, _G,__B,__E)|
+[V:1]!p! (_d3 _c3|[V:2]x6|[V:3]!p! ([__E_G]6|[V:4](_C,,_G,,_C, __E,_G,_C)|
+[V:1]"^dim." B3 A2) _G|[V:2]x6|[V:3][B,E]6)|[V:4](_G,,,_G,,B,, E,_G,B,)|
+[V:1]!p! (_G6|[V:2]x6|[V:3]!p! ([A,-_CE]6|[V:4](_D,,A,,_D, E,A,E,)|
+[V:1]F3-) F2 E|[V:2]x6|[V:3][A,_C_D]6)|[V:4](_D,,A,,_D, F,A,F,)|
+[V:1]_G3 z2 z|[V:2]x6|[V:3]z (_G,B, _D_GB,-|[V:4](_G,,,_G,,B,, _D,_G,D,)|
+[V:1]!pp! (_G3 A3)|[V:2]_G3 F3|[V:3][B,E]3 [A,_D]3)|[V:4](_C,E,C, _D,F,D,)|
+[V:1]B3- B z z|[V:2]_G3- G x x|[V:3]z (_G,B, _D_GB,-|[V:4](_G,,,_G,,B,, _D,_G,D,)|
+[V:1]"^rall." (_G3 A3)|[V:2]_G3 F3|[V:3]"^rall." [B,E]3 [A,_D]3)|[V:4](_C,E,C, _D,F,D,)|
+[V:1]B6-|[V:2]_G6-|[V:3][_G,B,_D]6-|[V:4](_G,,,_G,,_D, _G,D,G,|
+[V:1]B2 z z2|][V:2]G2 x x2|][V:3][G,B,D]2 z z2|][V:4]_D2) z z2|]

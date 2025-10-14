@@ -1,0 +1,32 @@
+X:1
+%%score 1 2 3
+L:1/8
+Q:1/4=60
+M:4/4
+K:C
+V:1 treble nm="Violino I."
+V:2 treble nm="Violino II."
+V:3 bass nm="Organo."
+[V:1]"^II. Adagio""^Adagio" e3 e dG z g|[V:2]c3 c B2 z d|[V:3]C,D,E,F, G,A,B,G,|
+[V:1]ec c'4 b2|[V:2]G2 z g f3 g/f/|[V:3]CDEE, D,C,D,G,,|
+[V:1]c'g c'2- c'(b/a/) b2-|[V:2]e2 z g f3 g/f/|[V:3]C,D,E,C, D,C,D,G,,|
+[V:1]be a2- a(g/^f/) ga|[V:2]e2 z e d3 e/d/|[V:3]C,B,,C,A,, B,,A,,B,,C,|
+[V:1]^fd g4 f2|[V:2]c2 Bd e2 d>c|[V:3]D,DB,G, CA,DD,|
+[V:1]g2 z g a3 (g/a/)|[V:2]Bd g2- g(^f/e/) f2|[V:3]G,A,B,G, CA,DD,|
+[V:1]bg c'4 b2|[V:2]g2 z g fe d>g|[V:3]G,F,E,C, D,F,G,G,,|
+[V:1]c'g c'4 b2-|[V:2]e2 z g f3 g/f/|[V:3]C,D,E,C, D,C,D,G,,|
+[V:1]b2 a4 ^g2|[V:2]e3 f/e/ d3 e/d/|[V:3]C,B,,C,A,, B,,A,,B,,E,,|
+[V:1]ae a4 ^g2|[V:2]c2 z e d3 e/d/|[V:3]A,,B,,C,A,, B,,A,,B,,E,,|
+[V:1]ae a4 ^g2|[V:2]c2 z e d3 e/d/|[V:3]A,,B,,C,A,, B,,A,,B,,E,,|
+[V:1]ae a4 ^g2|[V:2]c2 z e d2 z e|[V:3]A,,B,,C,A,, B,,D,E,E,,|
+[V:1]c'e a4 ^g2|[V:2]e2 z e d3 (e/d/)|[V:3]A,,B,,C,A,, B,,D,E,E,,|
+[V:1]ae a4 ^g2|[V:2]c2 z e d3 (e/d/)|[V:3]A,,B,,C,A,, B,,D,E,E,,|
+[V:1]a2 z e f3 (g/f/)|[V:2]cA e4 d2-|[V:3]A,,B,,C,A,, D,E,F,D,|
+[V:1]e3 (f/e/) d3 (e/d/)|[V:2]d2 c4 B2-|[V:3]G,E,A,A,, D,F,G,G,,|
+[V:1]c3 (d/c/) BG g2-|[V:2]B2 A2 G2 z d|[V:3]C,E,F,F,, G,,A,,B,,G,,|
+[V:1]gc c'4 b2|[V:2]e2 z g f3 (g/f/)|[V:3]C,D,E,C, D,C,D,G,,|
+[V:1]c'g c'4 b2|[V:2]e2 z g f3 (g/f/)|[V:3]C,D,E,C, D,C,D,G,,|
+[V:1]c'g c'2- c'(b/a/) b2-|[V:2]e2 z g f3 (g/f/)|[V:3]C,D,E,C, D,C,D,G,,|
+[V:1]be a4 g2-|[V:2]e2 z e d3 (e/d/)|[V:3]C,B,,C,A,, B,,A,,B,,G,,|
+[V:1]g2 f4 e2|[V:2]c3 (d/c/) B2 c2-|[V:3]A,,G,,A,,F,, G,,G,A,E,|
+[V:1]d4 c4|][V:2]c2 B2 c4|][V:3]F,D,G,G,, C,4|]
