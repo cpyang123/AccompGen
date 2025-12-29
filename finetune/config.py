@@ -1,16 +1,23 @@
 import os
 
 # Configuration for the data
-DATA_TRAIN_INDEX_PATH = "" 
-DATA_EVAL_INDEX_PATH  = ""
+DATA_TRAIN_INDEX_PATH = "../data/abcfiles_processed_train.jsonl" 
+DATA_EVAL_INDEX_PATH  = "../data/abcfiles_processed_eval.jsonl"
 
-# Configuration for the model
-PATCH_STREAM = True                                             # Stream training / inference
-PATCH_SIZE = 16                                                # Patch Size
-PATCH_LENGTH = 1024                                             # Patch Length
-CHAR_NUM_LAYERS = 6                                             # Number of layers in the decoder
-PATCH_NUM_LAYERS = 20                                           # Number of layers in the encoder
+# Configuration for the model 
+PATCH_STREAM = True                                              # Stream training / inference
+PATCH_SIZE = 16                                                  # Patch Size
+PATCH_LENGTH = 1024                                              # Patch Length
+CHAR_NUM_LAYERS = 6                                              # Number of layers in the decoder
+PATCH_NUM_LAYERS = 20                                            # Number of layers in the encoder
 HIDDEN_SIZE = 1280                                               # Hidden Size
+
+# PATCH_STREAM = True                                             # Stream training / inference
+# PATCH_SIZE = 16                                                 # Patch Size
+# PATCH_LENGTH = 2048                                             # Patch Length
+# CHAR_NUM_LAYERS = 3                                             # Number of layers in the decoder
+# PATCH_NUM_LAYERS = 12                                           # Number of layers in the encoder
+# HIDDEN_SIZE = 768                                               # Hidden Size
 
 # Configuration for the training
 BATCH_SIZE = 1         
@@ -19,10 +26,10 @@ NUM_EPOCHS = 64                                                 # Number of epoc
 ACCUMULATION_STEPS = 1                                          # Accumulation steps to simulate large batch size
 PATCH_SAMPLING_BATCH_SIZE = 0                                   # Batch size for patch during training, 0 for full conaudio
 LOAD_FROM_CHECKPOINT = False                                    # Whether to load weights from a checkpoint
-WANDB_LOGGING = False                                           # Whether to log to wandb
-WANDB_KEY = '<your_wandb_key>'
+WANDB_LOGGING = True                                            # Whether to log to wandb
+WANDB_KEY = '85232309c7b968d33a681acf7b1b863d63252c63'
 
-PRETRAINED_PATH = ""                # Path of pretrained weights
+PRETRAINED_PATH = "../weights/weights_notagenx_p_size_16_p_length_1024_p_layers_20_h_size_1280.pth"                # Path of pretrained weights
 EXP_TAG = ''                                            # Experiment tag for name differentiation
 NAME =  EXP_TAG + \
         "_p_size_" + str(PATCH_SIZE) + \

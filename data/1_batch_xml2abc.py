@@ -1,5 +1,5 @@
-ORI_FOLDER = ""  # Replace with the path to your folder containing XML (.xml, .mxl, .musicxml) files
-DES_FOLDER = ""   # The script will convert the musicxml files and output standard abc notation files to this folder
+ORI_FOLDER = "Lieder"  # Replace with the path to your folder containing XML (.xml, .mxl, .musicxml) files
+DES_FOLDER = "abcfiles"   # The script will convert the musicxml files and output standard abc notation files to this folder
 
 import os
 import math

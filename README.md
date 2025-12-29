@@ -35,6 +35,8 @@
 
 Check our [demo page](https://electricalexis.github.io/notagen-demo/) and enjoy music composed by NotaGen!
 
+> Note: To connect to gpu in terminal, use this command: srun -p compsci-gpu -G 1 --pty bash -l
+
 ## ⚙️ Environment Setup
 
 ```bash

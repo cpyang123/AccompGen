@@ -1,6 +1,6 @@
-ORI_FOLDER = ''  # Replace with the path to your folder containing standard ABC notation files
-INTERLEAVED_FOLDER = ''   # Output interleaved ABC notation files to this folder
-AUGMENTED_FOLDER = ''   # Output key-augmented and rest-omitted ABC notation files to this folder
+ORI_FOLDER = 'abcfiles'  # Replace with the path to your folder containing standard ABC notation files
+INTERLEAVED_FOLDER = 'abcfiles_inter'   # Output interleaved ABC notation files to this folder
+AUGMENTED_FOLDER = 'abcfiles_processed'   # Output key-augmented and rest-omitted ABC notation files to this folder
 EVAL_SPLIT = 0.1    # The ratio of eval data 
 
 import os
