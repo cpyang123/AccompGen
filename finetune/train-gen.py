@@ -33,7 +33,7 @@ if world_size > 1:
     dist.init_process_group(backend='nccl') if world_size > 1 else None
 else:
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    
+
 # Set random seed
 seed = 0 + global_rank
 random.seed(seed)
@@ -42,6 +42,7 @@ torch.manual_seed(seed)
 torch.cuda.manual_seed_all(seed)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
+
 
 batch_size = BATCH_SIZE
 
@@ -190,12 +191,12 @@ def process_one_batch(batch):
 
 
 # do one epoch for training
-def train_epoch(epoch):
-    tqdm_train_set = tqdm(train_set)
+def train_epoch(epoch, train_loader, global_step_offset=0):
+    tqdm_train_set = tqdm(train_loader)
     total_train_loss = 0
     iter_idx = 1
     model.train()
-    train_steps = (epoch-1)*len(train_set)
+    train_steps = global_step_offset + (epoch - 1) * len(train_loader)
 
     for batch in tqdm_train_set:
         minibatches = split_into_minibatches(batch[0], batch[1], BATCH_SIZE//ACCUMULATION_STEPS)
@@ -206,7 +207,7 @@ def train_epoch(epoch):
             total_train_loss += loss.item()
         scaler.step(optimizer)
         scaler.update()
-        
+
         lr_scheduler.step()
         model.zero_grad(set_to_none=True)
         tqdm_train_set.set_postfix({str(global_rank)+'_train_loss': total_train_loss / iter_idx})
@@ -219,19 +220,29 @@ def train_epoch(epoch):
         iter_idx += 1
         if iter_idx % 1000 == 0:
             clear_unused_tensors()
-        
+
     return total_train_loss / (iter_idx-1)
 
+
+def make_dataloader(files):
+    batch_nums = int(len(files) / batch_size)
+    files = files[:batch_nums * batch_size]
+    dataset = NotaGenDataset(files)
+    sampler = DistributedSampler(dataset, num_replicas=world_size, rank=local_rank)
+    loader = DataLoader(dataset, batch_size=batch_size, collate_fn=collate_batch,
+                        sampler=sampler, shuffle=(sampler is None))
+    return loader, sampler
+
 # do one epoch for eval
-def eval_epoch():
-    tqdm_eval_set = tqdm(eval_set)
+def eval_epoch(eval_loader):
+    tqdm_eval_set = tqdm(eval_loader)
     total_eval_loss = 0
     total_eval_bpb = 0
     iter_idx = 1
     model.eval()
-  
+
     # Evaluate data for one epoch
-    for batch in tqdm_eval_set: 
+    for batch in tqdm_eval_set:
         minibatches = split_into_minibatches(batch[0], batch[1], BATCH_SIZE//ACCUMULATION_STEPS)
         for minibatch in minibatches:
             with torch.no_grad():
@@ -243,20 +254,21 @@ def eval_epoch():
 
 # train and eval
 if __name__ == "__main__":
-    
+
     # Initialize wandb
     if WANDB_LOGGING and global_rank==0:
         wandb.login(key=WANDB_KEY)
         wandb.init(project="notagen",
+                   entity="SchenkerDiff",
                    name=WANDB_NAME)
-    
+
     # load data
     with open(DATA_TRAIN_INDEX_PATH, "r", encoding="utf-8") as f:
         print("Loading Data...")
         train_files = []
         for line in f:
             train_files.append(json.loads(line))
-    
+
     with open(DATA_EVAL_INDEX_PATH, "r", encoding="utf-8") as f:
         print("Loading Data...")
         eval_files = []
@@ -265,24 +277,17 @@ if __name__ == "__main__":
 
     if len(eval_files) == 0:
         train_files, eval_files = split_data(train_files)
-       
-    train_batch_nums = int(len(train_files) / batch_size)
-    eval_batch_nums = int(len(eval_files) / batch_size)
 
-    random.shuffle(train_files)
+    # Split train files into synthetic and real
+    synthetic_train_files = [f for f in train_files if "synthetic" in f["path"]]
+    real_train_files      = [f for f in train_files if "synthetic" not in f["path"]]
+    print(f"Curriculum split — synthetic: {len(synthetic_train_files)}, real: {len(real_train_files)}")
+
+    random.shuffle(synthetic_train_files)
+    random.shuffle(real_train_files)
     random.shuffle(eval_files)
 
-    train_files = train_files[:train_batch_nums*batch_size]
-    eval_files = eval_files[:eval_batch_nums*batch_size]
-
-    train_set = NotaGenDataset(train_files)
-    eval_set = NotaGenDataset(eval_files)
-
-    train_sampler = DistributedSampler(train_set, num_replicas=world_size, rank=local_rank)
-    eval_sampler = DistributedSampler(eval_set, num_replicas=world_size, rank=local_rank)
-
-    train_set = DataLoader(train_set, batch_size=batch_size, collate_fn=collate_batch, sampler=train_sampler, shuffle = (train_sampler is None))
-    eval_set = DataLoader(eval_set, batch_size=batch_size, collate_fn=collate_batch, sampler=eval_sampler, shuffle = (train_sampler is None))
+    eval_set, eval_sampler = make_dataloader(eval_files)
 
     lr_scheduler = get_constant_schedule_with_warmup(optimizer=optimizer, num_warmup_steps=1000)
 
@@ -293,20 +298,17 @@ if __name__ == "__main__":
         if os.path.exists(PRETRAINED_PATH):
             # Load pre-trained checkpoint to CPU
             checkpoint = torch.load(PRETRAINED_PATH, map_location='cpu')
-    
-            # Here, model is assumed to be on GPU
+
             # Load state dict to CPU model first, then move the model to GPU
             if torch.cuda.device_count() > 1:
-                # If you have a DataParallel model, you need to load to model.module instead
                 cpu_model = deepcopy(model.module)
                 cpu_model.load_state_dict(checkpoint['model'])
                 model.module.load_state_dict(cpu_model.state_dict())
             else:
-                # Load to a CPU clone of the model, then load back
                 cpu_model = deepcopy(model)
                 cpu_model.load_state_dict(checkpoint['model'])
                 model.load_state_dict(cpu_model.state_dict())
-                
+
             print(f"Successfully Loaded Pretrained Checkpoint at Epoch {checkpoint['epoch']} with Loss {checkpoint['min_eval_loss']}")
 
             pre_epoch = 0
@@ -314,21 +316,17 @@ if __name__ == "__main__":
             min_eval_loss = 100
         else:
             raise Exception('Pre-trained Checkpoint not found. Please check your pre-trained ckpt path.')
-            
+
     else:
         if os.path.exists(WEIGHTS_PATH):
             # Load checkpoint to CPU
             checkpoint = torch.load(WEIGHTS_PATH, map_location='cpu')
-    
-            # Here, model is assumed to be on GPU
-            # Load state dict to CPU model first, then move the model to GPU
+
             if torch.cuda.device_count() > 1:
-                # If you have a DataParallel model, you need to load to model.module instead
                 cpu_model = deepcopy(model.module)
                 cpu_model.load_state_dict(checkpoint['model'])
                 model.module.load_state_dict(cpu_model.state_dict())
             else:
-                # Load to a CPU clone of the model, then load back
                 cpu_model = deepcopy(model)
                 cpu_model.load_state_dict(checkpoint['model'])
                 model.load_state_dict(cpu_model.state_dict())
@@ -342,33 +340,53 @@ if __name__ == "__main__":
 
         else:
             raise Exception('Checkpoint not found to continue training. Please check your parameter settings.')
-    
 
-    for epoch in range(1+pre_epoch, NUM_EPOCHS+1):
-        train_sampler.set_epoch(epoch)
-        eval_sampler.set_epoch(epoch)
-        print('-' * 21 + "Epoch " + str(epoch) + '-' * 21)
-        train_loss = train_epoch(epoch)
-        eval_loss = eval_epoch()
-        if global_rank==0:
-            with open(LOGS_PATH,'a') as f:
-                f.write("Epoch " + str(epoch) + "\ntrain_loss: " + str(train_loss) + "\neval_loss: " +str(eval_loss) + "\ntime: " + time.asctime(time.localtime(time.time())) + "\n\n")
-            if eval_loss < min_eval_loss:
-                best_epoch = epoch
-                min_eval_loss = eval_loss
-                checkpoint = { 
-                                'model': model.module.state_dict() if hasattr(model, "module") else model.state_dict(),
-                                'optimizer': optimizer.state_dict(),
-                                'lr_sched': lr_scheduler.state_dict(),
-                                'epoch': epoch,
-                                'best_epoch': best_epoch,
-                                'min_eval_loss': min_eval_loss
-                                }
-                torch.save(checkpoint, WEIGHTS_PATH)
-        
-        if world_size > 1:
-            dist.barrier()
 
-    if global_rank==0:
-        print("Best Eval Epoch : "+str(best_epoch))
-        print("Min Eval Loss : "+str(min_eval_loss))
+    def run_phase(phase_name, phase_files, num_epochs, epoch_offset, global_step_offset, best_epoch, min_eval_loss):
+        train_set, train_sampler = make_dataloader(phase_files)
+        print(f"\n{'='*20} {phase_name} phase ({num_epochs} epochs) {'='*20}")
+        steps_this_phase = num_epochs * len(train_set)
+        for epoch in range(1, num_epochs + 1):
+            global_epoch = epoch + epoch_offset
+            train_sampler.set_epoch(global_epoch)
+            eval_sampler.set_epoch(global_epoch)
+            print('-' * 21 + f"Epoch {global_epoch} ({phase_name})" + '-' * 21)
+            train_loss = train_epoch(epoch, train_set, global_step_offset=global_step_offset)
+            eval_loss = eval_epoch(eval_set)
+            if global_rank == 0:
+                if WANDB_LOGGING:
+                    wandb.log({"eval_loss_epoch": eval_loss, "epoch": global_epoch,
+                               "phase": phase_name})
+                with open(LOGS_PATH, 'a') as f:
+                    f.write(f"Epoch {global_epoch} [{phase_name}]\ntrain_loss: {train_loss}\neval_loss: {eval_loss}\ntime: {time.asctime(time.localtime(time.time()))}\n\n")
+                if eval_loss < min_eval_loss:
+                    best_epoch = global_epoch
+                    min_eval_loss = eval_loss
+                    ckpt = {
+                        'model': model.module.state_dict() if hasattr(model, "module") else model.state_dict(),
+                        'optimizer': optimizer.state_dict(),
+                        'lr_sched': lr_scheduler.state_dict(),
+                        'epoch': global_epoch,
+                        'best_epoch': best_epoch,
+                        'min_eval_loss': min_eval_loss,
+                        'phase': phase_name,
+                    }
+                    torch.save(ckpt, WEIGHTS_PATH)
+            if world_size > 1:
+                dist.barrier()
+        return best_epoch, min_eval_loss, steps_this_phase
+
+    # Phase 1: synthetic data
+    best_epoch, min_eval_loss, phase1_steps = run_phase(
+        "synthetic", synthetic_train_files, NUM_EPOCHS_SYNTHETIC,
+        epoch_offset=pre_epoch, global_step_offset=0,
+        best_epoch=best_epoch, min_eval_loss=min_eval_loss)
+    # Phase 2: real data (step offset continues from end of phase 1)
+    best_epoch, min_eval_loss, _ = run_phase(
+        "real", real_train_files, NUM_EPOCHS_REAL,
+        epoch_offset=pre_epoch + NUM_EPOCHS_SYNTHETIC, global_step_offset=phase1_steps,
+        best_epoch=best_epoch, min_eval_loss=min_eval_loss)
+
+    if global_rank == 0:
+        print("Best Eval Epoch : " + str(best_epoch))
+        print("Min Eval Loss : " + str(min_eval_loss))

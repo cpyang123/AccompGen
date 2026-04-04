@@ -22,15 +22,17 @@ HIDDEN_SIZE = 1280                                               # Hidden Size
 # Configuration for the training
 BATCH_SIZE = 1         
 LEARNING_RATE = 1e-5   
-NUM_EPOCHS = 64                                                 # Number of epochs to train for (if early stopping doesn't intervene)
+NUM_EPOCHS_SYNTHETIC = 10                                     # Phase 1: epochs on synthetic data
+NUM_EPOCHS_REAL = 10                                          # Phase 2: epochs on real (non-synthetic) data
 ACCUMULATION_STEPS = 1                                          # Accumulation steps to simulate large batch size
 PATCH_SAMPLING_BATCH_SIZE = 0                                   # Batch size for patch during training, 0 for full conaudio
 LOAD_FROM_CHECKPOINT = False                                    # Whether to load weights from a checkpoint
 WANDB_LOGGING = True                                            # Whether to log to wandb
 WANDB_KEY = '85232309c7b968d33a681acf7b1b863d63252c63'
 
-PRETRAINED_PATH = "../weights/weights_notagenx_p_size_16_p_length_1024_p_layers_20_h_size_1280.pth"                # Path of pretrained weights
-EXP_TAG = ''                                            # Experiment tag for name differentiation
+# PRETRAINED_PATH = "../weights/weights_notagenx_p_size_16_p_length_1024_p_layers_20_h_size_1280.pth"                # Path of pretrained weights
+PRETRAINED_PATH = "/usr/xtmp/cy232/accompgen/pretrain/weights_notagenx_p_size_16_p_length_1024_p_layers_20_h_size_1280.pth"
+EXP_TAG = '10_epoch'                                            # Experiment tag for name differentiation
 NAME =  EXP_TAG + \
         "_p_size_" + str(PATCH_SIZE) + \
         "_p_length_" + str(PATCH_LENGTH) + \
@@ -40,6 +42,8 @@ NAME =  EXP_TAG + \
         "_lr_" + str(LEARNING_RATE) + \
         "_batch_" + str(BATCH_SIZE)
 
-WEIGHTS_PATH = "weights_notagen_" + NAME + ".pth"                  # Path to save weights
-LOGS_PATH    = "logs_notagen_"    + NAME + ".txt"                     # Path to save logs
+BASE_WEIGHTS_PATH = "/usr/xtmp/cy232/accompgen/weights/"
+
+WEIGHTS_PATH = BASE_WEIGHTS_PATH + "weights_notagen_" + NAME + ".pth"                  # Path to save weights
+LOGS_PATH    = BASE_WEIGHTS_PATH + "logs_notagen_"    + NAME + ".txt"                     # Path to save logs
 WANDB_NAME = NAME

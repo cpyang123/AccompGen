@@ -70,7 +70,21 @@ class Patchilizer:
 
         metadata_patches = []
         for line in metadata_lines:
-            metadata_patches += self.split_patches(line)
+            if line.startswith('%motif:abc: '):
+                # The preamble '%motif:abc: ' should be patched as metadata text
+                # But the actual abc notes following it should be patched as tunebody (using split_bars and then split_patches)
+                prefix = '%motif:abc: '
+                abc_part = line[len(prefix):]
+                
+                # patch the prefix as metadata
+                metadata_patches += self.split_patches(prefix)
+                
+                # patch the abc part using tunebody logic (split into bars, then patches)
+                bars = self.split_bars([abc_part])
+                for bar in bars:
+                    metadata_patches += self.split_patches(bar)
+            else:
+                metadata_patches += self.split_patches(line)
 
         return metadata_patches
     
@@ -96,9 +110,11 @@ class Patchilizer:
 
         tunebody_index = -1
         for i, line in enumerate(lines):
-            if '[V:' in line:
+            if line.startswith('[V:'):
                 tunebody_index = i
                 break
+            if line.startswith('%motif:') and tunebody_index == -1:
+                pass # keep looking
 
         metadata_lines = lines[ : tunebody_index]
         tunebody_lines = lines[tunebody_index : ]
@@ -175,6 +191,8 @@ class Patchilizer:
             if line.startswith('[V:') or line.startswith('[r:'):
                 tunebody_index = i
                 break
+            if line.startswith('%motif:') and tunebody_index is None:
+                pass # keep looking
     
         metadata_lines = lines[ : tunebody_index]
         tunebody_lines = lines[tunebody_index : ]   
@@ -370,6 +388,8 @@ class NotaGenLMHeadModel(PreTrainedModel):
         :return: the decoded patches
         """
         patches = patches.reshape(len(patches), -1, PATCH_SIZE)
+
+        #[TODO]: Find the motifs here and add weights to them in the pathes, then send them to forward
         encoded_patches = self.patch_level_decoder(patches, masks)["last_hidden_state"]
         
         left_shift_masks = masks * (masks.flip(1).cumsum(1).flip(1) > 1)

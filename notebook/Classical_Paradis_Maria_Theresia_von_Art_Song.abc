@@ -1,0 +1,19 @@
+X:1
+%%score 1 { ( 2 4 ) | 3 }
+L:1/8
+Q:1/4=92
+M:4/4
+K:C
+V:1 treble nm="Singstimme\nVoice"
+V:2 treble nm="Pianoforte"
+V:4 treble 
+V:3 bass 
+[V:1]"^In sanfter Bewegung" G|[V:2]G|[V:3]z1|[V:4]x1|
+[V:1]e2 e2 e2 ef|[V:2][ce]G [Be]G [ce]G [ce][df]|[V:3]C2 G,2 C2 C,2|[V:4]x8|
+[V:1]gf/e/ fd e2 z c|[V:2]gf/e/ fd eGcG|[V:3]E,2 G,2 C,2 z2|[V:4]x2 B2 x4|
+[V:1]B B cc de fg/a/|[V:2]BG cG de fg/a/|[V:3]G,2 E,2 B,,2 C,2|[V:4]x8|
+[V:1]a/g/f/e/ g/f/e/d/ c2 z d/e/|[V:2]a/g/f/e/ g/f/e/d/ cG E d/e/|[V:3]G,2 G,,2 C,2 z2|[V:4]x8|
+[V:1]f d B d ge c e/f/|[V:2]fd Bd ge ce/f/|[V:3][G,DF]2 [G,DF]2 [G,CE]2 [G,CE]2|[V:4]x8|
+[V:1]g/f/ e/d/ g/f/ e/d/ c2 z G|[V:2]g/f/e/d/ g/f/e/d/ cG cG|[V:3][G,CE]2 [G,B,F]2 [CE]2 z2|[V:4]x8|
+[V:1]B B cc de f g/a/|[V:2]BG cG de fg/a/|[V:3]G,2 E,2 B,,2 C,2|[V:4]x8|
+[V:1]a/g/f/e/ g/f/e/d/ c2 z|][V:2]a/g/f/e/ g/f/e/d/ c2 z|][V:3]G,2 G,,2 [C,C]2 z|][V:4]x7|]

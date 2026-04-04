@@ -1,0 +1,45 @@
+Epoch 1
+train_loss: 0.22530313938911223
+eval_loss: 0.19569111734076783
+time: Fri Nov 14 12:25:12 2025
+
+Epoch 2
+train_loss: 0.21351922855038277
+eval_loss: 0.19687595163230542
+time: Fri Nov 14 12:31:50 2025
+
+Epoch 3
+train_loss: 0.2045701971689305
+eval_loss: 0.19726266742304518
+time: Fri Nov 14 12:38:20 2025
+
+Epoch 4
+train_loss: 0.19637734660742562
+eval_loss: 0.19767454978492524
+time: Fri Nov 14 12:44:49 2025
+
+Epoch 5
+train_loss: 0.1886680671254949
+eval_loss: 0.20191449887222715
+time: Fri Nov 14 12:51:19 2025
+
+Epoch 6
+train_loss: 0.18157199462347695
+eval_loss: 0.20394410433040724
+time: Fri Nov 14 12:57:48 2025
+
+Epoch 7
+train_loss: 0.17607358107519325
+eval_loss: 0.20340799625824998
+time: Fri Nov 14 13:04:33 2025
+
+Epoch 8
+train_loss: 0.1696803467034461
+eval_loss: 0.20776045854996752
+time: Fri Nov 14 13:11:07 2025
+
+Epoch 9
+train_loss: 0.1642790954045786
+eval_loss: 0.21122191763586468
+time: Fri Nov 14 13:17:42 2025
+

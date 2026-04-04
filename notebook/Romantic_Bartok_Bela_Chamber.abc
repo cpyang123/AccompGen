@@ -1,0 +1,35 @@
+X:1
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=92
+M:4/4
+K:F#
+V:1 treble nm="Violin 1"
+V:2 treble nm="Violin 2"
+V:3 alto nm="Viola"
+V:4 bass nm="Violoncello"
+[V:1]"^Andante con moto"!p!"_dolce" (u!1!d2 !2!e2) (f2 g2)|[V:2]z4!p!"_dolce" (vA2 B2)|[V:3]z8|[V:4]z4!p!"_dolce" vD4|
+[V:1]!<(! !tenuto!!1!a4 !tenuto!!2!a4|[V:2]!<(! !tenuto!!2!A4 !tenuto!!1!A4|[V:3]!p!"_dolce"!<(! (vF2 E2) (D2 C2)|[V:4]!<(! (!tenuto!!1!D2 C2) (!tenuto!!2!B,2 A,2)|
+[V:1](!4!d'2!<)! !2!c'2)!>(! (!3!b2 !tenuto!a2)|[V:2](!4!d2!<)! !3!c2)!>(! (!2!B2 !tenuto!A2)|[V:3](B,2!<)! C2)!>(! (!tenuto!D2 !tenuto!D2)|[V:4](G,2!<)! A,2)!>(! (!tenuto!G,2 !tenuto!F,2)|
+[V:1](g4 a4)!>)!|[V:2](G4 A4)!>)!|[V:3](D2 F2) (E2 ^^C2)!>)!|[V:4](!tenuto!E,2 D,2) (^^C,2 A,,2)!>)!|
+[V:1](!1!d2 e2) (f2 g2)|[V:2]z4 (A2 B2)|[V:3]z4 D4|[V:4]z4 D4|
+[V:1]!<(! !tenuto!!1!a4 !tenuto!!2!a4|[V:2]!<(! !tenuto!!2!A4 !tenuto!!1!A4|[V:3]!<(! (!tenuto!!2!F2 !tenuto!!1!E2) (!tenuto!!3!D2 !tenuto!C2)|[V:4]!<(! (!tenuto!!2!D2 !tenuto!C2) (!tenuto!!4!B,2 !tenuto!A,2)|
+[V:1](!4!d'2!<)! !2!c'2)!>(! (!3!b2 !4!a2)|[V:2](!4!d2!<)! !3!c2)!>(! (!3!B2 !tenuto!A2)|[V:3](B,2 !1!C2)!<)!!>(! (!tenuto!!2!D2 !tenuto!!1!D2)|[V:4](G,2 A,2)!<)!!>(! (!tenuto!!4!G,2 !tenuto!!1!F,2)|
+[V:1](g4 a4)!>)!|[V:2](G4 A4)!>)!|[V:3](D2 F2) (E2 ^^C2)!>)!|[V:4](!tenuto!E,2 D,2) (^^C,2 A,,2)!>)!|
+[V:1]"_dolce" (!4!c'2 b2) (!2!a2 !1!g2)|[V:2]"_dolce" (!3!=e2 d2) (c2 !1!B2)|[V:3]z4!p!"_dolce" (!1!E4|[V:4]z4!p!"_dolce" (!3!C,4|
+[V:1]!<(! !tenuto!!2!a4 !tenuto!!2!a4|[V:2]!<(! !tenuto!!2!A4 !tenuto!!1!A4|[V:3]!<(! !3!F2 !1!D2) (!4!C2 !2!A,2)|[V:4]!<(! !4!D,2 !2!F,2) (!tenuto!!4!A,2 !2!F,2)|
+[V:1](!4!c'2!<)! b2) (a2 g2)|[V:2](=e2!<)! d2) (c2 B2)|[V:3]z4!<)! (E4|[V:4]z4!<)! (C,4|
+[V:1]!<(! !tenuto!a4 !tenuto!a4|[V:2]!<(! !tenuto!A4 !tenuto!A4|[V:3]!<(! F2 D2) (C2 A,2)|[V:4]!<(! D,2 F,2) (A,2 F,2)|
+[V:1](!3!c'2!<)! b2)!>(! (a2 g2)|[V:2](=e2!<)! d2)!>(! (c2 B2)|[V:3]z4!<)!!>(! E4|[V:4]z4!<)!!>(! C,4|
+[V:1](a4!>)!!<(! g4)|[V:2](c4!>)!!<(! B4)|[V:3](C2 D2)!>)!!<(! (=E2 F2)|[V:4](F,2 B,2)!>)!!<(! (=E,2 D,2)|
+[V:1](!3!c'2!<)! !1!b2)!>(! (a2 g2)|[V:2](=e2!<)! d2)!>(! (c2 B2)|[V:3](G2 G,2)!<)!!>(! A,4-|[V:4](C,2 =E,2)!<)!!>(! C,4-|
+[V:1](a4!>)! !breath!!fermata!d'4)|[V:2](A2 G2)!>)! !breath!!fermata!^^F4|[V:3]A,4!>)! !breath!!fermata!A,4|[V:4](C,2 ^^C,2)!>)! !breath!!fermata!D,4|
+[V:1]z8|[V:2]z4!p!"_dolce" vA4-|[V:3]!p!"_dolce" (!1!D2 E2) (F2 G2)|[V:4]z4!p!"_dolce" (vD4-|
+[V:1]!p!"_dolce" (va2 g2) (f2 e2)|[V:2]A4 !tenuto!A4|[V:3]!tenuto!A4 !tenuto!A4|[V:4]D2 C2) (!tenuto!B,2 A,2)|
+[V:1](d2 f2) (!tenuto!g2 !tenuto!a2)|[V:2](!tenuto!!3!d2 !tenuto!c2) (!tenuto!!3!B2 !tenuto!A2)|[V:3](d2 c2) (!tenuto!B2 !tenuto!A2)|[V:4](B,2 A,2) (!tenuto!G,2 !tenuto!F,2)|
+[V:1]!<(! (!tenuto!!1!b2 !tenuto!!3!^b2)!<)! (!4!c'2 !2!^^c'2)|[V:2]!<(! (G4 !3!A4)!<)!|[V:3]!<(! (G4 A4)!<)!|[V:4]!<(! (E,2 D,2) (^^C,2 A,,2)!<)!|
+[V:1]!>(! (!4!e'2 !3!d'2)!>)! (c'2 b2)|[V:2]z4!>(! (f2 g2)!>)!|[V:3]z4!>(! (D2 E2)!>)!|[V:4]z4!>(! D,4-!>)!|
+[V:1]!<(! !tenuto!!2!a4 !tenuto!!2!a4|[V:2]!<(! (!tenuto!!4!a2 !tenuto!g2) (!tenuto!f2 !tenuto!e2)|[V:3]!<(! (!tenuto!F2 !tenuto!E2) (!tenuto!D2 !tenuto!C2)|[V:4]!<(! D,4 !tenuto!D,4|
+[V:1](!4!d'2!<)! !2!c'2) (!1!b2 a2)|[V:2](d2!<)! e2) (!tenuto!f2 !tenuto!!2!A2)|[V:3](B,2 A,2)!<)! (!tenuto!B,2 !tenuto!C2)|[V:4](B,,2 C,2)!<)! (!tenuto!D,2 !tenuto!A,,2)|
+[V:1]!>(! (g4 a4)|[V:2]!>(! (!3!B2 !1!G2) (F2 !2!E2)|[V:3]!>(! (D2 B,2) A,4|[V:4]!>(! (!tenuto!!4!G,,2 !tenuto!!2!E,,2) (!tenuto!!1!D,,2 !tenuto!!4!A,,2)|
+[V:1]d4!>)! z4|][V:2]!1!D4!>)! z4|][V:3]D,4!>)! z4|][V:4]!4!D,4!>)! z4|]

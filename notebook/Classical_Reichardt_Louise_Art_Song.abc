@@ -1,0 +1,20 @@
+X:1
+%%score 1 { 2 | 3 }
+L:1/8
+Q:1/4=105
+M:6/8
+K:F#
+V:1 treble nm="Singstimme\nVoice"
+V:2 treble nm="Pianoforte"
+V:3 bass 
+[V:1]C|[V:2]z1|[V:3]z1|
+[V:1]A2 A A2 A|[V:2][CFA]2 [CFA] [CFA]2 [CFA]|[V:3]F,2 F, F,2 F,|
+[V:1]c2 A F2 A|[V:2][CFc]2 A [CF]2 A|[V:3]F,3 F,3|
+[V:1]B2 G A2 F|[V:2][CGB]2 G [CFA]2 F|[V:3]E,3 F,3|
+[V:1]G2 z z2 G|[V:2][CEG]2 [CEG] [CEG]2 G|[V:3]C,2 C, C,2 z|
+[V:1]G2 A BG F|[V:2][CEG]2 A [CEB]GF|[V:3]C,3 C,3|
+[V:1](E2 G) F2 C|[V:2]([CE]2 G) [CF]2 C|[V:3]B,3 A,3|
+[V:1]D2 D FE D|[V:2]D2 D FED|[V:3]B,2 B, DCB,|
+[V:1](C2 B) A2 c|[V:2](C2 B) [CFA]2 [Fc]|[V:3]A,2 G, F,2 A,|
+[V:1]cA F AB G|[V:2][Fc]AF [CFA]B[B,EG]|[V:3]C3 C,2 C,|
+[V:1]F2 z z2|][V:2][A,CF]2 z z2|][V:3]F,2 z z2|]

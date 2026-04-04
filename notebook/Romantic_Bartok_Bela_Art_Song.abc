@@ -1,0 +1,19 @@
+X:1
+%%score 1 { 2 | ( 3 4 ) }
+L:1/8
+Q:1/4=94
+M:6/8
+K:Eb
+V:1 treble nm="Voice"
+V:2 treble nm="Piano"
+V:3 bass 
+V:4 bass 
+[V:1]"^Andante" G|[V:2]G|[V:3]z1|[V:4]x1|
+[V:1]!mf! c2 c e>d c|[V:2]c2 c e>dc|[V:3]C3 C3|[V:4]x6|
+[V:1]d2 =B G2 G|[V:2]d2 =B G2 G|[V:3]=B,3 B,3|[V:4]x6|
+[V:1]!p! A2 A c>B A|[V:2]A2 A c>BA|[V:3]C3 A,3|[V:4]x6|
+[V:1]G3- G z g|[V:2]G3- G z g|[V:3]E,3- E,2 z|[V:4]x6|
+[V:1]!f! a2 g ^f2 d|[V:2]a2 g ^f2 d|[V:3]C3 D3|[V:4]x6|
+[V:1]!p! f2 e d2 =B|[V:2]f2 e d2 =B|[V:3]=B,2 C F3|[V:4]x6|
+[V:1]c2 d e>d =B|[V:2]c2 d e>d=B|[V:3]E2 D C2 G,|[V:4]x6|
+[V:1]c3- c z z:|[V:2]c3- c z z:|[V:3]C3- C z z:|[V:4]C,3- C, x x:|

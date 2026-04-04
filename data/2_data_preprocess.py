@@ -1,9 +1,18 @@
-ORI_FOLDER = 'abcfiles'  # Replace with the path to your folder containing standard ABC notation files
-INTERLEAVED_FOLDER = 'abcfiles_inter'   # Output interleaved ABC notation files to this folder
-AUGMENTED_FOLDER = 'abcfiles_processed'   # Output key-augmented and rest-omitted ABC notation files to this folder
+"""Dataset preprocessing.
+
+This script is designed to be executed as:
+    python data/2_data_preprocess.py
+
+So paths are resolved relative to this file's directory.
+"""
+
+ORI_FOLDER = 'abcfiles'  # Relative to data/
+INTERLEAVED_FOLDER = 'abcfiles_inter'   # Relative to data/
+AUGMENTED_FOLDER = 'abcfiles_processed'   # Relative to data/
 EVAL_SPLIT = 0.1    # The ratio of eval data 
 
 import os
+import sys
 import re
 import json
 import shutil
@@ -21,6 +30,19 @@ from abctoolkit.convert import unidecode_abc_lines
 from abctoolkit.rotate import rotate_abc
 from abctoolkit.check import check_alignment_unrotated
 from abctoolkit.transpose import Key2index, transpose_an_abc_text
+
+# Ensure project root is on sys.path so `import motif` works when running from data/
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+from motif import get_best_motifs
+
+# resolve folders relative to this script
+DATA_DIR = os.path.dirname(__file__)
+ORI_FOLDER = os.path.join(DATA_DIR, ORI_FOLDER)
+INTERLEAVED_FOLDER = os.path.join(DATA_DIR, INTERLEAVED_FOLDER)
+AUGMENTED_FOLDER = os.path.join(DATA_DIR, AUGMENTED_FOLDER)
 
 os.makedirs(INTERLEAVED_FOLDER, exist_ok=True)
 os.makedirs(AUGMENTED_FOLDER, exist_ok=True)
@@ -108,9 +130,56 @@ def abc_preprocess_pipeline(abc_path):
         transposed_abc_lines = list(filter(None, transposed_abc_lines))
         transposed_abc_lines = [line + '\n' for line in transposed_abc_lines]
 
+        # extract motif from V:1 (full piece)
+        motif_line = None
+        try:
+            # Use abctoolkit's header/parts split so we reliably get V:1 music content
+            _metadata_lines, part_text_dict = extract_metadata_and_parts(transposed_abc_lines)
+            v1_text = part_text_dict.get('V:1')
+            if v1_text:
+                top_motifs = get_best_motifs(v1_text, 
+                # interval_mode= 'chromatic',
+                # interval_mode="diatonic",
+                interval_mode="step_skip_leap"
+                # interval_mode="contour",
+                # interval_mode="contour"
+                )
+                if top_motifs:
+                    motif_strs = []
+                    motif_abc_strs = []
+                    for m in top_motifs[:3]:
+                        pat_str = ",".join(map(str, m["pattern"]))
+                        abc_str = m["abc"]
+                        motif_abc_strs.append(f"{abc_str} ")
+                        motif_strs.append(f"{pat_str} ")
+                    motif_line = f"%motif:v1:step_skip_leap: {' ; '.join(motif_strs)}\n%motif:abc: {' ; '.join(motif_abc_strs)}\n"
+        except Exception as e:
+            print(f"Motif extraction failed for {abc_name} {key}: {e}")
+
         # rest reduction
         metadata_lines, prefix_dict, left_barline_dict, bar_text_dict, right_barline_dict = \
             extract_barline_and_bartext_dict(transposed_abc_lines)
+        
+        # Insert motif line into metadata
+        if motif_line:
+            # Insert *just before* the score or %%score line if present, else before the first V: line
+            insert_idx = len(metadata_lines)
+            score_idx = -1
+            for idx, mline in enumerate(metadata_lines):
+                if mline.startswith('score') or mline.startswith('%%score'):
+                    score_idx = idx
+                    break
+            
+            if score_idx != -1:
+                insert_idx = score_idx
+            else:
+                for idx, mline in enumerate(metadata_lines):
+                    if mline.startswith('V:'):
+                        insert_idx = idx
+                        break
+            
+            metadata_lines.insert(insert_idx, motif_line)
+
         reduced_abc_lines = metadata_lines
         for i in range(len(bar_text_dict['V:1'])):
             line = ''
@@ -145,11 +214,14 @@ if __name__ == '__main__':
     
     data = []
     file_list = os.listdir(ORI_FOLDER)
+    
     for file in tqdm(file_list):
         ori_abc_path = os.path.join(ORI_FOLDER, file)
         try:
             abc_name, ori_key = abc_preprocess_pipeline(ori_abc_path)
-        except:
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
             print(ori_abc_path, 'failed to pre-process.')
             continue
 
@@ -170,12 +242,23 @@ if __name__ == '__main__':
     with open(data_index_path, 'w', encoding='utf-8') as w:
         for d in data:
             w.write(json.dumps(d) + '\n')
-    with open(eval_index_path, 'w', encoding='utf-8') as w:
-        for d in eval_data:
-            w.write(json.dumps(d) + '\n')
-    with open(train_index_path, 'w', encoding='utf-8') as w:
-        for d in train_data:
-            w.write(json.dumps(d) + '\n')
+    if os.path.exists(eval_index_path):
+        with open(eval_index_path, 'a', encoding='utf-8') as w:
+            for d in eval_data:
+                w.write(json.dumps(d) + '\n')
+    else:
+        with open(eval_index_path, 'w', encoding='utf-8') as w:
+            for d in eval_data:
+                w.write(json.dumps(d) + '\n')
+                
+    if os.path.exists(train_index_path):
+        with open(train_index_path, 'a', encoding='utf-8') as w:
+            for d in train_data:
+                w.write(json.dumps(d) + '\n')
+    else:
+        with open(train_index_path, 'w', encoding='utf-8') as w:
+            for d in train_data:
+                w.write(json.dumps(d) + '\n')
 
     
 

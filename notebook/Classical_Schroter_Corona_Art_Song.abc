@@ -1,0 +1,19 @@
+X:1
+%%score 1 { ( 2 4 ) | 3 }
+L:1/8
+Q:1/4=108
+M:6/8
+K:Eb
+V:1 treble nm="Singstimme\nVoice"
+V:2 treble nm="Pianoforte"
+V:4 treble 
+V:3 bass 
+[V:1]"^Zung carto" B|[V:2]B|[V:3]z1|[V:4]x1|
+[V:1]!p! G2 G G2 A|[V:2]!p! [EG]2 [EG] [EG]2 [DA]|[V:3]E,3 E,2 F,|[V:4]x6|
+[V:1]!sfz! B2 F!p! F2 G|[V:2]!sfz! [EB]2 [DF]!p! [DF]2 [EG]|[V:3]G,2 B, B,2 B,|[V:4]x6|
+[V:1]!sfz! A2 F!p! F2 E|[V:2]!sfz! [B,FA]2 [DF]!p! [DF]2 E|[V:3]B,3 A,2 G,|[V:4]x6|
+[V:1]!sfz! A2 G !fermata!F2 F|[V:2]!sfz! [B,DA]2 [EG] !fermata![DF]2 F|[V:3]F,2 E, !fermata!B,,2 z|[V:4]x6|
+[V:1]=EG B BA A|[V:2]=EG B [GB][FA][FA]|[V:3]C,3 F,3|[V:4]C3 x3|
+[V:1]!sfz! d2 e{f} ed B|[V:2]!sfz! d2 e{f} ed B|[V:3]A,3 G,3|[V:4]F3 E3|
+[V:1]!p! cA F E2 G/F/|[V:2]!p! cA [CF] [B,E]2 [DG]/F/|[V:3]A,2 A,, B,,2 B,,|[V:4]E2 x4|
+[V:1]E2 z z2|][V:2][B,E]2 z z2|][V:3]E,B,,G,, E,,2|][V:4]x5|]

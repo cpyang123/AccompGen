@@ -1,0 +1,3 @@
+/home/users/cy232/Music_Research/AccompGen/data/Lieder/scores/Schumann,_Robert/Liederkreis,_Op.39/08_In_der_Fremde_[II]/lc4987661.mxl
+/home/users/cy232/Music_Research/AccompGen/data/Lieder/scores/Schumann,_Robert/Liederkreis,_Op.39/01_In_der_Fremde_[I]/lc5080752.mxl
+/home/users/cy232/Music_Research/AccompGen/data/Lieder/scores/Brahms,_Johannes/4_Songs,_Op.43/3_Ich_schell_mein_Horn_ins_Jammertal/lc5067677.mxl

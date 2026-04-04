@@ -1,0 +1,38 @@
+X:1
+%%score 1 { ( 2 4 ) | ( 3 5 ) }
+L:1/8
+Q:1/4=60
+M:4/4
+K:Bb
+V:1 treble nm="Singstimme\nVoice"
+V:2 treble nm="Pianoforte"
+V:4 treble 
+V:3 bass 
+V:5 bass 
+[V:1]"^In massiger Bewegung" F|[V:2]F|[V:3]z1|[V:4]x1|[V:5]x1|
+[V:1]d2 c2 B2 A2|[V:2]([Bd]F)([Ac]F) ([GB]D)([EA]C)|[V:3][B,,B,]4 B,,4|[V:4]x8|[V:5]x8|
+[V:1](B3 d) F2 F2|[V:2](BFDF) (B,FDF)|[V:3]B,,4 B,,4|[V:4]x8|[V:5]x8|
+[V:1]F3 (G/A/) (B/c/d/c/) (e/d/) (c/B/)|[V:2](B,FDF) (B,FDF)|[V:3]B,,4 B,,4|[V:4]x8|[V:5]x8|
+[V:1](B2 A2) z2 z F|[V:2](CFEF) (EFEF)|[V:3]F,,4 F,4|[V:4]x8|[V:5]x8|
+[V:1]B3 B c3 c|[V:2](DFBF) (EFcF)|[V:3][B,,B,]4 [B,,B,]4|[V:4]x8|[V:5]x8|
+[V:1]d3 d (e2 =e) e|[V:2](FBdB) (Gc=eG)|[V:3][B,,B,]4 [B,,B,]4|[V:4]x8|[V:5]x8|
+[V:1]f2 (cd) (AB) (Gc)|[V:2](fFAc) ([FA][GB])([=EG][Ac])|[V:3][A,,A,]4 C,2 C,2|[V:4]x8|[V:5]x8|
+[V:1](B2 A2) z2 c2|[V:2]([GB]C[FA]C) ([FA]C[FA]C)|[V:3]F,,4 F,4|[V:4]x8|[V:5]x8|
+[V:1]f4 c4|[V:2](CFcF) (CFcF)|[V:3][A,,A,]4 [A,,A,]4|[V:4]x8|[V:5]x8|
+[V:1]{c} B2 B2 z2 z B|[V:2](DGBG) (DGBG)|[V:3][B,,B,]4 [B,,B,]4|[V:4]x8|[V:5]x8|
+[V:1]g3 f (f=e) (de)|[V:2](=EGBG) (EGBG)|[V:3][C,C]4 [C,C]4|[V:4]x8|[V:5]x8|
+[V:1]f4 z2 F2|[V:2](FAcA) (FAcA)|[V:3][F,,F,]4 F,4|[V:4]x8|[V:5]x8|
+[V:1]f2 f2 f2 f2|[V:2](F[Ac]) (F[Ac]) (F[A^c]) (F[Ac])|[V:3]F,2 F,2 F,2 F,2|[V:4]x8|[V:5]x8|
+[V:1](f3 d) B2 B2|[V:2](FBdB) (FBdB)|[V:3][B,,B,]4 [B,,B,]4|[V:4]x8|[V:5]x8|
+[V:1]B3 B (dc) (Bc)|[V:2](DFBF) (EFAF)|[V:3][F,,F,]4 [F,,F,]4|[V:4]x8|[V:5]x8|
+[V:1](c2 d2) z2 z B|[V:2](DFBF) (DFBF)|[V:3][B,,B,]4 [B,,B,]4|[V:4]x8|[V:5]x8|
+[V:1]b2 b2 b2 b2|[V:2](d[fb]) (d[fb]) (d[fb]) (d[fb])|[V:3]B,,2 B,,2 B,,2 B,,2|[V:4]x8|[V:5]x8|
+[V:1](b3 g) e2 g2|[V:2](egbg) (egeB)|[V:3][E,,E,]4 E,4|[V:4]x8|[V:5]x8|
+[V:1]f3 B dc BA|[V:2](FBdB) (FAcA)|[V:3]F,4 F,,4|[V:4]x8|[V:5]x8|
+[V:1]B4 z4|[V:2](DFBF) DFB!f! f|[V:3]B,,4 B,2 z2|[V:4]x8|[V:5]x8|
+[V:1]z8|[V:2]b2 b2 b2 b2|[V:3](DF) (DF) (DF) (DF)|[V:4]f2 f2 f2 f2|[V:5]B,2 B,2 B,2 B,2|
+[V:1]z8|[V:2](b3 g) e2 (ge)|[V:3](EGBG) E2 z2|[V:4]e4 x4|[V:5]x8|
+[V:1]z8|[V:2](df) z B (dcBA)|[V:3]F2 F,2 F2 F,2|[V:4]x8|[V:5]x8|
+[V:1]z8|[V:2]B2 z!p! [DF] ([DF][EG]) z .[EG]|[V:3]B,2 B,,2 B,2 B,,2|[V:4]x8|[V:5]x8|
+[V:1]z8|[V:2]([EG][DF]) z!f! .[EG]!p! ([EG][DF]) z [CE]|[V:3]B,2 B,,2 B,2 B,,2|[V:4]x8|[V:5]x8|
+[V:1]z7|][V:2]([CE]4 [B,D]2) z|][V:3]B,2 F,2 B,,2 z|][V:4]x7|][V:5]x7|]
