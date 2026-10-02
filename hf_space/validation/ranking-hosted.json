@@ -1,0 +1,143 @@
+{
+  "commit": "303453caed5e0e40c20d05dce2d227d13521cc92",
+  "results": [
+    {
+      "mode": "Abstract motif",
+      "status": "Selected candidate 5/12 \u00b7 18 note types \u00b7 4 motif matches. Matching notes are highlighted in amber.",
+      "evaluated": [
+        {
+          "candidate": 1,
+          "note_types": 10,
+          "matches": 1
+        },
+        {
+          "candidate": 2,
+          "note_types": 7,
+          "matches": 2
+        },
+        {
+          "candidate": 3,
+          "note_types": 11,
+          "matches": 1
+        },
+        {
+          "candidate": 4,
+          "note_types": 13,
+          "matches": 1
+        },
+        {
+          "candidate": 5,
+          "note_types": 18,
+          "matches": 4
+        },
+        {
+          "candidate": 6,
+          "note_types": 18,
+          "matches": 1
+        },
+        {
+          "candidate": 7,
+          "note_types": 12,
+          "matches": 2
+        },
+        {
+          "candidate": 8,
+          "note_types": 14,
+          "matches": 4
+        },
+        {
+          "candidate": 9,
+          "note_types": 12,
+          "matches": 3
+        },
+        {
+          "candidate": 10,
+          "note_types": 12,
+          "matches": 4
+        },
+        {
+          "candidate": 11,
+          "note_types": 12,
+          "matches": 2
+        },
+        {
+          "candidate": 12,
+          "note_types": 10,
+          "matches": 4
+        }
+      ],
+      "winner": {
+        "candidate": 5,
+        "note_types": 18,
+        "matches": 4
+      }
+    },
+    {
+      "mode": "Concrete notes",
+      "status": "No verified match in 12 candidates. No composition was accepted. Try more measures or a different style, then Generate again.",
+      "evaluated": [
+        {
+          "candidate": 1,
+          "note_types": 17,
+          "matches": 0
+        },
+        {
+          "candidate": 2,
+          "note_types": 11,
+          "matches": 0
+        },
+        {
+          "candidate": 3,
+          "note_types": 10,
+          "matches": 0
+        },
+        {
+          "candidate": 4,
+          "note_types": 23,
+          "matches": 0
+        },
+        {
+          "candidate": 5,
+          "note_types": 19,
+          "matches": 0
+        },
+        {
+          "candidate": 6,
+          "note_types": 19,
+          "matches": 0
+        },
+        {
+          "candidate": 7,
+          "note_types": 23,
+          "matches": 0
+        },
+        {
+          "candidate": 8,
+          "note_types": 17,
+          "matches": 0
+        },
+        {
+          "candidate": 9,
+          "note_types": 13,
+          "matches": 0
+        },
+        {
+          "candidate": 10,
+          "note_types": 12,
+          "matches": 0
+        },
+        {
+          "candidate": 11,
+          "note_types": 8,
+          "matches": 0
+        },
+        {
+          "candidate": 12,
+          "note_types": 20,
+          "matches": 0
+        }
+      ],
+      "winner": null
+    }
+  ]
+}

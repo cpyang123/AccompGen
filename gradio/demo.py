@@ -1,4 +1,5 @@
 import gradio as gr
+import re
 import sys
 import threading
 import queue
@@ -84,18 +85,24 @@ def save_and_convert(abc_content, period, composer, instrumentation):
 
 
 
-def generate_music(period, composer, instrumentation):
+def generate_music(period, composer, instrumentation, motif):
     if (period, composer, instrumentation) not in valid_combinations:
         raise gr.Error("Invalid prompt combination! Please re-select from the period options")
-    
+
+    motif = (motif or '').replace(' ', '')
+    if motif and not re.fullmatch(r'0(,[+-]?[1-3]){1,9}', motif):
+        raise gr.Error("Motif must be interval classes like 0,3,-1,-1 "
+                       "(leading 0, then ±1 step / ±2 skip / ±3 leap; 2-10 notes)")
+
     output_queue = queue.Queue()
     original_stdout = sys.stdout
     sys.stdout = RealtimeStream(output_queue)
-    
+
     result_container = []
     def run_inference():
         try:
-            result_container.append(inference_patch(period, composer, instrumentation))
+            result_container.append(inference_patch(period, composer, instrumentation,
+                                                    motif_pattern=motif or None))
         finally:
             sys.stdout = original_stdout
     
@@ -143,7 +150,14 @@ with gr.Blocks() as demo:
                 label="Instrumentation",
                 interactive=False
             )
-            
+
+            motif_tb = gr.Textbox(
+                label="Motif (interval classes: leading 0, then ±1 step, ±2 skip, ±3 leap)",
+                value="0,3,-1,-1",
+                placeholder="e.g. 0,3,-1,-1 — leave empty for unconditioned generation",
+                interactive=True
+            )
+
             generate_btn = gr.Button("Generate!", variant="primary")
             
             process_output = gr.Textbox(
@@ -188,7 +202,7 @@ with gr.Blocks() as demo:
     
     generate_btn.click(
         generate_music,
-        inputs=[period_dd, composer_dd, instrument_dd],
+        inputs=[period_dd, composer_dd, instrument_dd, motif_tb],
         outputs=[process_output, final_output]
     )
     

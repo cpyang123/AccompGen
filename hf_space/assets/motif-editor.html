@@ -1,0 +1,32 @@
+<div id="motif-editor">
+  <div class="me-tabs" role="tablist" aria-label="Motif input method">
+    <button type="button" role="tab" id="me-abstract-tab" aria-controls="me-abstract" aria-selected="true" data-mode="abstract">Abstract contour</button>
+    <button type="button" role="tab" id="me-concrete-tab" aria-controls="me-concrete" aria-selected="false" data-mode="concrete">Write on a staff</button>
+  </div>
+  <section id="me-abstract" role="tabpanel" aria-labelledby="me-abstract-tab">
+    <div class="me-heading"><span>Motif length</span><button type="button" id="me-shorter" aria-label="Remove last contour point">−</button><span id="me-length" aria-live="polite">4 notes</span><button type="button" id="me-longer" aria-label="Add contour point">+</button></div>
+    <p class="me-help" id="me-contour-help">Drag points to shape your motif.</p>
+    <svg id="me-contour" viewBox="0 0 480 280" role="group" aria-label="Draggable motif contour" aria-describedby="me-contour-help"></svg>
+    <details class="me-help-panel"><summary>Controls</summary><p>Step = 2nd · Skip = 3rd · Leap = 4th or larger. Use +/− for 4–10 notes, or arrow keys to move a focused point.</p></details>
+    <div class="me-presets"><span>Try a shape</span><button type="button" data-shape="arch">Arch</button><button type="button" data-shape="rise">Rising</button><button type="button" data-shape="zigzag">Zigzag</button></div>
+  </section>
+  <section id="me-concrete" role="tabpanel" aria-labelledby="me-concrete-tab" hidden>
+    <p class="me-help">Drag notes onto the staff. Click a note to edit.</p>
+    <div class="me-palette" role="group" aria-label="Note durations">
+      <button type="button" data-duration="1/4" aria-label="Sixteenth note" title="Sixteenth note · ¼ beat"><span>𝅘𝅥𝅯</span><small>1/16</small></button>
+      <button type="button" data-duration="1/2" aria-label="Eighth note" title="Eighth note · ½ beat"><span>♪</span><small>1/8</small></button>
+      <button type="button" data-duration="1" aria-label="Quarter note" title="Quarter note · 1 beat"><span>♩</span><small>1/4</small></button>
+      <button type="button" data-duration="2" aria-label="Half note" title="Half note · 2 beats"><span>𝅗𝅥</span><small>1/2</small></button>
+      <button type="button" data-duration="4" aria-label="Whole note" title="Whole note · 4 beats"><span>𝅝</span><small>1</small></button>
+      <button type="button" id="me-barline" data-bar-tool="true" aria-label="Barline tool" aria-pressed="false" title="Drag a barline onto a gap, or select and tap"><span>│</span><small>Barline</small></button>
+      <label class="me-dot"><input id="me-dotted" type="checkbox"> Dotted</label>
+    </div>
+    <div class="me-staff-scroll"><svg id="me-staff" viewBox="0 0 680 272" role="group" aria-label="Editable treble staff, C3 to C6. Select a note to use arrow keys or pitch controls."></svg></div>
+    <div class="me-staff-navigation"><span>Treble · C3–C6</span><button type="button" id="me-staff-left" aria-label="Scroll staff left">←</button><button type="button" id="me-staff-right" aria-label="Scroll staff right">→</button></div>
+    <div class="me-toolbar"><button type="button" id="me-listen">▶ Hear motif</button><button type="button" id="me-undo">Undo</button><button type="button" id="me-delete">Delete note</button><button type="button" id="me-clear">Clear</button><button type="button" id="me-reset">Reset</button></div>
+    <div class="me-properties"><label>Pitch <select id="me-pitch" aria-label="Selected note pitch"></select></label><label>Accidental <select id="me-accidental" aria-label="Accidental"><option value="">♮ Natural</option><option value="#">♯ Sharp</option><option value="b">♭ Flat</option></select></label></div>
+    <p id="me-selection" class="me-help"></p>
+    <p id="me-note-status" role="status" aria-live="polite"></p>
+    <details class="me-help-panel"><summary>Controls</summary><p>Click a note, then ← → to select, ↑ ↓ to change pitch, or Delete to remove. Drag notes vertically for pitch or sideways to reorder.</p><p>Select a duration and tap to add a note. Drag Barline to a gap, or select it and tap; click a line to remove it. Use 4–10 notes; combine adjacent repeated pitches.</p></details>
+  </section>
+</div>

@@ -21,18 +21,13 @@ os.makedirs(INTERLEAVED_OUTPUT_FOLDER, exist_ok=True)
 
 patchilizer = Patchilizer()
 
-patch_config = GPT2Config(num_hidden_layers=PATCH_NUM_LAYERS,
-                          max_length=PATCH_LENGTH,
-                          max_position_embeddings=PATCH_LENGTH,
-                          n_embd=HIDDEN_SIZE,
-                          num_attention_heads=HIDDEN_SIZE // 64,
-                          vocab_size=1)
-byte_config = GPT2Config(num_hidden_layers=CHAR_NUM_LAYERS,
-                         max_length=PATCH_SIZE + 1,
-                         max_position_embeddings=PATCH_SIZE + 1,
-                         hidden_size=HIDDEN_SIZE,
-                         num_attention_heads=HIDDEN_SIZE // 64,
-                         vocab_size=128)
+from notagen_core import build_notagen_configs
+patch_config, byte_config = build_notagen_configs(
+    encoder_backbone=ENCODER_BACKBONE, decoder_backbone=DECODER_BACKBONE,
+    patch_num_layers=PATCH_NUM_LAYERS, char_num_layers=CHAR_NUM_LAYERS,
+    hidden_size=HIDDEN_SIZE, patch_length=PATCH_LENGTH, patch_size=PATCH_SIZE,
+    motif_attention_bias=MOTIF_ATTENTION_BIAS,
+    patch_sampling_batch_size=PATCH_SAMPLING_BATCH_SIZE)
 
 model = NotaGenLMHeadModel(encoder_config=patch_config, decoder_config=byte_config)
 

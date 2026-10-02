@@ -1,0 +1,14 @@
+[
+  {
+    "style": "Romantic \u00b7 Chopin, Frederic \u00b7 Keyboard",
+    "status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+    "written_chord_members": 0,
+    "chord_labels": 0,
+    "playback_events": 18,
+    "accompaniment_events": 0,
+    "audio_seconds": 14.100045351473923,
+    "peak": 28834,
+    "xml_file": "/tmp/motigen-chord-hosted/b4539e43b8ebf4e10f3a243f7a2b7fa6b17fd6101db288d6d144ec98b65a0986/composition.xml",
+    "audio_file": "/tmp/motigen-chord-hosted/607f633705d1161df523421b0766f0d06afb7dc363f8778b08085be0bdd794ff/composition.wav"
+  }
+]

@@ -1,0 +1,56 @@
+X:1
+%%score 1 { 2 | ( 3 4 ) }
+L:1/8
+M:2/4
+K:D
+V:1 treble nm="Singstimme\nVoice"
+V:2 treble nm="Pianoforte"
+V:3 bass 
+V:4 bass 
+[V:1]"^Etwas langsam" z|[V:2]!p! A|[V:3]z1|[V:4]x1|
+[V:1]z4|[V:2]A>d{e} d/c/d/f/|[V:3][D,F,]/A,/D/A,/ [D,F,]/A,/D/A,/|[V:4]x4|
+[V:1]z4|[V:2]^de z A|[V:3][C,G,]/A,/C/A,/ [C,G,]/A,/C/A,/|[V:4]x4|
+[V:1]z4|[V:2]A/a/4g/4 f/4e/4d/4c/4 d/4c/4B/4A/4 ^G/4A/4B/4=G/4|[V:3][C,E,]/A,/C/A,/ [C,E,]/A,/C/A,/|[V:4]x4|
+[V:1]z4|[V:2](^EF) z F|[V:3][D,F,]/A,/D/A,/ [D,F,]/A,/D/A,/|[V:4]x4|
+[V:1]z4|[V:2]G/>F/ G/>F/ G/b/ a/4g/4f/4e/4|[V:3][B,,D,]/G,/B,/G,/ [B,,D,]/G,/B,/G,/|[V:4]x4|
+[V:1]z4|[V:2]e/>d/ e/>d/ d/a/4g/4 f/4e/4d/4c/4|[V:3][F,,A,,]/D,/F,/D,/ [F,,A,,]/D,/F,/D,/|[V:4]x4|
+[V:1]z4|[V:2]B/4b/4a/4g/4 f/4e/4d/4c/4 d/4a/4g/4f/4 e/4d/4c/4d/4|[V:3][G,,B,,]/D,/G,/D,/ [A,,D,]/F,/A,/F,/|[V:4]x4|
+[V:1]z2 z A|[V:2]f/4e/4g/4f/4 a/4g/4 f/4e/4 d z|[V:3][A,,D,]/F,/A,/C/ [D,F,A,D] z|[V:4]x4|
+[V:1]A3/2 d/ d/c/ d/e/|[V:2][K:bass] [F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z2|[V:4]x4|
+[V:1]^d e z A|[V:2][G,A,]/C/E/C/ [G,A,]/C/E/C/|[V:3][A,,,A,,]2 z2|[V:4]x4|
+[V:1]g3/2 e/ c/d/ e/G/|[V:2][G,A,]/C/E/C/ [G,A,]/C/E/C/|[V:3][A,,,A,,]2 z [A,,,A,,]|[V:4]x4|
+[V:1]{G} F2 z A|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z2|[V:4]x4|
+[V:1]d3/2 A/ F/A/ d/e/|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z2|[V:4]x4|
+[V:1]^e f z f|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z2|[V:4]x4|
+[V:1]e d/B/ A B/>A/|[V:2][F,B,]/D/F/D/ [A,C]/E/[B,D]/E/|[V:3]D,2 E,E,,|[V:4]x4|
+[V:1]A2 z2|[V:2][A,C]/E/A/E/ [A,C]/E/A/E/|[V:3]A,,2 z2|[V:4]x4|
+[V:1]A A/ A/ g3/2 c/|[V:2][A,C]/E/A/E/ [A,C]/E/A/E/|[V:3]A,,2 z2|[V:4]x4|
+[V:1]e d z d|[V:2][F,B,]/D/F/D/ [F,B,]/D/F/D/|[V:3]B,,2 z2|[V:4]x4|
+[V:1]d/>=c/ A3/4 c/4 d/>c/ A3/4 c/4|[V:2][A,=C]/D/F/D/ [A,C]/D/F/D/|[V:3][F,,D,]2 z2|[V:4]x4|
+[V:1]B2 z B|[V:2][G,B,]/D/G/D/ [G,B,]/^D/G/D/|[V:3][G,,D,]2 F,2|[V:4]x4|
+[V:1]e3/2 B/ ^G/B/ e/f/|[V:2][^G,B,]/E/^G/E/ [G,B,]/E/G/E/|[V:3]E,2 z2|[V:4]x4|
+[V:1]^^f ^g z g|[V:2][^G,B,]/E/^G/E/ [G,B,]/E/G/E/|[V:3]E,2 z E,,|[V:4]x4|
+[V:1]a e/c/ e/d/ c/B/|[V:2][A,C]/E/A/E/ [B,D]/E/^G/E/|[V:3]A,,2 E,,2|[V:4]x4|
+[V:1]A2 z A|[V:2][A,C]/E/A/E/ [A,C]/E/G/E/|[V:3]A,,2 z2|[V:4]x4|
+[V:1]A3/2 d/ d/c/ d/e/|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z2|[V:4]x4|
+[V:1]^d e z A|[V:2][G,A,]/C/E/C/ [G,A,]/C/E/C/|[V:3][A,,,A,,]2 z2|[V:4]x4|
+[V:1]g3/2 e/ c/d/ e/G/|[V:2][G,A,]/C/E/C/ [G,A,]/C/E/C/|[V:3][A,,,A,,]2 z [A,,,A,,]|[V:4]x4|
+[V:1]{G} F2 z A|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z2|[V:4]x4|
+[V:1]d/>A/ f/>d/ a/>f/ e/>d/|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z2|[V:4]x4|
+[V:1]c B z B|[V:2][G,B,]/E/G/E/ [G,B,]/E/G/E/|[V:3][G,,,G,,]2 z2|[V:4]x4|
+[V:1]A/d/ f/a/ a/g/ {f} e/d/|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][A,,,A,,]2 z2|[V:4]x4|
+[V:1]d2 z d|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z2|[V:4]x4|
+[V:1]c B z b/a/|[V:2][G,B,]/D/G/D/ [G,B,]/D/G/D/|[V:3][G,,,G,,]2 z2|[V:4]x4|
+[V:1]a g z/ f/4e/4 g/4f/4 e/4d/4|[V:2][F,A,]/D/F/D/ [F,A,]/D/F/D/|[V:3][D,,D,]2 z F,,|[V:4]x4|
+[V:1]c/4B/4g/4f/4 a/4g/4 f/4e/4 d/>e/ e3/4 d/4|[V:2][G,B,]/E/G/E/ [F,A,]/D/[G,C]/E/|[V:3]G,,E,, A,,A,,|[V:4]x4|
+[V:1]d2 z2|[V:2][F,A,]/D/F/D/ [F,A,][K:treble] A|[V:3][D,,D,]2 z/ A,/D/A,/|[V:4]x4|
+[V:1]z4|[V:2]A/>d/ f/>a/ g/f/e/d/|[V:3][D,F,]/A,/D/A,/ [D,F,]/A,/D/A,/|[V:4]x4|
+[V:1]z4|[V:2]cB z/ b/4a/4 g/4f/4e/4d/4|[V:3][G,,B,,]/D,/G,/D,/ [G,,B,,]/D,/G,/D,/|[V:4]x4|
+[V:1]z4|[V:2]c/4e/4g/4f/4 e/4d/4c/4B/4 A/>a/ a/>g/|[V:3][A,,C,]/E,/A,/E,/ [A,,C,]/E,/A,/E,/|[V:4]x4|
+[V:1]z4|[V:2](^ef) z/ A/4G/4 F/4E/4D/4C/4|[V:3][D,F,]/A,/D/A,/ [D,F,]/A,/D/A,/|[V:4]x4|
+[V:1]z4|[V:2]D/4F/4E/4D/4 E/4F/4G/4A/4 B/4c/4d/4e/4 g/4f/4e/4d/4|[V:3][D,F,]/A,/D/A,/ [D,F,]/A,/D/A,/|[V:4]x4|
+[V:1]z4|[V:2]cB z/ b/4a/4 g/4f/4e/4d/4|[V:3][G,,B,,]/D,/G,/D,/ [G,,B,,]/D,/G,/D,/|[V:4]x4|
+[V:1]z4|[V:2]c/4e/4g/4a/4 b/4a/4g/4f/4 e/4d/4c/4B/4 A/4G/4F/4E/4|[V:3][A,,C,]/E,/A,/E,/ [A,,C,]/E,/A,/E,/|[V:4]x4|
+[V:1]z4|[V:2]D{e} (d/4c/4d/4e/4) d{e} (d/4c/4d/4e/4)|[V:3]F,/A,/D/A,/ [E,G,]/A,/C/A,/|[V:4]D,2 D,2|
+[V:1]z4|[V:2]d{e} (d/4c/4d/4e/4) d{e} (d/4c/4d/4e/4)|[V:3]F,/A,/D/A,/ [E,G,]/A,/C/A,/|[V:4]D,2 D,2|
+[V:1]z3|][V:2]([Ge]2 [Fd])|][V:3]D,/D/A,/F,/ D,|][V:4]x3|]

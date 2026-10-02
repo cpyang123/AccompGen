@@ -1,20 +1,19 @@
 X:1
+ F G F B3  ; F G F B3 
 %%score 1 { 2 | 3 }
 L:1/8
-Q:1/4=105
+Q:1/4=90
 M:6/8
-K:F#
-V:1 treble nm="Singstimme\nVoice"
-V:2 treble nm="Pianoforte"
+K:Eb
+V:1 treble nm="Voice"
+V:2 treble nm="Piano"
 V:3 bass 
-[V:1]C|[V:2]z1|[V:3]z1|
-[V:1]A2 A A2 A|[V:2][CFA]2 [CFA] [CFA]2 [CFA]|[V:3]F,2 F, F,2 F,|
-[V:1]c2 A F2 A|[V:2][CFc]2 A [CF]2 A|[V:3]F,3 F,3|
-[V:1]B2 G A2 F|[V:2][CGB]2 G [CFA]2 F|[V:3]E,3 F,3|
-[V:1]G2 z z2 G|[V:2][CEG]2 [CEG] [CEG]2 G|[V:3]C,2 C, C,2 z|
-[V:1]G2 A BG F|[V:2][CEG]2 A [CEB]GF|[V:3]C,3 C,3|
-[V:1](E2 G) F2 C|[V:2]([CE]2 G) [CF]2 C|[V:3]B,3 A,3|
-[V:1]D2 D FE D|[V:2]D2 D FED|[V:3]B,2 B, DCB,|
-[V:1](C2 B) A2 c|[V:2](C2 B) [CFA]2 [Fc]|[V:3]A,2 G, F,2 A,|
-[V:1]cA F AB G|[V:2][Fc]AF [CFA]B[B,EG]|[V:3]C3 C,2 C,|
-[V:1]F2 z z2|][V:2][A,CF]2 z z2|][V:3]F,2 z z2|]
+[V:1]"^Sehr herzlich" G|[V:2]G|[V:3]z1|
+[V:1]B2 B B2 B|[V:2][EGB]2 [EGB] [EGB]2 [EGB]|[V:3]E,2 E, E,2 E,|
+[V:1]e3 B2 B|[V:2][EBe]3 [EGB]2 [EGB]|[V:3]G,3 E,2 E,|
+[V:1]c2 c e d c|[V:2][EAc]2 [EAc] [ce][Bd][Ac]|[V:3]A,2 A, A,2 A,|
+[V:1]B3 z2 B|[V:2][GB]3 z2 [GB]|[V:3]E,3 z2 z|
+[V:1]B2 F G A B|[V:2][GB]2 [DF] [EG][FA][GB]|[V:3]E,2 z E,2 z|
+[V:1]c3 B2 B|[V:2][EAc]3 [EGB]2 [EB]|[V:3]A,3 E,2 G,|
+[V:1]c2 f e d c|[V:2][Ec]2 [Af] [Ge][Bd][Ac]|[V:3]A,2 A, A,2 A,|
+[V:1](B2 A) G2|][V:2][GB]2 [FA] [EG]2|][V:3]B,2 B,, E,2|]

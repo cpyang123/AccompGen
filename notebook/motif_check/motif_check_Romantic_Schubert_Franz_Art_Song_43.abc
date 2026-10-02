@@ -1,0 +1,40 @@
+X:1
+%%score ( 1 2 ) { ( 3 5 ) | 4 }
+L:1/8
+Q:1/4=52
+M:6/8
+K:Bb
+V:1 treble nm="Chant\nVoice"
+V:2 treble 
+V:3 treble nm="Piano"
+V:5 treble 
+V:4 bass 
+[V:1]"^Lento" z6|[V:2]x6|[V:3]"^Lento" z2 z!p! [B,DGB]2 z|[V:4]z2 z [G,,D,G,]2 z|[V:5]x6|
+[V:1]z6|:[V:2]x6|:[V:3][CD^FA]2 z [CDAd]2 z|:[V:4][D,,D,]2 z [^F,,D,]2 z|:[V:5]x6|:
+[V:1]!p!"^Con espressere" G2 B d2 g|[V:2]x6|[V:3]!p! z2 z [B,DG]2 z|[V:4][G,,,G,,]2 z [G,,D,G,]2 z|[V:5]x6|
+[V:1]^f3 =f2 =e|[V:2]x6|[V:3][CD^F]2 z ([B,-=FB-]2 [B,=EB])|[V:4][D,,D,]2 z (([D,,D,]2 [C,,C,]))|[V:5]x6|
+[V:1]e3 d2 ^c|[V:2]x6|[V:3]([A,-EF-]3 [A,DF]2 [A,^CA])|[V:4](([F,,F,]3 [B,,F,]2 [^F,,^F,]))|[V:5]x6|
+[V:1](d3 B2) z|[V:2]x6|[V:3][B,DB]3- [B,DB]2 z|[V:4][G,,G,]3- [G,,G,]2 z|[V:5]x6|
+[V:1]!p! G2 B d2 g|[V:2]x6|[V:3]!p! z2 z [B,DG]2 z|[V:4][G,,,G,,]2 z [G,,D,G,]2 z|[V:5]x6|
+[V:1]^f3 =f2 =e|[V:2]x6|[V:3][CD^F]2 z (([=B,=F=B]2 [_B,=E_B]))|[V:4][D,,D,]2 z (([_D,,_D,]2 [C,,C,]))|[V:5]x6|
+[V:1]e3 d2 ^c|[V:2]x6|[V:3]([A,-EF-]3 [A,DF]2 [A,^CA])|[V:4](([F,,F,]3 [B,,F,]2 [^F,,^F,]))|[V:5]x6|
+[V:1](d3 B2) z|[V:2]x6|[V:3][B,DB]3- [B,DB]2 z|[V:4][G,,G,]3- [G,,G,]2 z|[V:5]x6|
+[V:1]d2 d d2 d|[V:2]x6|[V:3][DGBd]6|[V:4][G,B,]6|[V:5]x6|
+[V:1](d3 D2) z|[V:2]x6|[V:3][DAd]6|[V:4][F,A,]6|[V:5]x6|
+[V:1]d2 d d2 d|[V:2]x6|[V:3][D^G=Bd]6|[V:4][=E,^G,]6|[V:5]x6|
+[V:1](!>!g3 A2) z|[V:2]x6|[V:3][=EGA^c]6|[V:4][A,,A,]6|[V:5]x6|
+[V:1]!<(! d2 d d2 d|[V:2]x6|[V:3]!<(! [D^FAcd]6|[V:4][D,A,]6|[V:5]x6|
+[V:1](d3!<)! =B2) z|[V:2]x6|[V:3][DG=Bd]6!<)!|[V:4][G,,G,]6|[V:5]x6|
+[V:1]"^riten." A2 A B2 B|[V:2]x6|[V:3]"^ritard." [E^FAe]3 [DGBd]3|[V:4][C,A,]3 [D,B,]3|[V:5]x6|
+[V:1](d3 B2) z|[V:2]x6|[V:3][DAcd]3 [DGBd]3|[V:4][^F,,^F,]3 [G,,G,]3|[V:5]x6|
+[V:1]"^a tempo" d2 d d2 d|[V:2]x3 d2 x|[V:3]"^a tempo" [DGBd]6|[V:4][G,B,]6|[V:5]x6|
+[V:1](d3 D2) z|[V:2]x6|[V:3][DAd]6|[V:4][F,A,]6|[V:5]x6|
+[V:1]d2 d d2 d|[V:2]x6|[V:3][D^G=Bd]6|[V:4][=E,^G,]6|[V:5]x6|
+[V:1](!>!g3 A2) z|[V:2]x6|[V:3][=EGA^c]6|[V:4][A,,A,]6|[V:5]x6|
+[V:1]!<(! d2 d d2 d|[V:2]x3 d2 x|[V:3]!<(! [D^FAcd]6|[V:4][D,A,]6|[V:5]x6|
+[V:1](d3!<)! g2) z|[V:2]x6|[V:3][DGBd]6!<)!|[V:4][G,,G,]6|[V:5]x6|
+[V:1]"^ritard." A2 A B2 B|[V:2]x3 (Bc) x|[V:3]"^ritard." [E^FAe]3 [DGBd]3|[V:4][C,A,]3 [D,B,]3|[V:5]x6|
+[V:1](d6-|1,3,4[V:2]x6|[V:3][DAcd]3 [D^FAcd]3|[V:4][D,,D,]3 [D,,D,]3|[V:5]x6|
+[V:1]d3 G2) z:|4[V:2]x6:|4[V:3][DG=Bd]3- [DGBd]2 z:|5[V:4][G,,,G,,]3- [G,,,G,,]2 z:|4[V:5]x6:|4
+[V:1](d6||[V:2]x6||[V:3][DG=Bd]3 [^Fcd^f]3||[V:4][G,,,G,,]3 [D,,D,]3||[V:5]x3 A2 D||
+[V:1]G3- G2) z|][V:2]x6|][V:3][G=Bdg]3- [GBdg]2 z|][V:4][G,,,G,,]3- [G,,,G,,]2 z|][V:5]D3- D2 x|]

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Motif-ated: Generated Examples</title>
+<style>
+  :root {
+    --bg: #f6f7f6;
+    --card: #ffffff;
+    --ink: #1d2126;
+    --muted: #626a74;
+    --line: #dde1e4;
+    --accent: #35547e;
+    --accent-soft: #e7edf5;
+    --hit: #2e6e4e;
+    --hit-soft: #e5f0ea;
+    --mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+    --score-filter: none;
+    --mark: #b23a2a;
+    --mark-soft: #f6e2dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15181b;
+      --card: #1d2125;
+      --ink: #e6e8e6;
+      --muted: #98a0a8;
+      --line: #343a40;
+      --accent: #92b1da;
+      --accent-soft: #242e3c;
+      --hit: #7fc39e;
+      --hit-soft: #1e2f26;
+      --score-filter: invert(0.90) hue-rotate(180deg);
+      --mark: #b23a2a;
+      --mark-soft: #43241d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15181b;
+    --card: #1d2125;
+    --ink: #e6e8e6;
+    --muted: #98a0a8;
+    --line: #343a40;
+    --accent: #92b1da;
+    --accent-soft: #242e3c;
+    --hit: #7fc39e;
+    --hit-soft: #1e2f26;
+    --score-filter: invert(0.90) hue-rotate(180deg);
+    --mark: #b23a2a;
+    --mark-soft: #43241d;
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f7f6;
+    --card: #ffffff;
+    --ink: #1d2126;
+    --muted: #626a74;
+    --line: #dde1e4;
+    --accent: #35547e;
+    --accent-soft: #e7edf5;
+    --hit: #2e6e4e;
+    --hit-soft: #e5f0ea;
+    --score-filter: none;
+    --mark: #b23a2a;
+    --mark-soft: #f6e2dc;
+  }
+  .score svg { filter: var(--score-filter); }
+  .score .motif-note, .score .motif-note * { fill: var(--mark); stroke: var(--mark); }
+  details pre mark { background: var(--mark-soft); color: var(--mark); border-radius: 2px; padding: 0 .05em; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 Charter, "Bitstream Charter", "Source Serif Pro", "Palatino Linotype", Palatino, Georgia, serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+  header h1 { font-size: 1.9rem; margin: 0 0 .5rem; font-weight: 600; text-wrap: balance; }
+  header .authors { margin: 0 0 1.5rem; font-size: 1.05rem; }
+  header .authors .affil { display: block; color: var(--muted); font-style: italic; font-size: .9rem; margin-top: .2rem; }
+  header .authors sup { font-size: .7em; }
+  .abstract {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 1rem 1.5rem; margin: 0 0 1.5rem;
+  }
+  .abstract h3 { margin: 0 0 .5rem; font-size: 1rem; }
+  .abstract p { margin: 0; font-size: .95rem; text-align: justify; hyphens: auto; }
+  header .sub { color: var(--muted); font-style: italic; margin: 0 0 1.5rem; }
+  .note {
+    background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+    border-radius: 6px; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: .95rem;
+  }
+  .note p { margin: .4rem 0; }
+  .note > summary { cursor: pointer; color: var(--ink); font-size: .95rem; }
+  .note > summary strong { font-weight: 600; }
+  .encoding-fig { margin: .9rem 0; }
+  .encoding-fig img { width: 100%; height: auto; border-radius: 6px; filter: var(--score-filter); }
+  .encoding-fig figcaption { color: var(--muted); font-size: .85rem; margin-top: .4rem; }
+  code, .mono { font-family: var(--mono); font-size: .85em; }
+  .motif-code {
+    background: var(--accent-soft); color: var(--accent); border-radius: 4px;
+    padding: .05em .4em; font-family: var(--mono); font-size: .85em; white-space: nowrap;
+  }
+  /* sections */
+  h2 { font-size: 1.35rem; margin: 3rem 0 .25rem; border-bottom: 2px solid var(--line); padding-bottom: .3rem; }
+  .tier-desc { color: var(--muted); font-size: .95rem; margin: .25rem 0 1.25rem; }
+  /* cards */
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 1rem 1.25rem 1.25rem; margin: 1.25rem 0;
+  }
+  .card-head { display: flex; flex-wrap: wrap; gap: .5rem .75rem; align-items: baseline; margin-bottom: .5rem; }
+  .card-title { font-weight: 600; }
+  .realization { font-size: .85rem; color: var(--muted); margin: .25rem 0 .5rem; }
+  .realization code { color: var(--ink); }
+  .score { overflow-x: auto; }
+  .controls { display: flex; align-items: center; gap: .75rem; margin-top: .5rem; flex-wrap: wrap; }
+  button.play {
+    font: 500 .9rem/1.2 system-ui, -apple-system, "Segoe UI", sans-serif; cursor: pointer;
+    background: var(--accent); color: var(--card); border: 0; border-radius: 6px; padding: .4rem 1rem;
+  }
+  button.play.secondary { background: var(--accent-soft); color: var(--accent); }
+  details.score-box summary { cursor: pointer; }
+  details.score-box .score { margin-top: .5rem; }
+  button.play:focus-visible, summary:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+  button.play[disabled] { opacity: .5; cursor: wait; }
+  .progress { flex: 1 1 120px; height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; min-width: 100px; }
+  .progress > div { height: 100%; width: 0%; background: var(--accent); transition: width .2s linear; }
+  a.dl, summary { color: var(--accent); font-size: .9rem; }
+  details { margin-top: .6rem; }
+  details pre {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+    padding: .75rem; overflow-x: auto; font-family: var(--mono); font-size: .78rem; line-height: 1.45;
+  }
+  footer { margin-top: 4rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  /* Every couple of minutes a cat walks across the bottom of the page. */
+  .cat-walker {
+    position: fixed; bottom: -2px; left: 0; z-index: 90;
+    pointer-events: none; user-select: none; color: var(--ink); opacity: .9;
+  }
+  .cat-walker.ltr { animation: cat-cross-ltr var(--cat-dur, 24s) linear forwards; }
+  .cat-walker.rtl { animation: cat-cross-rtl var(--cat-dur, 24s) linear forwards; }
+  .cat-walker.rtl svg { transform: scaleX(-1); }
+  .cat-walker svg { display: block; width: 56px; height: auto; }
+  .cat-walker .cat-bob { animation: cat-bob .5s ease-in-out infinite; }
+  .cat-walker .leg {
+    transform-box: fill-box; transform-origin: top center;
+    animation: cat-leg .5s ease-in-out infinite;
+  }
+  .cat-walker .leg.off { animation-delay: -.25s; }
+  .cat-walker .tail {
+    transform-box: fill-box; transform-origin: bottom right;
+    animation: cat-tail 1.6s ease-in-out infinite;
+  }
+  @keyframes cat-cross-ltr { from { transform: translateX(-70px); } to { transform: translateX(100vw); } }
+  @keyframes cat-cross-rtl { from { transform: translateX(100vw); } to { transform: translateX(-70px); } }
+  @keyframes cat-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.5px); } }
+  @keyframes cat-leg { 0%, 100% { transform: rotate(16deg); } 50% { transform: rotate(-16deg); } }
+  @keyframes cat-tail { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(7deg); } }
+  /* Konami code: it rains cats. */
+  .cat-rain {
+    position: fixed; top: -90px; z-index: 95;
+    pointer-events: none; user-select: none; color: var(--ink); opacity: .9;
+    animation: cat-fall var(--fall-dur, 3s) linear var(--fall-delay, 0s) both;
+  }
+  .cat-rain svg {
+    display: block; width: 100%; height: auto;
+    animation: cat-spin var(--fall-dur, 3s) linear var(--fall-delay, 0s) both;
+  }
+  @keyframes cat-fall { from { transform: translateY(0); } to { transform: translateY(calc(100vh + 180px)); } }
+  @keyframes cat-spin { from { transform: rotate(0); } to { transform: rotate(var(--spin, 260deg)); } }
+  @media (prefers-reduced-motion: reduce) { .cat-walker, .cat-rain { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Getting Motif-ated: Controllable AI Compositions from Injected Motif Prompts</h1>
+  <p class="authors">Chao Peter Yang<sup>1</sup>, Cynthia Rudin<sup>2</sup>, Yue Jiang<sup>2</sup>,
+  Simon Mak<sup>2</sup>, Stephen Ni-Hahn<sup>3</sup>
+  <span class="affil"><sup>1</sup>Yale University &middot; <sup>2</sup>Duke University &middot;
+  <sup>3</sup>Chinese University of Hong Kong, Shenzhen</span></p>
+  <section class="abstract">
+    <h3>Abstract</h3>
+    <p>Deep learning has transformed symbolic music generation by borrowing the training paradigms of
+    large language models, with systems such as NotaGen now producing complete, stylistically convincing
+    classical scores from a short prompt. These systems could become powerful creative partners, helping
+    musicians generate endless possibilities. However, current systems expose almost no control handles
+    on the music itself. In principle, control handles could be built into a foundation model trained
+    from scratch, but this is rarely practical without massive amounts of quality annotated data and
+    compute resources. We therefore present <em>MotiGen</em>, a recipe for retrofitting pretrained
+    symbolic music models to use new instruction prompts. MotiGen injects a musical motif as a
+    structured prompt line, reinforces it with a scalar attention bias toward the motif tokens, and
+    learns the association with a two-phase curriculum. First it learns from focused excerpts cropped
+    around motif occurrences in the training data, then full scores including the motifs. Our
+    experiments show that our model composes with the prompted motif in over 92.3% of generated pieces.
+    Generated pieces using a variety of motifs are included in our sample site:
+    <a href="https://motigen-site.github.io/" style="color:var(--accent)">https://motigen-site.github.io/</a>.</p>
+  </section>
+  <p class="sub">Generated examples: supplementary material for peer review</p>
+</header>
+
+<details class="note">
+  <summary><strong>What you are looking at</strong></summary>
+  <p>Each piece below was generated by the largest MotiGen
+  configuration (NotaGen backbone, 20-layer patch encoder, hidden size 1280; fine-tuned on the Lieder corpus
+  plus the full ~216k-tune Irishman collection with a motif-aware synthetic curriculum; trained-in motif
+  attention bias +4). The model was prompted with a single <em>abstract</em> motif line, e.g.
+  <code class="motif-code">%motif:v1:step_skip_leap: 0,3,-1,-1</code>. No concrete realization was provided;
+  the model invents its own. Sampling: top-k&nbsp;9, top-p&nbsp;0.9, temperature&nbsp;1.2.</p>
+  <figure class="encoding-fig">
+    <img src="fig_encoding.png" alt="Interval-class encoding: signed letter-step distances map to steps (±1), skips (±2), and leaps (±3); sign is direction. The classification is diatonic, so an augmented second is a step while its enharmonic minor third is a skip. Right: an example training file with the %motif prompt lines, the realized motif, and a transposed recurrence highlighted.">
+    <figcaption><strong>Reading the motif code</strong> (figure from the paper). Signed letter-step
+    distances are classified as steps (±1), skips (±2), and leaps (±3); the sign gives the direction. So
+    <code class="motif-code">0,3,-1,-1</code> = a note, a leap up, then two steps down.
+    Every occurrence of the prompted motif is <span style="color:var(--mark)">highlighted in red</span>
+    in both the engraved score and the raw ABC.</figcaption>
+  </figure>
+  <p><strong>Selection.</strong> Examples are drawn from the paper&rsquo;s 50-piece evaluation runs (one run
+  per motif). Every piece shown realizes the prompted motif faithfully in its own
+  <code>%motif:abc</code> line, contains the motif in the generated melody, and uses its own realization
+  in the piece: at least a motif-length span of the realization&rsquo;s pitches appears verbatim in the body.</p>
+  <p><strong>A note on chords.</strong> While we trained the model to output only a single voice
+  (i.e. the melody), some harmonization passed through the data cleaning stage. This led the model to
+  sometimes output chords as well. Since the chords really didn&rsquo;t degrade generation and are often
+  rather pleasant, we decided to leave them in.</p>
+</details>
+
+<main id="sections"></main>
+
+<footer>
+  <p>Scores are rendered and sonified in-browser from the raw generated ABC with
+  <a href="https://abcjs.net" style="color:var(--accent)">abcjs</a> (vendored; the page is fully static and
+  works offline). Playback uses a synthesized choir-like voice (formant-filtered, in-browser). Each example's raw ABC can be viewed
+  inline, and each piece can be downloaded as MusicXML.</p>
+</footer>
+</div>
+
+<script src="abcjs-basic-min.js"></script>
+<script src="data.js"></script>
+<script>
+(function () {
+  const DATA = window.MOTIGEN_DATA;
+  const TIERS = [
+    ['top', 'Frequent motifs (corpus ranks 1\u20135)',
+     'Motifs the model saw often during training. Conditioning is strongest here: the prompted contour typically appears repeatedly in the melody.'],
+    ['mid', 'Mid-frequency motifs (corpus ranks 14\u201327)',
+     'Less common contours, including skips and leaps.'],
+    ['tail', 'Near-out-of-distribution motifs (vanishingly rare in training)',
+     'Consecutive-leap contours from the extreme tail of the training distribution: the hardest conditioning cases.'],
+  ];
+
+  // ---- tiny WebAudio player ----
+  let audioCtx = null, playing = null; // playing = {nodes, timer, btn, bar}
+  function stopPlayback() {
+    if (!playing) return;
+    playing.nodes.forEach(n => { try { n.stop(); } catch (e) {} });
+    clearInterval(playing.timer);
+    if (playing.bar) playing.bar.style.width = '0%';
+    playing.btn.textContent = playing.btn.dataset.label;
+    playing = null;
+  }
+  // events: [{pitch(midi), volume(0-127), start(sec), dur(sec)}]
+  // Voice-like timbre: sawtooth source -> parallel vowel-formant bandpasses
+  // ("ah": ~700/1220/2600 Hz) + a darker lowpassed dry path, soft attack/release,
+  // one shared 5.2 Hz vibrato LFO, and a compressor to keep levels safe.
+  function playEvents(events, total, btn, bar) {
+    stopPlayback();
+    if (!events || !events.length) return;
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    // resume() is async: schedule only once the context clock is actually running
+    const ready = audioCtx.state === 'suspended' ? audioCtx.resume() : Promise.resolve();
+    ready.then(() => {
+    if (playing) return;                        // user clicked something else meanwhile
+    const comp = audioCtx.createDynamicsCompressor();
+    comp.connect(audioCtx.destination);
+    const master = audioCtx.createGain();
+    master.gain.value = 1.4;
+    master.connect(comp);
+    const bus = audioCtx.createGain();          // all notes feed this
+    // Wide vocal formants ("ah"); low Q so every melody pitch keeps harmonics
+    // inside the bands (high Q starved notes above ~500 Hz into silence).
+    [[700, 1.0, 4], [1220, 0.7, 5], [2600, 0.35, 6]].forEach(([f, g, q]) => {
+      const bp = audioCtx.createBiquadFilter();
+      bp.type = 'bandpass'; bp.frequency.value = f; bp.Q.value = q;
+      const bg = audioCtx.createGain(); bg.gain.value = g;
+      bus.connect(bp); bp.connect(bg); bg.connect(master);
+    });
+    const lp = audioCtx.createBiquadFilter();   // dry body under the formants
+    lp.type = 'lowpass'; lp.frequency.value = 1800;
+    const lpg = audioCtx.createGain(); lpg.gain.value = 0.6;
+    bus.connect(lp); lp.connect(lpg); lpg.connect(master);
+    const t0 = audioCtx.currentTime + 0.08;
+    const lfo = audioCtx.createOscillator();    // shared vibrato
+    lfo.type = 'sine'; lfo.frequency.value = 5.2;
+    lfo.start(t0); lfo.stop(t0 + total + 1);
+    const nodes = [master, lfo];
+    events.forEach(ev => {
+      const start = t0 + ev.start;
+      const dur = Math.max(0.05, ev.dur - 0.02);
+      const freq = 440 * Math.pow(2, (ev.pitch - 69) / 12);
+      const osc = audioCtx.createOscillator();
+      osc.type = 'sawtooth';
+      osc.frequency.value = freq;
+      const vib = audioCtx.createGain();
+      vib.gain.setValueAtTime(0, start);        // vibrato eases in per note
+      vib.gain.linearRampToValueAtTime(freq * 0.007, start + Math.min(0.25, dur));
+      lfo.connect(vib); vib.connect(osc.frequency);
+      const g = audioCtx.createGain();
+      const vol = (ev.volume || 90) / 127 * 0.9;
+      const atk = Math.min(0.06, dur * 0.4);
+      g.gain.setValueAtTime(0, start);
+      g.gain.linearRampToValueAtTime(vol, start + atk);
+      g.gain.setTargetAtTime(0, start + dur * 0.75, Math.max(0.05, dur * 0.15));
+      osc.connect(g); g.connect(bus);
+      osc.start(start);
+      osc.stop(start + dur + 0.5);
+      nodes.push(osc);
+    });
+    btn.dataset.label = btn.textContent;
+    btn.textContent = '\u25a0 Stop';
+    const timer = setInterval(() => {
+      const t = audioCtx.currentTime - t0;
+      if (t >= total) { stopPlayback(); return; }
+      if (bar) bar.style.width = Math.max(0, Math.min(100, t / total * 100)) + '%';
+    }, 120);
+    playing = { nodes, timer, btn, bar };
+    });
+  }
+  // Dynamic tempo: honor a model-emitted Q: header; otherwise pick the tempo
+  // that puts the piece's median note length at ~0.25 s, clamped to 75-150 BPM.
+  function deriveQpm(seq, hasQ) {
+    if (hasQ && seq.tempo) return seq.tempo;
+    const durs = [];
+    seq.tracks.forEach(t => t.forEach(e => { if (e.cmd === 'note') durs.push(e.duration); }));
+    if (!durs.length) return seq.tempo || 110;
+    durs.sort((a, b) => a - b);
+    const med = durs[Math.floor(durs.length / 2)];
+    return Math.max(75, Math.min(150, 240 * med / 0.25));
+  }
+  function eventsFromSeq(seq, qpm) {
+    const secPerWhole = 240 / (qpm || seq.tempo || 100);
+    const events = [];
+    let total = 0;
+    seq.tracks.forEach(track => track.forEach(ev => {
+      if (ev.cmd !== 'note') return;
+      events.push({ pitch: ev.pitch, volume: ev.volume, start: ev.start * secPerWhole, dur: ev.duration * secPerWhole });
+      total = Math.max(total, (ev.start + ev.duration) * secPerWhole);
+    }));
+    return { events, total };
+  }
+  // Abstract interval-class pattern -> audible contour (step=2, skip=4,
+  // leap=5 semitones), played as even quarter notes at the piece's tempo.
+  const SEMIS = { 1: 2, 2: 4, 3: 5 };
+  function patternEvents(motifStr, qpm) {
+    let midi = 72;
+    const NOTE = 60 / (qpm || 110);
+    const events = [];
+    motifStr.split(',').map(s => parseInt(s.trim(), 10)).forEach((c, i) => {
+      if (i > 0) midi += Math.sign(c) * (SEMIS[Math.abs(c)] || 0);
+      events.push({ pitch: midi, volume: 105, start: i * NOTE, dur: NOTE * 0.92 });
+    });
+    return { events, total: events.length * NOTE };
+  }
+
+  // ---- motif highlighting ----
+  function escapeHtml(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function markupAbc(abc, spans) {
+    if (!spans || !spans.length) return escapeHtml(abc);
+    let out = '', pos = 0;
+    spans.forEach(([a, b]) => {
+      out += escapeHtml(abc.slice(pos, a)) + '<mark>' + escapeHtml(abc.slice(a, b)) + '</mark>';
+      pos = b;
+    });
+    return out + escapeHtml(abc.slice(pos));
+  }
+  function highlightScore(visualObj, spans) {
+    if (!spans || !spans.length || !visualObj || !visualObj.lines) return;
+    visualObj.lines.forEach(line => (line.staff || []).forEach(staff =>
+      (staff.voices || []).forEach(voice => voice.forEach(el => {
+        if (el.el_type !== 'note' || el.rest || el.startChar == null) return;
+        if (!spans.some(([a, b]) => el.startChar < b && el.endChar > a)) return;
+        if (el.abselem && el.abselem.elemset)
+          el.abselem.elemset.forEach(g => g.classList && g.classList.add('motif-note'));
+      }))));
+  }
+
+  // ---- example cards ----
+  const sections = document.getElementById('sections');
+  TIERS.forEach(([tier, title, desc]) => {
+    const h = document.createElement('h2');
+    h.textContent = title;
+    const p = document.createElement('p');
+    p.className = 'tier-desc';
+    p.textContent = desc;
+    sections.appendChild(h);
+    sections.appendChild(p);
+    DATA.examples.filter(e => e.tier === tier).forEach(ex => sections.appendChild(makeCard(ex)));
+  });
+
+  function makeCard(ex) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const head = document.createElement('div');
+    head.className = 'card-head';
+    head.innerHTML =
+      '<span class="card-title">Motif <span class="motif-code">' + ex.motif + '</span></span>';
+    card.appendChild(head);
+
+    if (ex.realization) {
+      const r = document.createElement('div');
+      r.className = 'realization';
+      r.innerHTML = 'Prompt motif ABC: <code>' +
+        ex.realization.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</code>';
+      card.appendChild(r);
+    }
+
+    // controls (playback works without expanding the score)
+    let pieceTune = null;
+    function getPieceTune() {
+      if (!pieceTune) { try { pieceTune = ABCJS.parseOnly(ex.abc)[0]; } catch (e) {} }
+      return pieceTune;
+    }
+    const controls = document.createElement('div');
+    controls.className = 'controls';
+    const btn = document.createElement('button');
+    btn.className = 'play';
+    btn.textContent = '\u25b6 Play piece';
+    const mbtn = document.createElement('button');
+    mbtn.className = 'play secondary';
+    mbtn.textContent = '\u25b6 Motif';
+    mbtn.title = 'Play the prompted motif contour (step/skip/leap intervals as quarter notes)';
+    const prog = document.createElement('div');
+    prog.className = 'progress';
+    const bar = document.createElement('div');
+    prog.appendChild(bar);
+    const dl = document.createElement('a');
+    dl.className = 'dl';
+    dl.textContent = 'Download XML';
+    dl.href = 'xml/' + ex.id + '.xml';
+    dl.download = 'motigen_' + ex.id + '.xml';
+    btn.addEventListener('click', () => {
+      if (playing && playing.btn === btn) { stopPlayback(); return; }
+      const tune = getPieceTune();
+      if (!tune) return;
+      const seq = tune.setUpAudio({});
+      const qpm = deriveQpm(seq, /\nQ:/.test(ex.abc));
+      const { events, total } = eventsFromSeq(seq, qpm);
+      playEvents(events, total, btn, bar);
+    });
+    mbtn.addEventListener('click', () => {
+      if (playing && playing.btn === mbtn) { stopPlayback(); return; }
+      const tune = getPieceTune();
+      let qpm = 110;
+      if (tune) { const seq = tune.setUpAudio({}); qpm = deriveQpm(seq, /\nQ:/.test(ex.abc)); }
+      const r = patternEvents(ex.motif, qpm);
+      playEvents(r.events, r.total, mbtn, bar);
+    });
+    controls.appendChild(mbtn);
+    controls.appendChild(btn);
+    controls.appendChild(prog);
+    controls.appendChild(dl);
+    card.appendChild(controls);
+
+    // collapsed score, rendered lazily on first expand
+    const scoreDet = document.createElement('details');
+    scoreDet.className = 'score-box';
+    const scoreSum = document.createElement('summary');
+    scoreSum.textContent = 'Show score';
+    const scoreDiv = document.createElement('div');
+    scoreDiv.className = 'score';
+    scoreDet.appendChild(scoreSum);
+    scoreDet.appendChild(scoreDiv);
+    let rendered = false;
+    scoreDet.addEventListener('toggle', () => {
+      if (!scoreDet.open || rendered) return;
+      rendered = true;
+      // The generated ABC has one measure per source line, which abcjs honors
+      // as hard system breaks. Join body lines (replacing "\n[V:1]" with an
+      // equal number of spaces so startChar offsets (and thus the motif
+      // highlight spans) are unchanged) and let wrap{} lay out the measures.
+      // The first "[V:1]" (right after the "V:1" header line) must stay put.
+      const displayAbc = ex.abc.replace(/\n\[V:1\]/g,
+        (m, off, s) => s.slice(Math.max(0, off - 4), off) === '\nV:1' ? m : '      ');
+      try {
+        const vo = ABCJS.renderAbc(scoreDiv, displayAbc, {
+          responsive: 'resize', staffwidth: 900, paddingtop: 4, paddingbottom: 4,
+          wrap: { minSpacing: 1.8, maxSpacing: 2.7, preferredMeasuresPerLine: 4 },
+        })[0];
+        highlightScore(vo, ex.spans);
+      } catch (e) {
+        scoreDiv.innerHTML = '<em style="color:var(--muted)">Score rendering failed; see raw ABC below.</em>';
+      }
+      scoreSum.textContent = 'Hide score';
+    });
+    scoreDet.addEventListener('toggle', () => {
+      if (rendered) scoreSum.textContent = scoreDet.open ? 'Hide score' : 'Show score';
+    });
+    card.appendChild(scoreDet);
+
+    const det = document.createElement('details');
+    const sum = document.createElement('summary');
+    sum.textContent = 'Raw ABC';
+    const pre = document.createElement('pre');
+    pre.innerHTML = markupAbc(ex.abc, ex.spans);
+    det.appendChild(sum);
+    det.appendChild(pre);
+    card.appendChild(det);
+
+    return card;
+  }
+})();
+</script>
+<script>
+(function () {
+  const CAT_INTERVAL_MS = 120000; // a cat every ~2 minutes
+  const CAT_SPEED = 55;           // px per second
+  const CAT_SVG =
+    '<svg viewBox="0 0 120 64" xmlns="http://www.w3.org/2000/svg">' +
+    '<g fill="currentColor">' +
+    '<path class="tail" d="M18 34 C6 30 2 18 9 9" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>' +
+    '<rect class="leg" x="22" y="36" width="5.5" height="24" rx="2.7"/>' +
+    '<rect class="leg off" x="32" y="36" width="5.5" height="24" rx="2.7"/>' +
+    '<rect class="leg off" x="60" y="36" width="5.5" height="24" rx="2.7"/>' +
+    '<rect class="leg" x="70" y="36" width="5.5" height="24" rx="2.7"/>' +
+    '<ellipse cx="49" cy="34" rx="32" ry="13"/>' +
+    '<circle cx="88" cy="22" r="11"/>' +
+    '<path d="M79 15 L77 3 L87 11 Z"/>' +
+    '<path d="M90 13 L97 3 L98 16 Z"/>' +
+    '</g></svg>';
+  let goRight = true;
+  function walkCat() {
+    if (document.hidden) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (document.querySelector('.cat-walker')) return;
+    const cat = document.createElement('div');
+    cat.className = 'cat-walker ' + (goRight ? 'ltr' : 'rtl');
+    cat.setAttribute('aria-hidden', 'true');
+    cat.style.setProperty('--cat-dur', Math.round((window.innerWidth + 140) / CAT_SPEED) + 's');
+    cat.innerHTML = '<div class="cat-bob">' + CAT_SVG + '</div>';
+    cat.addEventListener('animationend', (e) => { if (e.target === cat) cat.remove(); });
+    document.body.appendChild(cat);
+    goRight = !goRight;
+  }
+  setInterval(walkCat, CAT_INTERVAL_MS);
+  window.walkCat = walkCat; // run walkCat() in the console to summon one now
+
+  // Konami code (up up down down left right left right B A): rain cats.
+  const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+                  'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let recent = [];
+  let raining = false;
+  document.addEventListener('keydown', (e) => {
+    const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    recent.push(k);
+    if (recent.length > KONAMI.length) recent.shift();
+    if (recent.join(' ') === KONAMI.join(' ')) { recent = []; rainCats(); }
+  });
+  function rainCats() {
+    if (raining) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    raining = true;
+    const N = 40;
+    let alive = N;
+    for (let i = 0; i < N; i++) {
+      const drop = document.createElement('div');
+      drop.className = 'cat-rain';
+      drop.setAttribute('aria-hidden', 'true');
+      drop.style.left = (Math.random() * 96) + 'vw';
+      drop.style.width = Math.round(24 + Math.random() * 40) + 'px';
+      drop.style.setProperty('--fall-dur', (2.2 + Math.random() * 2.6).toFixed(2) + 's');
+      drop.style.setProperty('--fall-delay', (Math.random() * 2.5).toFixed(2) + 's');
+      drop.style.setProperty('--spin',
+        Math.round((Math.random() < .5 ? -1 : 1) * (140 + Math.random() * 360)) + 'deg');
+      drop.innerHTML = CAT_SVG;
+      drop.addEventListener('animationend', (e) => {
+        if (e.target !== drop) return;
+        drop.remove();
+        if (--alive === 0) raining = false;
+      });
+      document.body.appendChild(drop);
+    }
+  }
+  window.rainCats = rainCats; // or just type the code
+})();
+</script>
+</body>
+</html>

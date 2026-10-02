@@ -1,0 +1,77 @@
+{
+  "commit": "996055f1e287bd6915e4a13cf8bc7acdca37e182",
+  "results": [
+    {
+      "mode": "Abstract motif",
+      "status": "Selected candidate 1/12 \u00b7 4 motif matches \u00b7 12 note types. Matching notes are highlighted in amber.",
+      "evaluated": [
+        {
+          "candidate": 1,
+          "note_types": 12,
+          "matches": 4
+        },
+        {
+          "candidate": 2,
+          "note_types": 9,
+          "matches": 0
+        },
+        {
+          "candidate": 3,
+          "note_types": 10,
+          "matches": 2
+        },
+        {
+          "candidate": 4,
+          "note_types": 11,
+          "matches": 2
+        },
+        {
+          "candidate": 5,
+          "note_types": 10,
+          "matches": 2
+        },
+        {
+          "candidate": 6,
+          "note_types": 7,
+          "matches": 0
+        },
+        {
+          "candidate": 7,
+          "note_types": 15,
+          "matches": 0
+        },
+        {
+          "candidate": 8,
+          "note_types": 9,
+          "matches": 1
+        },
+        {
+          "candidate": 9,
+          "note_types": 8,
+          "matches": 2
+        },
+        {
+          "candidate": 10,
+          "note_types": 12,
+          "matches": 2
+        },
+        {
+          "candidate": 11,
+          "note_types": 15,
+          "matches": 0
+        },
+        {
+          "candidate": 12,
+          "note_types": 6,
+          "matches": 2
+        }
+      ],
+      "winner": {
+        "candidate": 1,
+        "note_types": 12,
+        "matches": 4
+      },
+      "prefill": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n"
+    }
+  ]
+}

@@ -15,3 +15,43 @@ data/*.abc
 
 finetune/wandb/
 finetune/__pycache__/
+# --- added 2026-10-02 (cluster move) ---
+__pycache__/
+*.pyc
+.pytest_cache/
+.claude/settings.local.json
+
+# processed corpora and index backups (regenerate with scripts/run_*_data.sh)
+data/abcfiles_processed*/
+data/*.jsonl.bak*
+data/logs/
+
+# generated eval outputs and demo samples (executed copies live on scratch)
+notebook/motif_check_*/
+notebook/multilen_demo_out/
+notebook/multilen_trans_demo_out/
+notebook/sample_outputs/
+notebook/sample_outputs.zip
+exploratory/results/
+
+# model exports for the Space (rebuild with hf_space/prepare.py)
+hf_space/model.safetensors
+hf_space/model.safetensors.gz
+
+# training logs copied next to the code
+finetune/logs_*.txt
+
+# latex build artifacts and editor backups
+latex/*.aux
+latex/*.log
+latex/*.out
+latex/*.bbl
+latex/*.blg
+latex/build.log
+latex/compile.out
+latex/*.bak
+latex/*.disk.bak
+
+# stray local files
+/texput.log
+/synth_*_Bb.abc

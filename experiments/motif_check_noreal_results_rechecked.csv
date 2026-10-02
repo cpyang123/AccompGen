@@ -1,0 +1,6 @@
+model,bias,regime,n,generated_ok,emitted_motif_abc,realiz_ge1_n,realiz_ge1_pct,realiz_all_n,realiz_all_pct,body_n,body_pct,faithful_and_body,faithful_body_miss,unfaithful_body_hit,neither,job
+orig,2,False,50,50,50,27,54.0,27,54.0,42,84.0,25,2,17,6,11916571
+v1,2,False,50,50,50,20,40.0,20,40.0,38,76.0,15,5,23,7,11916570
+cropsyn,4,False,50,50,50,1,2.0,1,2.0,21,42.0,0,1,21,28,11916063
+irish10k,4,False,50,,,,,,,30,60.0,,,,,11916065*
+irish20k,4,False,50,,,,,,,26,52.0,,,,,11916066*

@@ -12,6 +12,12 @@ CHAR_NUM_LAYERS = 3                                             # Number of laye
 PATCH_NUM_LAYERS = 12                                           # Number of layers in the encoder
 HIDDEN_SIZE = 768                                               # Hidden Size
 
+# Backbone per level. "gpt2" reproduces the original NotaGen and loads legacy
+# checkpoints strict; see notagen_core.available_backbones() for alternatives.
+ENCODER_BACKBONE = "gpt2"
+DECODER_BACKBONE = "gpt2"
+MOTIF_ATTENTION_BIAS = 0.0                                       # pretraining has no motif conditioning
+
 # Configuration for the training
 BATCH_SIZE = 4         
 LEARNING_RATE = 1e-4   

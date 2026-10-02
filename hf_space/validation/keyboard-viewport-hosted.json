@@ -1,0 +1,26 @@
+{
+  "commit": "075a516a6e004056e35216420e9a74152fcec4d7",
+  "click_then_arrow_keys": true,
+  "help_collapsed": true,
+  "standalone_cat_bottom": 900,
+  "embedded_positions": [
+    {
+      "scroll": 0,
+      "cat_bottom": 900,
+      "screen_bottom": 900
+    },
+    {
+      "scroll": 350,
+      "cat_bottom": 900,
+      "screen_bottom": 900
+    },
+    {
+      "scroll": 850,
+      "cat_bottom": 900,
+      "screen_bottom": 900
+    }
+  ],
+  "mobile_cat_bottom": 700,
+  "page_errors": [],
+  "embed_scope": "Hosted app inside a controlled cross-origin frame matching a tall Space embed"
+}

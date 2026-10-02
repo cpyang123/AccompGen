@@ -1,19 +1,26 @@
 X:1
-%%score 1 { ( 2 4 ) | 3 }
+%%score 1 { 2 | 3 }
 L:1/8
-Q:1/4=90
-M:2/4
-K:G
-V:1 treble nm="Singstimme\nVoice"
-V:2 treble nm="Pianoforte"
-V:4 treble 
+Q:1/4=71
+M:3/8
+K:D
+V:1 treble nm="Voice"
+V:2 treble nm="Piano"
 V:3 bass 
-[V:1]G A|[V:2]GA|[V:3]B,A,|[V:4]x2|
-[V:1]B G c B|[V:2]BGcB|[V:3]G,B,A,G,|[V:4]x4|
-[V:1]B A B A|[V:2][GB][FA][GB][FA]|[V:3]D2 DC|[V:4]x4|
-[V:1]d G c B|[V:2][Gd]G[Fc][GB]|[V:3]B,B,A,G,|[V:4]x4|
-[V:1](BA) G B|[V:2]BAGB|[V:3]D2 B,G,|[V:4]F2 G2|
-[V:1]A F G E|[V:2][DA][DF][^CG][CE]|[V:3]F,D,E,G,|[V:4]x4|
-[V:1]E D c B|[V:2]EDcB|[V:3]G,F,A,G,|[V:4]CD D2|
-[V:1](A/e/) (c/A/) G F|[V:2](A/e/)(c/A/) [DG][DF]|[V:3]C2 D,D,|[V:4]E2 x2|
-[V:1]G2|][V:2]G2|][V:3]G,2|][V:4]B,2|]
+[V:1]"^Wehmuthig" F|[V:2]F|[V:3]z1|
+[V:1]d d c|[V:2][FBd][FBd][F^Ac]|[V:3]B,B,F,|
+[V:1]{c} B B B|[V:2]{c} [DFB][DFB][DFB]|[V:3]D,B,,B,,|
+[V:1]e e d|[V:2][Fce][Fce][FBd]|[V:3]^A,,A,,B,,|
+[V:1]d c F|[V:2][FBd][^Ac]F|[V:3]F,,F, z|
+[V:1]d d c|[V:2][FBd][FBd][F^Ac]|[V:3]B,B,F,|
+[V:1]{c} B B B|[V:2]{c} [DFB][DFB][DFB]|[V:3]D,B,,B,,|
+[V:1]c c/e/ d/c/|[V:2][Fc][Fc]/e/[Fd]/c/|[V:3]^A,,A,,A,,|
+[V:1]B2 d|[V:2][DB]2 d|[V:3]B,,2 z|
+[V:1]c c/ ^A/ B/ d/|[V:2][^Ac][Ac]/F/[Bd]/F/|[V:3]F,F,F,|
+[V:1]c c d|[V:2][^Ac][Ac][Bd]|[V:3]F,F,F,|
+[V:1]e e d|[V:2][ce][ce][Bd]|[V:3]F,F,^E,|
+[V:1]d c F|[V:2][Bd][^Ac]F|[V:3]F,F,, z|
+[V:1]d d c|[V:2][FBd][FBd][F^Ac]|[V:3]B,B,F,|
+[V:1]{c} B B B|[V:2]{c} [DFB][DFB][DFB]|[V:3]D,B,,B,,|
+[V:1]c c/e/ d/c/|[V:2][Gc][Gc]/e/[Fd]/c/|[V:3]E,E,F,|
+[V:1]B2|][V:2][DB]2|][V:3]B,,2|]

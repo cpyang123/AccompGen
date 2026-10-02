@@ -1,0 +1,73 @@
+{
+  "commit": "29c673de826ed7e9976c5ed2c11f9a83737c8c75",
+  "results": [
+    {
+      "mode": "Concrete notes",
+      "status": "No verified match in 12 candidates. No composition was accepted. Try more measures or a different style, then Generate again.",
+      "evaluated": [
+        {
+          "candidate": 1,
+          "note_types": 12,
+          "matches": 0
+        },
+        {
+          "candidate": 2,
+          "note_types": 8,
+          "matches": 0
+        },
+        {
+          "candidate": 3,
+          "note_types": 14,
+          "matches": 0
+        },
+        {
+          "candidate": 4,
+          "note_types": 11,
+          "matches": 0
+        },
+        {
+          "candidate": 5,
+          "note_types": 13,
+          "matches": 0
+        },
+        {
+          "candidate": 6,
+          "note_types": 12,
+          "matches": 0
+        },
+        {
+          "candidate": 7,
+          "note_types": 16,
+          "matches": 0
+        },
+        {
+          "candidate": 8,
+          "note_types": 12,
+          "matches": 0
+        },
+        {
+          "candidate": 9,
+          "note_types": 20,
+          "matches": 0
+        },
+        {
+          "candidate": 10,
+          "note_types": 12,
+          "matches": 0
+        },
+        {
+          "candidate": 11,
+          "note_types": 20,
+          "matches": 0
+        },
+        {
+          "candidate": 12,
+          "note_types": 16,
+          "matches": 0
+        }
+      ],
+      "winner": null,
+      "prefill": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n"
+    }
+  ]
+}

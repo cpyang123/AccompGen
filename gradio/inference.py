@@ -20,18 +20,13 @@ else:
 
 patchilizer = Patchilizer()
 
-patch_config = GPT2Config(num_hidden_layers=PATCH_NUM_LAYERS,
-                          max_length=PATCH_LENGTH,
-                          max_position_embeddings=PATCH_LENGTH,
-                          n_embd=HIDDEN_SIZE,
-                          num_attention_heads=HIDDEN_SIZE // 64,
-                          vocab_size=1)
-byte_config = GPT2Config(num_hidden_layers=CHAR_NUM_LAYERS,
-                         max_length=PATCH_SIZE + 1,
-                         max_position_embeddings=PATCH_SIZE + 1,
-                         hidden_size=HIDDEN_SIZE,
-                         num_attention_heads=HIDDEN_SIZE // 64,
-                         vocab_size=128)
+from notagen_core import build_notagen_configs
+patch_config, byte_config = build_notagen_configs(
+    encoder_backbone=ENCODER_BACKBONE, decoder_backbone=DECODER_BACKBONE,
+    patch_num_layers=PATCH_NUM_LAYERS, char_num_layers=CHAR_NUM_LAYERS,
+    hidden_size=HIDDEN_SIZE, patch_length=PATCH_LENGTH, patch_size=PATCH_SIZE,
+    motif_attention_bias=MOTIF_ATTENTION_BIAS,
+    patch_sampling_batch_size=PATCH_SAMPLING_BATCH_SIZE)
 
 model = NotaGenLMHeadModel(encoder_config=patch_config, decoder_config=byte_config).to(device)
 
@@ -185,12 +180,14 @@ def rest_unreduce(abc_lines):
     return unreduced_lines
 
 
-def inference_patch(period, composer, instrumentation):
+def inference_patch(period, composer, instrumentation, motif_pattern=None):
 
     prompt_lines=[
     '%' + period + '\n',
     '%' + composer + '\n',
     '%' + instrumentation + '\n']
+    if motif_pattern:
+        prompt_lines.append('%motif:v1:step_skip_leap: ' + motif_pattern + ' \n')
 
     while True:
 
@@ -211,6 +208,19 @@ def inference_patch(period, composer, instrumentation):
                           in prompt_patches]
         prompt_patches.insert(0, bos_patch)
 
+        # Matched-bias motif conditioning (mirrors training): every patch of a
+        # '%motif:' prompt line is flagged; flags are then maintained for
+        # generated patches (so the model's own emitted %motif:abc line is
+        # biased too) and rebuilt after stream recuts.
+        motif_weights = None
+        motif_flags_live = None
+        cur_motif_line = ''
+        if motif_pattern:
+            motif_flags_live = [False]  # bos patch
+            for _line in prompt_lines:
+                motif_flags_live += [_line.lstrip().startswith('%motif:')] * len(patchilizer.split_patches(_line))
+            motif_weights = torch.tensor([[3.0 if _f else 1.0 for _f in motif_flags_live]], device=device)
+
         input_patches = torch.tensor(prompt_patches, device=device).reshape(1, -1)
 
         end_flag = False
@@ -225,7 +235,8 @@ def inference_patch(period, composer, instrumentation):
                     predicted_patch = model.generate(input_patches.unsqueeze(0),
                                                     top_k=TOP_K,
                                                     top_p=TOP_P,
-                                                    temperature=TEMPERATURE)
+                                                    temperature=TEMPERATURE,
+                                                    motif_weights=motif_weights)
                 if not tunebody_flag and patchilizer.decode([predicted_patch]).startswith('[r:'):  # 初次进入tunebody，必须以[r:0/开头
                     tunebody_flag = True
                     r0_patch = torch.tensor([ord(c) for c in '[r:0/']).unsqueeze(0).to(device)
@@ -233,7 +244,8 @@ def inference_patch(period, composer, instrumentation):
                     predicted_patch = model.generate(temp_input_patches.unsqueeze(0),
                                                     top_k=TOP_K,
                                                     top_p=TOP_P,
-                                                    temperature=TEMPERATURE)
+                                                    temperature=TEMPERATURE,
+                                                    motif_weights=motif_weights)
                     predicted_patch = [ord(c) for c in '[r:0/'] + predicted_patch
                 if predicted_patch[0] == patchilizer.bos_token_id and predicted_patch[1] == patchilizer.eos_token_id:
                     end_flag = True
@@ -257,6 +269,12 @@ def inference_patch(period, composer, instrumentation):
 
                 predicted_patch = torch.tensor([predicted_patch], device=device)  # (1, 16)
                 input_patches = torch.cat([input_patches, predicted_patch], dim=1)  # (1, 16 * patch_len)
+
+                if motif_flags_live is not None:
+                    _flag_src = cur_motif_line if cur_motif_line else next_patch
+                    motif_flags_live.append(_flag_src.lstrip().startswith('%motif:'))
+                    cur_motif_line = next_patch.rsplit('\n', 1)[-1] if '\n' in next_patch else cur_motif_line + next_patch
+                    motif_weights = torch.tensor([[3.0 if _f else 1.0 for _f in motif_flags_live]], device=device)
 
                 if len(byte_list) > 102400:
                     failure_flag = True
@@ -289,7 +307,18 @@ def inference_patch(period, composer, instrumentation):
                     input_patches = torch.tensor([input_patches], device=device)
                     input_patches = input_patches.reshape(1, -1)
 
-                    context_tunebody_byte_list = list(''.join(context_tunebody_lines[-cut_index:]))
+                    if motif_flags_live is not None:
+                        # rebuild per-patch motif flags for the re-encoded context
+                        motif_flags_live = []
+                        cur_motif_line = ''
+                        for _pi in range(input_patches.shape[1] // PATCH_SIZE):
+                            _ptxt = patchilizer.decode([input_patches[0, _pi*PATCH_SIZE:(_pi+1)*PATCH_SIZE].tolist()])
+                            _flag_src = cur_motif_line if cur_motif_line else _ptxt
+                            motif_flags_live.append(_flag_src.lstrip().startswith('%motif:'))
+                            cur_motif_line = _ptxt.rsplit('\n', 1)[-1] if '\n' in _ptxt else cur_motif_line + _ptxt
+                        motif_weights = torch.tensor([[3.0 if _f else 1.0 for _f in motif_flags_live]], device=device)
+
+                    context_tunebody_byte_list = list(''.join(context_tunebody_liness[-cut_index:]))
 
             if not failure_flag:
                 abc_text = ''.join(byte_list)

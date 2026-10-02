@@ -66,26 +66,39 @@ class Patchilizer:
         return bytes
         
 
-    def patchilize_metadata(self, metadata_lines):
+    def patchilize_metadata(self, metadata_lines, return_weights=False):
 
         metadata_patches = []
+        patch_weights = []
         for line in metadata_lines:
-            if line.startswith('%motif:abc: '):
-                # The preamble '%motif:abc: ' should be patched as metadata text
+            is_motif = line.startswith('%motif:')
+            weight = MOTIF_LOSS_WEIGHT if is_motif else 1.0
+
+            abc_tag = re.match(r'^(%motif:(?:rhythm:)?abc(?::[a-z_]+)?: )', line)   # '%motif:abc: ', '%motif:abc:inversion_instance: ' or '%motif:rhythm:abc: '
+            if abc_tag:
+                # The preamble tag should be patched as metadata text
                 # But the actual abc notes following it should be patched as tunebody (using split_bars and then split_patches)
-                prefix = '%motif:abc: '
+                prefix = abc_tag.group(1)
                 abc_part = line[len(prefix):]
-                
+
                 # patch the prefix as metadata
-                metadata_patches += self.split_patches(prefix)
-                
+                prefix_patches = self.split_patches(prefix)
+                metadata_patches += prefix_patches
+                patch_weights += [weight] * len(prefix_patches)
+
                 # patch the abc part using tunebody logic (split into bars, then patches)
                 bars = self.split_bars([abc_part])
                 for bar in bars:
-                    metadata_patches += self.split_patches(bar)
+                    bar_patches = self.split_patches(bar)
+                    metadata_patches += bar_patches
+                    patch_weights += [weight] * len(bar_patches)
             else:
-                metadata_patches += self.split_patches(line)
+                line_patches = self.split_patches(line)
+                metadata_patches += line_patches
+                patch_weights += [weight] * len(line_patches)
 
+        if return_weights:
+            return metadata_patches, patch_weights
         return metadata_patches
     
     def patchilize_tunebody(self, tunebody_lines, encode_mode='train'):
@@ -123,22 +136,25 @@ class Patchilizer:
             tunebody_lines = ['[r:' + str(line_index) + '/' + str(len(tunebody_lines) - line_index - 1) + ']' + line for line_index, line in
                                 enumerate(tunebody_lines)]    
 
-        metadata_patches = self.patchilize_metadata(metadata_lines)
+        metadata_patches, metadata_weights = self.patchilize_metadata(metadata_lines, return_weights=True)
         tunebody_patches = self.patchilize_tunebody(tunebody_lines, encode_mode='train')
+        tunebody_weights = [1.0] * len(tunebody_patches)
 
         if add_special_patches:
             bos_patch = chr(self.bos_token_id) * (patch_size - 1) + chr(self.eos_token_id)
             eos_patch = chr(self.bos_token_id) + chr(self.eos_token_id) * (patch_size - 1)
 
             metadata_patches = [bos_patch] + metadata_patches
+            metadata_weights = [1.0] + metadata_weights
             tunebody_patches = tunebody_patches + [eos_patch]
+            tunebody_weights = tunebody_weights + [1.0]
 
         if self.stream:
             if len(metadata_patches) + len(tunebody_patches) > patch_length:
                 available_cut_indexes = [0] + [index + 1 for index, patch in enumerate(tunebody_patches) if '\n' in patch]
-                line_index_for_cut_index = list(range(len(available_cut_indexes)))  
+                line_index_for_cut_index = list(range(len(available_cut_indexes)))
                 end_index = len(metadata_patches) + len(tunebody_patches) - patch_length
-                biggest_index = bisect.bisect_left(available_cut_indexes, end_index) 
+                biggest_index = bisect.bisect_left(available_cut_indexes, end_index)
                 available_cut_indexes = available_cut_indexes[:biggest_index + 1]
 
                 if len(available_cut_indexes) == 1:
@@ -150,28 +166,32 @@ class Patchilizer:
                 choice = random.choice(choices)
                 if choice == 'head':
                     patches = metadata_patches + tunebody_patches[0:]
+                    weights = metadata_weights + tunebody_weights[0:]
                 else:
                     if choice == 'tail':
                         cut_index = len(available_cut_indexes) - 1
                     else:
                         cut_index = random.choice(range(1, len(available_cut_indexes) - 1))
 
-                    line_index = line_index_for_cut_index[cut_index] 
+                    line_index = line_index_for_cut_index[cut_index]
                     stream_tunebody_lines = tunebody_lines[line_index : ]
-                    
+
                     stream_tunebody_patches = self.patchilize_tunebody(stream_tunebody_lines, encode_mode='train')
                     if add_special_patches:
                         stream_tunebody_patches = stream_tunebody_patches + [eos_patch]
+                    stream_tunebody_weights = [1.0] * len(stream_tunebody_patches)
                     patches = metadata_patches + stream_tunebody_patches
+                    weights = metadata_weights + stream_tunebody_weights
             else:
                 patches = metadata_patches + tunebody_patches
+                weights = metadata_weights + tunebody_weights
         else:
             patches = metadata_patches + tunebody_patches
+            weights = metadata_weights + tunebody_weights
 
-        if cut: 
+        if cut:
             patches = patches[ : patch_length]
-        else:  
-            pass
+            weights = weights[ : patch_length]
 
         # encode to ids
         id_patches = []
@@ -179,7 +199,7 @@ class Patchilizer:
             id_patch = [ord(c) for c in patch] + [self.special_token_id] * (patch_size - len(patch))
             id_patches.append(id_patch)
 
-        return id_patches
+        return id_patches, weights
 
     def encode_generate(self, abc_code, patch_length=PATCH_LENGTH, patch_size=PATCH_SIZE, add_special_patches=True):
 
@@ -234,210 +254,14 @@ class Patchilizer:
         """
         return ''.join(self.patch2chars(patch) for patch in patches)
 
-        
 
-
-class PatchLevelDecoder(PreTrainedModel):
-    """
-    A Patch-level Decoder model for generating patch features in an auto-regressive manner. 
-    It inherits PreTrainedModel from transformers.
-    """
-    def __init__(self, config):
-        super().__init__(config)
-        self.patch_embedding = torch.nn.Linear(PATCH_SIZE * 128, config.n_embd)
-        torch.nn.init.normal_(self.patch_embedding.weight, std=0.02)
-        self.base = GPT2Model(config)
-
-    def forward(self,
-                patches: torch.Tensor,
-                masks=None) -> torch.Tensor:
-        """
-        The forward pass of the patch-level decoder model.
-        :param patches: the patches to be encoded
-        :param masks: the masks for the patches
-        :return: the encoded patches
-        """
-        patches = torch.nn.functional.one_hot(patches, num_classes=128).to(self.dtype)
-        patches = patches.reshape(len(patches), -1, PATCH_SIZE * (128))
-        patches = self.patch_embedding(patches.to(self.device))
-
-        if masks==None:
-            return self.base(inputs_embeds=patches)
-        else:
-            return self.base(inputs_embeds=patches,
-                             attention_mask=masks)
-
-
-class CharLevelDecoder(PreTrainedModel):
-    """
-    A Char-level Decoder model for generating the chars within each patch in an auto-regressive manner
-    based on the encoded patch features. It inherits PreTrainedModel from transformers.
-    """
-    def __init__(self, config):
-        super().__init__(config)
-        self.special_token_id = 0
-        self.bos_token_id = 1
-
-        self.base = GPT2LMHeadModel(config)
-
-    def forward(self,
-                encoded_patches: torch.Tensor,
-                target_patches: torch.Tensor):
-        """
-        The forward pass of the char-level decoder model.
-        :param encoded_patches: the encoded patches
-        :param target_patches: the target patches
-        :return: the output of the model
-        """
-        # preparing the labels for model training
-        target_patches = torch.cat((torch.ones_like(target_patches[:,0:1])*self.bos_token_id, target_patches), dim=1)
-        # print('target_patches shape:', target_patches.shape)
-
-        target_masks = target_patches == self.special_token_id
-        labels = target_patches.clone().masked_fill_(target_masks, -100)
-
-        # masking the labels for model training
-        target_masks = torch.ones_like(labels)
-        target_masks = target_masks.masked_fill_(labels == -100, 0)
-
-        # select patches
-        if PATCH_SAMPLING_BATCH_SIZE!=0 and PATCH_SAMPLING_BATCH_SIZE<target_patches.shape[0]:
-            indices = list(range(len(target_patches)))
-            random.shuffle(indices)
-            selected_indices = sorted(indices[:PATCH_SAMPLING_BATCH_SIZE])
-
-            target_patches = target_patches[selected_indices,:]
-            target_masks = target_masks[selected_indices,:]
-            encoded_patches = encoded_patches[selected_indices,:]
-
-        # get input embeddings
-        inputs_embeds = torch.nn.functional.embedding(target_patches, self.base.transformer.wte.weight)
-
-        # concatenate the encoded patches with the input embeddings
-        inputs_embeds = torch.cat((encoded_patches.unsqueeze(1), inputs_embeds[:,1:,:]), dim=1)
-
-        output = self.base(inputs_embeds=inputs_embeds, 
-                         attention_mask=target_masks,
-                         labels=labels)
-                         # output_hidden_states=True=True)
-
-        return output
-
-    def generate(self,
-                 encoded_patch: torch.Tensor,   # [hidden_size]
-                 tokens: torch.Tensor): # [1]
-        """
-        The generate function for generating a patch based on the encoded patch and already generated tokens.
-        :param encoded_patch: the encoded patch
-        :param tokens: already generated tokens in the patch
-        :return: the probability distribution of next token
-        """
-        encoded_patch = encoded_patch.reshape(1, 1, -1) # [1, 1, hidden_size]
-        tokens = tokens.reshape(1, -1)
-
-        # Get input embeddings
-        tokens = torch.nn.functional.embedding(tokens, self.base.transformer.wte.weight)
-
-        # Concatenate the encoded patch with the input embeddings
-        tokens = torch.cat((encoded_patch, tokens[:,1:,:]), dim=1)
-        
-        # Get output from model
-        outputs = self.base(inputs_embeds=tokens)
-        
-        # Get probabilities of next token
-        probs = torch.nn.functional.softmax(outputs.logits.squeeze(0)[-1], dim=-1)
-
-        return probs
-
-def safe_normalize_probs(probs):
-    epsilon = 1e-12
-    probs = np.array(probs, dtype=np.float64)
-    probs = np.where(np.isnan(probs) | (probs < 0), 0, probs)
-    probs = probs + epsilon
-    s = probs.sum()
-    if s > 0:
-        probs = probs / s
-    else:
-        probs = np.zeros_like(probs)
-        probs[0] = 1.0
-    return probs
-
-class NotaGenLMHeadModel(PreTrainedModel):
-    """
-    NotaGen is a language model with a hierarchical structure.
-    It includes a patch-level decoder and a char-level decoder.
-    The patch-level decoder is used to generate patch features in an auto-regressive manner.
-    The char-level decoder is used to generate the chars within each patch in an auto-regressive manner.
-    It inherits PreTrainedModel from transformers.
-    """
-    def __init__(self, encoder_config, decoder_config):
-        super().__init__(encoder_config)
-        self.special_token_id = 0
-        self.bos_token_id = 1
-        self.eos_token_id = 2
-        self.patch_level_decoder = PatchLevelDecoder(encoder_config)
-        self.char_level_decoder = CharLevelDecoder(decoder_config)
-
-    def forward(self,
-                patches: torch.Tensor,
-                masks: torch.Tensor):
-        """
-        The forward pass of the bGPT model.
-        :param patches: the patches to be encoded
-        :param masks: the masks for the patches
-        :return: the decoded patches
-        """
-        patches = patches.reshape(len(patches), -1, PATCH_SIZE)
-
-        #[TODO]: Find the motifs here and add weights to them in the pathes, then send them to forward
-        encoded_patches = self.patch_level_decoder(patches, masks)["last_hidden_state"]
-        
-        left_shift_masks = masks * (masks.flip(1).cumsum(1).flip(1) > 1)
-        masks[:, 0] = 0
-        
-        encoded_patches = encoded_patches[left_shift_masks == 1]
-        patches = patches[masks == 1]        
-
-        return self.char_level_decoder(encoded_patches, patches)
-        
-    def generate(self,
-                 patches: torch.Tensor,
-                 top_k=0,
-                 top_p=1,
-                 temperature=1.0):
-        """
-        The generate function for generating patches based on patches.
-        :param patches: the patches to be encoded
-        :param top_k: the top k for sampling
-        :param top_p: the top p for sampling
-        :param temperature: the temperature for sampling
-        :return: the generated patches
-        """
-        if patches.shape[-1] % PATCH_SIZE != 0:
-            tokens = patches[:,:,-(patches.shape[-1]%PATCH_SIZE):].squeeze(0, 1)
-            tokens = torch.cat((torch.tensor([self.bos_token_id], device=self.device), tokens), dim=-1)
-            patches = patches[:,:,:-(patches.shape[-1]%PATCH_SIZE)]
-        else:
-            tokens =  torch.tensor([self.bos_token_id], device=self.device)
-
-        patches = patches.reshape(len(patches), -1, PATCH_SIZE) # [bs, seq, patch_size]
-        encoded_patches = self.patch_level_decoder(patches)["last_hidden_state"]    # [bs, seq, hidden_size]
-        generated_patch = []            
-
-        while True:
-            prob = self.char_level_decoder.generate(encoded_patches[0][-1], tokens).cpu().detach().numpy()  # [128]
-            prob = safe_normalize_probs(prob)
-            prob = top_k_sampling(prob, top_k=top_k, return_probs=True) # [128]
-            prob = safe_normalize_probs(prob)
-            prob = top_p_sampling(prob, top_p=top_p, return_probs=True) # [128]
-            prob = safe_normalize_probs(prob)
-            token = temperature_sampling(prob, temperature=temperature) # int
-            char = chr(token)
-            generated_patch.append(token)
-
-            if len(tokens) >= PATCH_SIZE:# or token == self.eos_token_id:
-                break
-            else:
-                tokens = torch.cat((tokens, torch.tensor([token], device=self.device)), dim=0)
-        
-        return generated_patch
+# ── Centralized, backbone-agnostic model classes ─────────────────────────────
+# PatchLevelDecoder / CharLevelDecoder / NotaGenLMHeadModel now live in the
+# shared notagen_core package, so a new backbone (gpt2, llama, ...) can be
+# dropped in purely via config (ENCODER_BACKBONE / DECODER_BACKBONE). The
+# Patchilizer above intentionally stays per-directory.
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from notagen_core import (  # noqa: E402,F401
+    PatchLevelDecoder, CharLevelDecoder, NotaGenLMHeadModel, safe_normalize_probs,
+)

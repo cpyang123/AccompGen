@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"from abctoolkit.transpose import Note2pitch; print\\(sorted\\(Note2pitch.keys\\(\\)\\)\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python3)"
+    ],
+    "additionalDirectories": [
+      "/home/users/cy232/Music_Research/AccompGen/notebook"
+    ]
+  }
+}

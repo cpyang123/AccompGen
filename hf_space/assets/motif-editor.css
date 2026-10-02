@@ -1,0 +1,73 @@
+#motif-editor{background:#fffdf7;border:1px solid #d9ccb8;border-radius:4px;padding:18px;color:#3d342a;font:14px system-ui;min-width:0}
+#motif-editor [hidden]{display:none!important}
+#motif-editor button,#motif-editor select{font:inherit;color:inherit;border:1px solid #d5c7b1;border-radius:3px;background:#fffdf7;padding:8px 10px;cursor:pointer;min-height:38px;touch-action:manipulation}
+#motif-editor button:hover{background:#f0e6d5}#motif-editor button:focus-visible,#motif-editor select:focus-visible,#motif-editor [tabindex]:focus-visible{outline:3px solid #9b7135;outline-offset:2px}
+#motif-editor select{appearance:auto;padding-right:22px}
+#motif-editor button:disabled,#motif-editor select:disabled{opacity:.45;cursor:default}
+#motif-editor .me-tabs{display:flex;gap:6px;background:#eee5d6;padding:4px;border-radius:3px;margin-bottom:18px}
+#motif-editor .me-tabs button{flex:1;border:0;background:transparent;font-weight:500}
+#motif-editor .me-tabs button[aria-selected=true]{background:#51412e;color:white;box-shadow:0 2px 5px #49392312}
+#motif-editor .me-heading{display:flex;align-items:center;gap:10px;font-weight:500}
+#motif-editor .me-help{color:#786952;font-size:13px;line-height:1.55;margin:10px 0}
+#me-contour{display:block;width:100%;background:#f7f1e5;border-radius:3px;margin:12px 0}
+#motif-editor .me-presets{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px}
+#motif-editor .me-palette{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+#motif-editor .me-palette button{display:flex;flex-direction:column;align-items:center;min-width:44px;padding:5px 9px;touch-action:none;user-select:none}
+#motif-editor .me-palette button span{height:28px;font-size:25px;line-height:28px}#motif-editor .me-palette small{font-size:10px}
+#motif-editor .me-palette button[aria-pressed=true]{border-color:#51412e;background:#eee0c6;color:#51412e}
+#motif-editor .me-dot{display:flex;align-items:center;gap:4px;margin-left:4px;font-size:12px;cursor:pointer}
+#motif-editor .me-staff-scroll{overflow-x:auto;margin:12px -4px 8px;border:1px solid #dfd3c0;border-radius:3px;background:#fffdf7}
+#me-staff{display:block;width:100%;min-width:600px;touch-action:none;user-select:none}
+#me-staff [data-note]{cursor:grab}#me-staff [data-note]:active{cursor:grabbing}
+#motif-editor .me-staff-navigation{display:flex;align-items:center;gap:6px;margin:-3px 0 12px;font-size:12px;color:#786952}#motif-editor .me-staff-navigation span{flex:1}#motif-editor .me-staff-navigation button{padding:3px 12px;min-height:30px}
+#motif-editor .me-toolbar{display:flex;gap:5px;flex-wrap:wrap}#motif-editor .me-toolbar button{font-size:12px;padding:6px 8px}
+#motif-editor .me-properties{display:flex;gap:12px;flex-wrap:wrap}#motif-editor .me-properties label{display:flex;gap:6px;align-items:center;font-size:12px}
+#me-note-status{font-size:13px;margin:9px 0;color:#665235}#me-note-status[data-invalid=true]{color:#943e2a}
+#me-contour{touch-action:none;user-select:none}
+#me-contour [data-point]{cursor:grab;outline:none}#me-contour [data-point]:active{cursor:grabbing}
+#me-contour [data-point]:focus-visible .me-point{stroke:#9b7135;stroke-width:4}
+#motif-editor .me-properties{margin-top:14px}
+@media(max-width:700px){#motif-editor{padding:12px}#motif-editor select{min-width:0;padding:8px 5px}}
+
+/* Same walking cat as the motif sample site. */
+#motigen-cat-lane{position:fixed;bottom:0;left:0;right:0;height:40px;overflow:hidden;pointer-events:none;z-index:90}
+  .cat-walker {
+    position: absolute; bottom: -2px; left: 0; z-index: 90;
+    pointer-events: none; user-select: none; color: #3d342a; opacity: .9;
+  }
+  .cat-walker.ltr { animation: cat-cross-ltr var(--cat-dur, 24s) linear forwards; }
+  .cat-walker.rtl { animation: cat-cross-rtl var(--cat-dur, 24s) linear forwards; }
+  .cat-walker.rtl svg { transform: scaleX(-1); }
+  .cat-walker svg { display: block; width: 56px; height: auto; }
+  .cat-walker .cat-bob { animation: cat-bob .5s ease-in-out infinite; }
+  .cat-walker .leg {
+    transform-box: fill-box; transform-origin: top center;
+    animation: cat-leg .5s ease-in-out infinite;
+  }
+  .cat-walker .leg.off { animation-delay: -.25s; }
+  .cat-walker .tail {
+    transform-box: fill-box; transform-origin: bottom right;
+    animation: cat-tail 1.6s ease-in-out infinite;
+  }
+  @keyframes cat-cross-ltr { from { transform: translateX(-70px); } to { transform: translateX(var(--cat-width,100vw)); } }
+  @keyframes cat-cross-rtl { from { transform: translateX(var(--cat-width,100vw)); } to { transform: translateX(-70px); } }
+  @keyframes cat-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.5px); } }
+  @keyframes cat-leg { 0%, 100% { transform: rotate(16deg); } 50% { transform: rotate(-16deg); } }
+  @keyframes cat-tail { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(7deg); } }
+
+@media(prefers-reduced-motion:reduce){#motigen-cat-lane{display:none}}
+
+#me-staff [data-bar-after]{cursor:pointer}
+#me-staff [data-bar-after]:hover .me-bar-stroke,#me-staff [data-bar-after]:focus-visible .me-bar-stroke{stroke:#95652a;stroke-width:3}
+
+#motif-editor .me-help-panel{margin-top:10px;font-size:12px;color:#786952}
+#motif-editor .me-help-panel summary{cursor:pointer;width:fit-content}
+#motif-editor .me-help-panel p{margin:6px 0;line-height:1.5}
+#me-selection:empty{display:none}
+
+#motif-editor .me-tabs button{font-size:13px;letter-spacing:.1px;}
+#motif-editor .me-heading{font-size:13px;}
+#motif-editor .me-presets{margin-top:12px;padding-top:12px;border-top:1px solid #e3d8c5;}
+#motif-editor .me-help-panel{border-top:1px solid #e7ddcc;padding-top:10px;}
+#motif-editor .me-dot input{accent-color:#92713e;}
+#motif-editor .me-palette button[aria-pressed=true]{box-shadow:inset 0 -2px #a18150;}

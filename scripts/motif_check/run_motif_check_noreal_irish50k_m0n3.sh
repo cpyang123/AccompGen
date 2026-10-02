@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH -p compsci-gpu
+#SBATCH --gres=gpu:a5000:1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=24G
+#SBATCH --time=2:00:00
+#SBATCH --output=slurm_logs/motifcheck_noreal_irish50k_m0n3-%j.out
+#SBATCH --error=slurm_logs/motifcheck_noreal_irish50k_m0n3-%j.err
+set -eo pipefail
+eval "$(mamba shell hook --shell bash)"
+mamba activate notagen
+cd notebook/
+jupyter nbconvert --to notebook --execute --allow-errors \
+    --ExecutePreprocessor.timeout=4800 \
+    --output /usr/xtmp/cy232/accompgen/motifcheck_out/motif_check_noreal_irish50k_m0n3_executed_${SLURM_JOB_ID}.ipynb \
+    motif_check_noreal_irish50k_m0n3.ipynb
+echo "EXECUTED_NB=/usr/xtmp/cy232/accompgen/motifcheck_out/motif_check_noreal_irish50k_m0n3_executed_${SLURM_JOB_ID}.ipynb"

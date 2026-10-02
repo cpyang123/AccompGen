@@ -1,0 +1,38 @@
+{
+ "new": {
+  "g005": "0,-1,-1,1",
+  "g008": "0,-1,-2,-1",
+  "g012": "0,-1,-1,-2",
+  "g020": "0,-1,1,-1",
+  "g007": "0,1,1,-2",
+  "g010": "0,-3,3,-3"
+ },
+ "bands": {
+  "A": "1-10",
+  "B": "11-40",
+  "C": "41+"
+ },
+ "seed": 20260809,
+ "note": "Reported bands, 8 each (24 total): A_report = the eight most frequent patterns excluding the (0,1,1,1) emission anomaly (ranks 1,3,4,5,6,7,8,9; rank 7 = its replacement, rank 10 evaluated but unreported); B = the 8 evaluated in ranks 11-40; C_report = seeded 8 of the 12 evaluated rank-41+.",
+ "C_report": [
+  "0,2,1,-1",
+  "0,3,-2,-2",
+  "0,3,-3,2",
+  "0,-3,1,1",
+  "0,-1,3,-1",
+  "0,1,-3,1",
+  "0,-3,2,1",
+  "0,3,3,-3"
+ ],
+ "C_report_seed": 20260810,
+ "A_report": [
+  "0,-1,-1,-1",
+  "0,1,-1,-1",
+  "0,1,1,-1",
+  "0,-1,-1,1",
+  "0,-1,1,1",
+  "0,1,1,-2",
+  "0,-1,-2,-1",
+  "0,3,-3,3"
+ ]
+}

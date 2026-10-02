@@ -48,18 +48,23 @@ batch_size = BATCH_SIZE
 
 patchilizer = Patchilizer()
 
-patch_config = GPT2Config(num_hidden_layers=PATCH_NUM_LAYERS, 
-                    max_length=PATCH_LENGTH, 
-                    max_position_embeddings=PATCH_LENGTH,
-                    n_embd=HIDDEN_SIZE,
-                    num_attention_heads=HIDDEN_SIZE//64,
-                    vocab_size=1)
-char_config = GPT2Config(num_hidden_layers=CHAR_NUM_LAYERS, 
-                            max_length=PATCH_SIZE+1, 
-                            max_position_embeddings=PATCH_SIZE+1,
-                            hidden_size=HIDDEN_SIZE,
-                            num_attention_heads=HIDDEN_SIZE//64,
-                            vocab_size=128)
+from notagen_core import build_notagen_configs
+if USE_STAGE1_STUDENT:
+    # Stage 2 with the distilled wider patch encoder; char decoder stays 1280.
+    patch_config, char_config = build_notagen_configs(
+        encoder_backbone=STUDENT_ENCODER_BACKBONE, decoder_backbone=DECODER_BACKBONE,
+        patch_num_layers=STUDENT_PATCH_NUM_LAYERS, char_num_layers=CHAR_NUM_LAYERS,
+        hidden_size=HIDDEN_SIZE, encoder_hidden_size=STUDENT_HIDDEN_SIZE,
+        patch_length=PATCH_LENGTH, patch_size=PATCH_SIZE,
+        motif_attention_bias=MOTIF_ATTENTION_BIAS,
+        patch_sampling_batch_size=PATCH_SAMPLING_BATCH_SIZE)
+else:
+    patch_config, char_config = build_notagen_configs(
+        encoder_backbone=ENCODER_BACKBONE, decoder_backbone=DECODER_BACKBONE,
+        patch_num_layers=PATCH_NUM_LAYERS, char_num_layers=CHAR_NUM_LAYERS,
+        hidden_size=HIDDEN_SIZE, patch_length=PATCH_LENGTH, patch_size=PATCH_SIZE,
+        motif_attention_bias=MOTIF_ATTENTION_BIAS,
+        patch_sampling_batch_size=PATCH_SAMPLING_BATCH_SIZE)
 
 model = NotaGenLMHeadModel(encoder_config=patch_config, decoder_config=char_config)
 
@@ -114,20 +119,22 @@ def clear_unused_tensors():
         torch.cuda.empty_cache()  # Clear the CUDA cache
 
 def collate_batch(input_batches):
-    
-    input_patches, input_masks = zip(*input_batches)
+
+    input_patches, input_masks, input_weights = zip(*input_batches)
     input_patches = torch.nn.utils.rnn.pad_sequence(input_patches, batch_first=True, padding_value=0)
     input_masks = torch.nn.utils.rnn.pad_sequence(input_masks, batch_first=True, padding_value=0)
+    input_weights = torch.nn.utils.rnn.pad_sequence(input_weights, batch_first=True, padding_value=1.0)
 
-    return input_patches.to(device), input_masks.to(device)
+    return input_patches.to(device), input_masks.to(device), input_weights.to(device)
 
-def split_into_minibatches(input_patches, input_masks, minibatch_size):
+def split_into_minibatches(input_patches, input_masks, input_weights, minibatch_size):
     minibatches = []
     for start_idx in range(0, len(input_patches), minibatch_size):
         end_idx = start_idx + minibatch_size
         minibatch_patches = input_patches[start_idx:end_idx]
         minibatch_masks = input_masks[start_idx:end_idx]
-        minibatches.append((minibatch_patches, minibatch_masks))
+        minibatch_weights = input_weights[start_idx:end_idx]
+        minibatches.append((minibatch_patches, minibatch_masks, minibatch_weights))
     return minibatches
 
 class NotaGenDataset(Dataset):
@@ -167,18 +174,20 @@ class NotaGenDataset(Dataset):
         with open(des_filepath, 'r', encoding='utf-8') as f:
             abc_text = f.read()
 
-        file_bytes = patchilizer.encode_train(abc_text)
+        file_bytes, file_weights = patchilizer.encode_train(abc_text)
         file_masks = [1] * len(file_bytes)
 
         file_bytes = torch.tensor(file_bytes, dtype=torch.long)
         file_masks = torch.tensor(file_masks, dtype=torch.long)
-        
-        return file_bytes, file_masks
+        file_weights = torch.tensor(file_weights, dtype=torch.float)
+
+        return file_bytes, file_masks, file_weights
 
 
-def process_one_batch(batch):
-    input_patches, input_masks = batch
-    loss = model(input_patches, input_masks).loss
+def process_one_batch(batch, use_weights=False):
+    input_patches, input_masks, motif_weights = batch
+    weights = motif_weights if use_weights else None
+    loss = model(input_patches, input_masks, weights).loss
 
     # Reduce the loss on GPU 0
     if world_size > 1:
@@ -191,7 +200,7 @@ def process_one_batch(batch):
 
 
 # do one epoch for training
-def train_epoch(epoch, train_loader, global_step_offset=0):
+def train_epoch(epoch, train_loader, global_step_offset=0, use_motif_weights=False):
     tqdm_train_set = tqdm(train_loader)
     total_train_loss = 0
     iter_idx = 1
@@ -199,10 +208,10 @@ def train_epoch(epoch, train_loader, global_step_offset=0):
     train_steps = global_step_offset + (epoch - 1) * len(train_loader)
 
     for batch in tqdm_train_set:
-        minibatches = split_into_minibatches(batch[0], batch[1], BATCH_SIZE//ACCUMULATION_STEPS)
+        minibatches = split_into_minibatches(batch[0], batch[1], batch[2], BATCH_SIZE//ACCUMULATION_STEPS)
         for minibatch in minibatches:
             with autocast():
-                loss = process_one_batch(minibatch) / ACCUMULATION_STEPS
+                loss = process_one_batch(minibatch, use_weights=use_motif_weights) / ACCUMULATION_STEPS
             scaler.scale(loss).backward()
             total_train_loss += loss.item()
         scaler.step(optimizer)
@@ -234,19 +243,25 @@ def make_dataloader(files):
     return loader, sampler
 
 # do one epoch for eval
-def eval_epoch(eval_loader):
+def eval_epoch(eval_loader, use_motif_weights=False):
     tqdm_eval_set = tqdm(eval_loader)
     total_eval_loss = 0
     total_eval_bpb = 0
     iter_idx = 1
     model.eval()
 
-    # Evaluate data for one epoch
+    # Evaluate data for one epoch. Pass `use_motif_weights` so eval runs the model in
+    # the SAME configuration it was trained in for this phase: motif_weights only gate
+    # the motif attention bias (the loss is unweighted CE regardless), so with the real
+    # phase (use_motif_weights=True) the bias is applied during eval — matching both
+    # real-phase training and inference (generate() always applies the bias). Evaluating
+    # bias-OFF a model that is trained and deployed bias-ON makes the eval loss drift up
+    # as the weights co-adapt to the bias, which is not a real regression.
     for batch in tqdm_eval_set:
-        minibatches = split_into_minibatches(batch[0], batch[1], BATCH_SIZE//ACCUMULATION_STEPS)
+        minibatches = split_into_minibatches(batch[0], batch[1], batch[2], BATCH_SIZE//ACCUMULATION_STEPS)
         for minibatch in minibatches:
             with torch.no_grad():
-                loss = process_one_batch(minibatch) / ACCUMULATION_STEPS
+                loss = process_one_batch(minibatch, use_weights=use_motif_weights) / ACCUMULATION_STEPS
             total_eval_loss += loss.item()
         tqdm_eval_set.set_postfix({str(global_rank)+'_eval_loss': total_eval_loss / iter_idx})
         iter_idx += 1
@@ -257,7 +272,7 @@ if __name__ == "__main__":
 
     # Initialize wandb
     if WANDB_LOGGING and global_rank==0:
-        wandb.login(key=WANDB_KEY)
+        wandb.login(key=WANDB_KEY or None)
         wandb.init(project="notagen",
                    entity="SchenkerDiff",
                    name=WANDB_NAME)
@@ -287,15 +302,63 @@ if __name__ == "__main__":
     random.shuffle(real_train_files)
     random.shuffle(eval_files)
 
-    eval_set, eval_sampler = make_dataloader(eval_files)
+    # Evaluate each phase on data matched to what it trains on, so the eval loss is
+    # comparable to the training distribution within a phase. Without this split the
+    # synthetic phase would be scored on the full (mostly-synthetic) eval set while the
+    # real phase is scored on real-only, so the eval curve jumps at the phase boundary
+    # purely because the eval set's composition changed — not because the model regressed.
+    synthetic_eval_files = [f for f in eval_files if "synthetic" in f["path"]]
+    real_eval_files      = [f for f in eval_files if "synthetic" not in f["path"]]
+    print(f"Eval split — synthetic: {len(synthetic_eval_files)}, real: {len(real_eval_files)}")
+
+    # Phase 1 (synthetic) is evaluated on synthetic-only eval data.
+    if synthetic_eval_files:
+        eval_set, eval_sampler = make_dataloader(synthetic_eval_files)
+    else:
+        print("Warning: no synthetic eval files found, using full eval set for synthetic phase")
+        eval_set, eval_sampler = make_dataloader(eval_files)
 
     lr_scheduler = get_constant_schedule_with_warmup(optimizer=optimizer, num_warmup_steps=1000)
 
     model = model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
 
+    def assemble_stage2_state_dict():
+        """Initial weights for Stage 2 with the distilled student: patch encoder +
+        projection from the Stage-1 student, char decoder from the teacher."""
+        student_file = os.path.join(STAGE1_STUDENT_PATH, "student_encoder.pt")
+        if not os.path.exists(student_file):
+            raise Exception(f"Stage-1 student not found at {student_file}. Run distillation/distill_patch_encoder.py first.")
+        student_sd = torch.load(student_file, map_location='cpu')
+        teacher_sd = torch.load(PRETRAINED_PATH, map_location='cpu')['model']
+        new_sd = {}
+        for k, v in student_sd.items():
+            if k.startswith('encoder.'):
+                new_sd['patch_level_decoder.' + k[len('encoder.'):]] = v
+            elif k.startswith('proj.'):
+                new_sd['patch_proj.' + k[len('proj.'):]] = v
+        for k, v in teacher_sd.items():
+            if k.startswith('char_level_decoder.'):
+                new_sd[k] = v
+        return new_sd
+
     if not LOAD_FROM_CHECKPOINT:
-        if os.path.exists(PRETRAINED_PATH):
+        if USE_STAGE1_STUDENT:
+            new_sd = assemble_stage2_state_dict()
+            if torch.cuda.device_count() > 1:
+                cpu_model = deepcopy(model.module)
+                cpu_model.load_state_dict(new_sd)
+                model.module.load_state_dict(cpu_model.state_dict())
+            else:
+                cpu_model = deepcopy(model)
+                cpu_model.load_state_dict(new_sd)
+                model.load_state_dict(cpu_model.state_dict())
+            print(f"Initialized Stage 2 from distilled student ({STUDENT_ENCODER_BACKBONE} "
+                  f"L{STUDENT_PATCH_NUM_LAYERS} h{STUDENT_HIDDEN_SIZE}) + teacher char decoder")
+            pre_epoch = 0
+            best_epoch = 0
+            min_eval_loss = 100
+        elif os.path.exists(PRETRAINED_PATH):
             # Load pre-trained checkpoint to CPU
             checkpoint = torch.load(PRETRAINED_PATH, map_location='cpu')
 
@@ -330,8 +393,14 @@ if __name__ == "__main__":
                 cpu_model = deepcopy(model)
                 cpu_model.load_state_dict(checkpoint['model'])
                 model.load_state_dict(cpu_model.state_dict())
-            optimizer.load_state_dict(checkpoint['optimizer'])
-            lr_scheduler.load_state_dict(checkpoint['lr_sched'])
+            _lora_resume = None
+            if USE_LORA:
+                # LoRA checkpoints hold merged weights under 'model'; a resume re-applies
+                # the adapter ('lora') on top of the PRETRAINED base instead (see below).
+                _lora_resume = {k: checkpoint[k] for k in ('lora', 'optimizer', 'lr_sched')}
+            else:
+                optimizer.load_state_dict(checkpoint['optimizer'])
+                lr_scheduler.load_state_dict(checkpoint['lr_sched'])
             pre_epoch = checkpoint['epoch']
             best_epoch = checkpoint['best_epoch']
             min_eval_loss = checkpoint['min_eval_loss']
@@ -342,7 +411,55 @@ if __name__ == "__main__":
             raise Exception('Checkpoint not found to continue training. Please check your parameter settings.')
 
 
-    def run_phase(phase_name, phase_files, num_epochs, epoch_offset, global_step_offset, best_epoch, min_eval_loss):
+    if USE_LORA:
+        from peft import LoraConfig, get_peft_model, get_peft_model_state_dict, set_peft_model_state_dict
+        if world_size > 1:
+            raise Exception('USE_LORA is single-GPU only (the peft wrapper is applied to the bare model)')
+        if LOAD_FROM_CHECKPOINT:
+            # base = pretrained weights; the saved adapter is re-applied on top
+            base_sd = torch.load(PRETRAINED_PATH, map_location='cpu')['model']
+            model.load_state_dict(base_sd)
+            del base_sd
+        lora_cfg = LoraConfig(r=LORA_R, lora_alpha=LORA_ALPHA, lora_dropout=LORA_DROPOUT,
+                              target_modules=LORA_TARGET_MODULES, bias='none',
+                              fan_in_fan_out=True)   # GPT2 Conv1D stores (in, out)
+        model = get_peft_model(model, lora_cfg)
+        model.print_trainable_parameters()
+        optimizer = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=LEARNING_RATE)
+        lr_scheduler = get_constant_schedule_with_warmup(optimizer=optimizer, num_warmup_steps=1000)
+        if LOAD_FROM_CHECKPOINT and _lora_resume is not None:
+            set_peft_model_state_dict(model, _lora_resume['lora'])
+            optimizer.load_state_dict(_lora_resume['optimizer'])
+            lr_scheduler.load_state_dict(_lora_resume['lr_sched'])
+            _lora_resume = None
+            print('Re-applied LoRA adapter + optimizer state from checkpoint')
+
+    def plain_state_dict():
+        """Full weights under the ORIGINAL key names (merged with the adapter when
+        training LoRA), so notebook/multilen_gen.py & co. load checkpoints unchanged."""
+        if not USE_LORA:
+            return model.module.state_dict() if hasattr(model, "module") else model.state_dict()
+        merged = deepcopy(model).merge_and_unload()
+        sd = {k: v.detach().cpu() for k, v in merged.state_dict().items()}
+        del merged
+        torch.cuda.empty_cache()
+        return sd
+
+    def load_saved_weights(checkpoint):
+        """Restore a checkpoint written by this script into the live model."""
+        if USE_LORA:
+            set_peft_model_state_dict(model, checkpoint['lora'])
+            return
+        if torch.cuda.device_count() > 1:
+            cpu_model = deepcopy(model.module)
+            cpu_model.load_state_dict(checkpoint['model'])
+            model.module.load_state_dict(cpu_model.state_dict())
+        else:
+            cpu_model = deepcopy(model)
+            cpu_model.load_state_dict(checkpoint['model'])
+            model.load_state_dict(cpu_model.state_dict())
+
+    def run_phase(phase_name, phase_files, num_epochs, epoch_offset, global_step_offset, best_epoch, min_eval_loss, use_motif_weights=False):
         train_set, train_sampler = make_dataloader(phase_files)
         print(f"\n{'='*20} {phase_name} phase ({num_epochs} epochs) {'='*20}")
         steps_this_phase = num_epochs * len(train_set)
@@ -351,8 +468,8 @@ if __name__ == "__main__":
             train_sampler.set_epoch(global_epoch)
             eval_sampler.set_epoch(global_epoch)
             print('-' * 21 + f"Epoch {global_epoch} ({phase_name})" + '-' * 21)
-            train_loss = train_epoch(epoch, train_set, global_step_offset=global_step_offset)
-            eval_loss = eval_epoch(eval_set)
+            train_loss = train_epoch(epoch, train_set, global_step_offset=global_step_offset, use_motif_weights=use_motif_weights)
+            eval_loss = eval_epoch(eval_set, use_motif_weights=use_motif_weights)
             if global_rank == 0:
                 if WANDB_LOGGING:
                     wandb.log({"eval_loss_epoch": eval_loss, "epoch": global_epoch,
@@ -363,7 +480,8 @@ if __name__ == "__main__":
                     best_epoch = global_epoch
                     min_eval_loss = eval_loss
                     ckpt = {
-                        'model': model.module.state_dict() if hasattr(model, "module") else model.state_dict(),
+                        'model': plain_state_dict(),
+                        **({'lora': get_peft_model_state_dict(model)} if USE_LORA else {}),
                         'optimizer': optimizer.state_dict(),
                         'lr_sched': lr_scheduler.state_dict(),
                         'epoch': global_epoch,
@@ -376,16 +494,55 @@ if __name__ == "__main__":
                 dist.barrier()
         return best_epoch, min_eval_loss, steps_this_phase
 
-    # Phase 1: synthetic data
-    best_epoch, min_eval_loss, phase1_steps = run_phase(
-        "synthetic", synthetic_train_files, NUM_EPOCHS_SYNTHETIC,
-        epoch_offset=pre_epoch, global_step_offset=0,
-        best_epoch=best_epoch, min_eval_loss=min_eval_loss)
-    # Phase 2: real data (step offset continues from end of phase 1)
+    # Phase 1: synthetic data — no motif weighting (all patches are motifs anyway)
+    if SKIP_SYNTHETIC_PHASE:
+        # Resume straight into the real phase from the saved synthetic checkpoint
+        # (loaded above via LOAD_FROM_CHECKPOINT). phase1_steps only offsets the wandb
+        # x-axis, so derive it from the file count instead of building the dataloader.
+        phase1_steps = NUM_EPOCHS_SYNTHETIC * (len(synthetic_train_files) // batch_size)
+        if global_rank == 0:
+            print(f"SKIP_SYNTHETIC_PHASE set — skipping {NUM_EPOCHS_SYNTHETIC} synthetic epochs; "
+                  f"resuming into the real phase from WEIGHTS_PATH.")
+    else:
+        best_epoch, min_eval_loss, phase1_steps = run_phase(
+            "synthetic", synthetic_train_files, NUM_EPOCHS_SYNTHETIC,
+            epoch_offset=pre_epoch, global_step_offset=0,
+            best_epoch=best_epoch, min_eval_loss=min_eval_loss, use_motif_weights=False)
+
+    # Load best synthetic checkpoint before starting real phase
+    if global_rank == 0:
+        print(f"\nLoading best synthetic checkpoint (epoch {best_epoch}, loss {min_eval_loss:.6f}) for real phase...")
+    # Preserve the phase-1 best before the real phase overwrites WEIGHTS_PATH.
+    # Phase 1 trains bias-free (use_motif_weights=False), so this checkpoint is
+    # shared by all bias variants: fork real-phase-only runs from it via
+    # SKIP_SYNTHETIC_PHASE + LOAD_FROM_CHECKPOINT instead of redoing phase 1.
+    if global_rank == 0 and not SKIP_SYNTHETIC_PHASE and os.path.exists(WEIGHTS_PATH):
+        import shutil
+        shutil.copyfile(WEIGHTS_PATH, WEIGHTS_PATH.replace('.pth', '_phase1.pth'))
+    if os.path.exists(WEIGHTS_PATH):
+        checkpoint = torch.load(WEIGHTS_PATH, map_location='cpu')
+        load_saved_weights(checkpoint)
+        checkpoint = None
+
+    # Switch to real-only eval set for the real phase (matched to real training data),
+    # symmetric to the synthetic-only eval used in the synthetic phase above.
+    if real_eval_files:
+        eval_set, eval_sampler = make_dataloader(real_eval_files)
+        if global_rank == 0:
+            print(f"Real eval set size: {len(real_eval_files)}")
+    else:
+        if global_rank == 0:
+            print("Warning: no real eval files found, reusing existing eval set")
+
+    # Reset best-model tracking so real phase saves based on real-data eval
+    best_epoch = 0
+    min_eval_loss = 100
+
+    # Phase 2: real data — turn motif attention bias ON
     best_epoch, min_eval_loss, _ = run_phase(
         "real", real_train_files, NUM_EPOCHS_REAL,
         epoch_offset=pre_epoch + NUM_EPOCHS_SYNTHETIC, global_step_offset=phase1_steps,
-        best_epoch=best_epoch, min_eval_loss=min_eval_loss)
+        best_epoch=best_epoch, min_eval_loss=min_eval_loss, use_motif_weights=True)
 
     if global_rank == 0:
         print("Best Eval Epoch : " + str(best_epoch))

@@ -1,0 +1,11 @@
+{
+  "commit": "468908397ecef6fb683584da5d580428688c3dcc",
+  "status_banner_visible": false,
+  "score_match_banner_present": false,
+  "diagnostics_collapsed": true,
+  "prompt_available": true,
+  "highlighted_elements": 18,
+  "diagnostic": "Generation details\n\nSelected candidate 5/12 \u00b7 4 motif matches \u00b7 18 note types \u00b7 Verified contour \u00b7 Measure(s): 1, 3, 5, 7 \u00b7 12 eligible \u00b7 Seed: 46 \u00b7 Motif: 0,3,-1,-1\n\nModel prompt used",
+  "mobile_overflow": false,
+  "page_errors": []
+}

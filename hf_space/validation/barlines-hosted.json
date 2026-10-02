@@ -1,0 +1,33 @@
+{
+  "commit": "9accdd09a95ff4f0d022196667a7b9c13bacafb7",
+  "status": "No verified match after 12 attempts. No composition was accepted. Try more measures or a different style, then Generate again.",
+  "notes": [
+    [
+      "C4",
+      "1"
+    ],
+    [
+      "G4",
+      "1/2"
+    ],
+    [
+      "|",
+      ""
+    ],
+    [
+      "F4",
+      "1/2"
+    ],
+    [
+      "E4",
+      "2"
+    ],
+    [
+      "|",
+      ""
+    ]
+  ],
+  "request_matches_editor": true,
+  "prompt": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: =C2 =G | =F =E4 | \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n",
+  "page_errors": []
+}

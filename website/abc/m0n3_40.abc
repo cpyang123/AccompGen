@@ -1,0 +1,40 @@
+X:1
+%%score 1
+L:1/8
+M:6/8
+Q:1/4=110
+K:Bb
+V:1
+[V:1]d|:
+[V:1]"Gm" ggd GGG|
+[V:1]DDD G,2 D|
+[V:1]"F" DFF FDC|
+[V:1]DG,G, G,2 d|
+[V:1]"Gm" ggg dGG|
+[V:1]DDD G,2 G,|
+[V:1]"F" DFF FDC|1
+[V:1]"Gm" DG,G, G,2 d:|2
+[V:1]"Gm" DG,G, G,2 D|:
+[V:1]"Gm" DGG G2 G|
+[V:1]"F" FGF C2 C|
+[V:1]"Gm" DGG GAG|
+[V:1]"F" F2 F FGF|
+[V:1]"Gm" DGG G2 G|
+[V:1]"F" FGF C2 C|
+[V:1]"Gm" DGG GDC|1
+[V:1]"Gm" DG,G, G,2 D:|2
+[V:1]"Gm" DG,G, G,2 G|:
+[V:1]"Cm" Gcc cGG|
+[V:1]cdc c2 G|
+[V:1]"Gm" GBB BGG|
+[V:1]BGF G2 G|
+[V:1]"Cm" Gcc cGG|
+[V:1]cdc c2 c|1
+[V:1]"Gm" ddd dGB|
+[V:1]"Cm" c2 c c2 c:|2
+[V:1]"Gm" ddd dGB|
+[V:1]"Cm" c2 c c2 c|:
+[V:1]"Gm" BGG GBc|
+[V:1]d2 d d2 G|
+[V:1]"F" FFF FCD|
+[V:1]"Gm" B,G,G, G,3:|

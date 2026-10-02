@@ -1,0 +1,89 @@
+{
+  "commit": "983cc6994384c9d7b925f331c455eb8141f6bb5f",
+  "mode": "Concrete notes",
+  "seed": 0,
+  "measures": 8,
+  "evaluated": [
+    {
+      "candidate": 1,
+      "matches": 0,
+      "note_types": 17
+    },
+    {
+      "candidate": 2,
+      "matches": 0,
+      "note_types": 14
+    },
+    {
+      "candidate": 3,
+      "matches": 0,
+      "note_types": 17
+    },
+    {
+      "candidate": 4,
+      "matches": 1,
+      "note_types": 14
+    },
+    {
+      "candidate": 5,
+      "matches": 1,
+      "note_types": 18
+    },
+    {
+      "candidate": 6,
+      "matches": 0,
+      "note_types": 11
+    },
+    {
+      "candidate": 7,
+      "matches": 1,
+      "note_types": 15
+    },
+    {
+      "candidate": 8,
+      "matches": 0,
+      "note_types": 13
+    },
+    {
+      "candidate": 9,
+      "matches": 1,
+      "note_types": 15
+    },
+    {
+      "candidate": 10,
+      "matches": 2,
+      "note_types": 11
+    },
+    {
+      "candidate": 11,
+      "matches": 2,
+      "note_types": 12
+    },
+    {
+      "candidate": 12,
+      "matches": 1,
+      "note_types": 18
+    }
+  ],
+  "eligible": 7,
+  "winner": {
+    "candidate": 11,
+    "matches": 2,
+    "note_types": 12
+  },
+  "diagnostic": "<details><summary>Generation details</summary><p>Selected candidate 11/12 \u00b7 2 motif matches \u00b7 12 note types \u00b7 Verified exact pitches and rhythm \u00b7 Measure(s): 1, 5 \u00b7 7 eligible \u00b7 Seed: 10 \u00b7 Motif: 0,3,-1,-1</p>\n\n<details><summary>Model prompt used</summary><pre>%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n</pre></details></details>",
+  "raw": {
+    "1": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/8][V:1]E2 F2 ^F2|:\n[r:1/7][V:1]\"C\" G A G E D2 C2|\n[r:2/6][V:1]G,2 C2 E4|\n[r:3/5][V:1]\"G\" D E D B, A,2 G,2|\n[r:4/4][V:1]B,2 D2 G4|\n[r:5/3][V:1]\"C\" G A G E D2 C2|\n[r:6/2][V:1]G,2 C2 E4|\n[r:7/1][V:1]\"G\" D ^C D F E2 D2|\n",
+    "2": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/11][V:1]G2 E F G2 E F|\n[r:1/10][V:1]G2 e d c2 G2|\n[r:2/9][V:1]F2 D E F2 D D|\n[r:3/8][V:1]F2 d c B4|\n[r:4/7][V:1]c c E F G G E F|\n[r:5/6][V:1]G2 e d c2 G2|\n[r:6/5][V:1]F2 D E F2 d2|\n[r:7/4][V:1]c6 e f|\n",
+    "3": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/8][V:1]G,|\n[r:1/7][V:1]C3 G, C3 B,|\n[r:2/6][V:1]A, D2 C B,4|\n[r:3/5][V:1]D2 D C B,2 G,2|\n[r:4/4][V:1]E3 D C3 C|\n[r:5/3][V:1]C D E F G2 E2|\n[r:6/2][V:1]D E F G A4|\n[r:7/1][V:1]G2 G F E2 D2|\n",
+    "4": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/7][V:1]C2 G F E4|\n[r:1/6][V:1]C2 G F E2 D E|\n[r:2/5][V:1]F2 E2 D E D C|\n[r:3/4][V:1]A,2 G,2 A,4|\n[r:4/3][V:1]A,2 A, C D2 D E|\n[r:5/2][V:1]D C A, C D2 E2|\n[r:6/1][V:1]A,2 C2 D E D C|\n[r:7/0][V:1]A,2 G,2 A,4|]\n",
+    "5": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/8][V:1]C2 G F E4|\n[r:1/7][V:1]G2 e d c2 B2|\n[r:2/6][V:1]A2 f2 e2 d d|\n[r:3/5][V:1]c4 B4|\n[r:4/4][V:1]c2 g f e2 e d|\n[r:5/3][V:1]c2 G2 A2 A2|\n[r:6/2][V:1]G2 c c c2 B2|\n[r:7/1][V:1]c8|\n",
+    "6": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/7][V:1]\"C\" G2 G A G2 E D|\n[r:1/6][V:1]C2 c A G4|\n[r:2/5][V:1]\"G\" G2 G A\"C\" G2 E C|\n[r:3/4][V:1]\"Dm\" D8|\n[r:4/3][V:1]\"C\" G2 G A G2 E D|\n[r:5/2][V:1]\"C\" C2 c A G4|\n[r:6/1][V:1]\"G\" G2 G A\"G7\" G E D E|\n[r:7/0][V:1]\"C\" C8|]\n",
+    "7": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/11][V:1]C2 G F E4|\n[r:1/10][V:1]C2 G F E2 D E|\n[r:2/9][V:1]F2 F2 E D C2|\n[r:3/8][V:1]D4 D4|\n[r:4/7][V:1]D2 A G F2 D E|\n[r:5/6][V:1]F2 F2 E D C2|\n[r:6/5][V:1]D2 D2 C B, A,2|\n[r:7/4][V:1]G,4 G,4|\n",
+    "8": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/8][V:1]\"C\" G2 G A G E D C|\n[r:1/7][V:1]\"F\" A2 A G A2 c2|\n[r:2/6][V:1]\"C\" G2 G A G E D C|\n[r:3/5][V:1]\"F\" f e d c\"G\" A2 c2|\n[r:4/4][V:1]\"C\" G2 G A G E D C|\n[r:5/3][V:1]\"F\" A2 A G A B c2|\n[r:6/2][V:1]\"C\" G2 G A\"Am\" G E D C|\n[r:7/1][V:1]\"F\" f e d c\"G\" A2 c2||\n",
+    "9": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/7][V:1]C2 G F E4|\n[r:1/6][V:1]C2 G F E3 E|\n[r:2/5][V:1]F2 E2 D2 E F|\n[r:3/4][V:1]G2 F2 E4|\n[r:4/3][V:1]C2 B A G4|\n[r:5/2][V:1]C2 B A G2 G2|\n[r:6/1][V:1]A2 G2 F2 E E|\n[r:7/0][V:1]G4 D4|\n",
+    "10": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/7][V:1]C2 G F E4|\n[r:1/6][V:1]C2 G F E2 D E|\n[r:2/5][V:1]F2 E2 D D C D|\n[r:3/4][V:1]E2 D2 C4|\n[r:4/3][V:1]C2 G F E4|\n[r:5/2][V:1]C2 G F E2 D E|\n[r:6/1][V:1]F2 E2 D D C D|\n[r:7/0][V:1]E2 D2 C4|]\n",
+    "11": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/15][V:1]C2 G F E4|\n[r:1/14][V:1]C2 c B A4|\n[r:2/13][V:1]F2 F G A F c A|\n[r:3/12][V:1]G8|\n[r:4/11][V:1]C2 G F E4|\n[r:5/10][V:1]C2 c B A4|\n[r:6/9][V:1]A2 A B c A E A|\n[r:7/8][V:1]G8|\n",
+    "12": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n[r:0/7][V:1]C2 G F E4|\n[r:1/6][V:1]C2 G F E3 E|\n[r:2/5][V:1]F2 E2 D2 E C|\n[r:3/4][V:1]B,2 C2 D4|\n[r:4/3][V:1]D2 D E D2 B,2|\n[r:5/2][V:1]G,4 G4|\n[r:6/1][V:1]G G A G E2 G2|\n[r:7/0][V:1]C6 z2|]\n"
+  }
+}

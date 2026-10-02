@@ -1,0 +1,31 @@
+{
+  "commit": "cef4f8324876b188d7d6f6c12a4380939b074507",
+  "abstract_status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+  "highlighted_elements": 6,
+  "audio_played": true,
+  "concrete_status": "No verified match after 12 attempts. No composition was accepted. Try more measures or a different style, then Generate again.",
+  "concrete_notes": [
+    [
+      "C4",
+      "1"
+    ],
+    [
+      "G4",
+      "1/2"
+    ],
+    [
+      "F4",
+      "1/2"
+    ],
+    [
+      "E4",
+      "2"
+    ],
+    [
+      "A4",
+      "0.5"
+    ]
+  ],
+  "concrete_request_matches_editor": true,
+  "page_errors": []
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "mode": "Abstract motif",
+    "status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+    "prefill": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n",
+    "stream_samples_with_original_prefill": 7,
+    "inspectable_prompt_updates": 9,
+    "exported_motif_lines": [
+      "%motif:v1:step_skip_leap: 0,3,-1,-1",
+      "%motif:count: 3",
+      "%motif:abc: c2 c | f2 f | e d c",
+      "%motif:inversion_count: 0"
+    ]
+  },
+  {
+    "mode": "Concrete notes",
+    "status": "No verified match after 12 attempts. No composition was accepted. Try more measures or a different style, then Generate again.",
+    "prefill": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: =C2 =G =F =E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n",
+    "stream_samples_with_original_prefill": 57,
+    "inspectable_prompt_updates": 71,
+    "exported_motif_lines": []
+  }
+]

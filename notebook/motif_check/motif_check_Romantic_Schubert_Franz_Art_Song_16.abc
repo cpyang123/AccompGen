@@ -1,0 +1,19 @@
+X:1
+%%score 1 { ( 2 4 ) | 3 }
+L:1/8
+Q:1/4=72
+M:6/8
+K:Cb
+V:1 treble nm="Voice"
+V:2 treble nm="Piano"
+V:4 treble 
+V:3 bass 
+[V:1]"^Sehr langsam" c|[V:2][Ec]|[V:3][C,G,]|[V:4]x1|
+[V:1]e2 c B d G|[V:2][Ge]2 [Ec] [DB][Fd][B,G]|[V:3][C,G,]2 [C,G,] [C,G,]2 [C,G,]|[V:4]x6|
+[V:1]c2 e g2 c|[V:2][Ec]2 [Ge] [cg]2 [Ec]|[V:3][C,G,]2 [C,G,] [C,G,]2 [C,G,]|[V:4]x6|
+[V:1]f2 e d =c d|[V:2][Af]2 [Ge] [Fd][E=c][Fd]|[V:3][C,G,]2 [C,G,] [C,G,]2 [C,G,]|[V:4]x6|
+[V:1]e3 d z c|[V:2][Ge]3 [Gd] z [Ec]|[V:3][C,G,]2 [C,G,] [C,G,]2 [C,G,]|[V:4]x6|
+[V:1]=c2 c d c d|[V:2][E=c]2 [Ec] [Fd][Ec][Fd]|[V:3][C,__B,]2 [C,B,] [C,A,]2 [C,A,]|[V:4]x6|
+[V:1]e2 f g2 g|[V:2][Ge]2 [Af] [__Bg]2 [Bg]|[V:3][C,__B,]2 [C,A,] [C,G,]2 [C,G,]|[V:4]x6|
+[V:1]g f e e d c|[V:2][__Bg][Af][Ge] [Ge][Fd][Ec]|[V:3][F,,F,]2 [F,,F,] [G,,G,]2 [G,,G,]|[V:4]c2 x B2 x|
+[V:1](B2 e/d/) c2:|[V:2][DB]2 [Ge]/[Fd]/ [Ec]2:|[V:3][G,,G,]2 [G,,G,] [C,G,]2:|[V:4]x5:|

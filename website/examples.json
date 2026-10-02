@@ -1,0 +1,887 @@
+{
+ "examples": [
+  {
+   "id": "top1_22",
+   "motif": "0,-1,-1,-1",
+   "tier": "top",
+   "rank": "rank 1",
+   "piece": 22,
+   "body_hits": 17,
+   "faithful": true,
+   "realization": "fed cBA",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nK:F\nV:1\n[V:1]c|\n[V:1]fed cBA|\n[V:1]GAB A2 c|\n[V:1]dcd ede|\n[V:1]ff/f/f f2::\n[V:1]c|\n[V:1]ceg gec|\n[V:1]fd=B c2 c|\n[V:1]ceg gec|\n[V:1]fd=B c2 c|\n[V:1]AGF ABc|\n[V:1]fed c2 c|\n[V:1]agf edc|\n[V:1]BAG F2:|\n[V:1][M:6/8][K:G] G2 g gfg|\n[V:1]f2 e d2 B|\n[V:1]cBc E2 F|\n[V:1]G3 G,3::\n[V:1]G2 g (g/a/b)g|\n[V:1](f/g/a)f (e/f/g)e|\n[V:1]dfa afd|\n[V:1](f/g/a)f (e/f/g)e|\n[V:1]G2 g (g/a/b)g|\n[V:1](f/g/a)f (e/f/g)e|\n[V:1]dcB AGF|\n[V:1]G3 G,3:|\n",
+   "spans": [
+    [
+     47,
+     62
+    ],
+    [
+     189,
+     195
+    ],
+    [
+     204,
+     224
+    ],
+    [
+     252,
+     267
+    ],
+    [
+     423,
+     438
+    ]
+   ]
+  },
+  {
+   "id": "top1_45",
+   "motif": "0,-1,-1,-1",
+   "tier": "top",
+   "rank": "rank 1",
+   "piece": 45,
+   "body_hits": 16,
+   "faithful": true,
+   "realization": "B>GBg fedc",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:2/2\nQ:1/4=120\nK:Bb\nV:1\n[V:1]F|\n[V:1]B>GBg fedc|\n[V:1]B>GBg f2 fd|\n[V:1]e/d/e/f/ eg fdcB|\n[V:1]A2 c2 c2 F>F|\n[V:1]B>GBg fedc|\n[V:1]B>GBg f2 ga|\n[V:1]bfdg fedc|\n[V:1]d2 B2 B2::\n[V:1]d>e|\n[V:1]fdfd B2 ef|\n[V:1]g2 f>e edcd|\n[V:1]ecge fdcB|\n[V:1]A2 c2 c2 Bc|\n[V:1]dcBA GecA|\n[V:1]Bdfd edcB|\n[V:1]babg gfed|\n[V:1]d2 B2 B2:|\n",
+   "spans": [
+    [
+     62,
+     76
+    ],
+    [
+     106,
+     118
+    ],
+    [
+     139,
+     153
+    ],
+    [
+     173,
+     179
+    ],
+    [
+     229,
+     239
+    ],
+    [
+     253,
+     265
+    ],
+    [
+     281,
+     287
+    ],
+    [
+     302,
+     306
+    ],
+    [
+     316,
+     322
+    ]
+   ]
+  },
+  {
+   "id": "top3_30",
+   "motif": "0,1,-1,-1",
+   "tier": "top",
+   "rank": "rank 3",
+   "piece": 30,
+   "body_hits": 16,
+   "faithful": true,
+   "realization": "cd | e2 e2 ed c2",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:2/2\nK:Ab\nV:1\n[V:1]cd|\n[V:1]\"Ab\" e2 e2 ed c2|\n[V:1]\"Eb\" d2 d2 dc B2|\n[V:1]\"Ab\" c2 c2 cB A2|\n[V:1]\"Eb\" BAGF E2 cd|\n[V:1]\"Ab\" e2 e2 ed c2|\n[V:1]\"Eb\" d2 d2 dc B2|\n[V:1]\"Ab\" cB A2\"Eb\" B2 G2|1\n[V:1]\"Ab\" A6:|2\n[V:1]\"Ab\" A8|:\n[V:1]\"Db\" F4 A4|\n[V:1]d6 A2|\n[V:1]F2 F4 A2|\n[V:1]\"Ab\" c2 BA- A4|\n[V:1]\"Db\" F4 A4|\n[V:1]d6 AB|\n[V:1]\"Ab\" cB A2\"Eb\" B2 G2|1\n[V:1]\"Ab\" A8:|2\n[V:1]\"Ab\" A4 c2 d2|]:\n[V:1]\"Ab\" e2 e2 ed c2|\n[V:1]\"Eb\" d2 d2 dc B2|\n[V:1]\"Ab\" c2 c2 cB A2|\n[V:1]\"Eb\" BAGF E2 cd|\n[V:1]\"Ab\" e2 e2 ed c2|\n[V:1]\"Eb\" d2 d2 dc B2|\n[V:1]\"Ab\" cB A2\"Eb\" B2 G2|1\n[V:1]\"Ab\" A4 c2 d2:|2\n[V:1]\"Ab\" A6 A2|:\n[V:1]\"Db\" d4 d3 A|\n[V:1]d2 d4 A2|\n[V:1]d2 d4 A2|\n[V:1]\"Ab\" c2 BA- A4|\n[V:1]\"Db\" d4 d3 A|\n[V:1]d2 d4 AB|\n[V:1]\"Ab\" cB A2\"Eb\" B2 G2|1\n[V:1]\"Ab\" A6 A2:|2\n[V:1]\"Ab\" A6|]\n",
+   "spans": [
+    [
+     41,
+     126
+    ],
+    [
+     132,
+     196
+    ],
+    [
+     331,
+     349
+    ],
+    [
+     394,
+     482
+    ],
+    [
+     488,
+     552
+    ],
+    [
+     706,
+     724
+    ]
+   ]
+  },
+  {
+   "id": "top3_03",
+   "motif": "0,1,-1,-1",
+   "tier": "top",
+   "rank": "rank 3",
+   "piece": 3,
+   "body_hits": 11,
+   "faithful": true,
+   "realization": "F>G AG | Ff ec",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:2/4\nQ:1/4=100\nK:F#\nV:1\n[V:1]C|\n[V:1]F>G AG|\n[V:1]Ff ec|\n[V:1]dc/B/ AB|\n[V:1]G>A BA|\n[V:1]Ff ec|\n[V:1]dc/B/ AB|\n[V:1]c>d cA|\n[V:1]F>G AG||\n[V:1]Ff ec|\n[V:1]dc/B/ AB|\n[V:1]G>A BA|\n[V:1]Ff ec|\n[V:1]dc/B/ Ac|\n[V:1]B>G F||\n[V:1]C|\n[V:1]F>G AG|\n[V:1]Ff ec|\n[V:1]dc/B/ AB|\n[V:1]G>A BA|\n[V:1]Ff ec|\n[V:1]dc/B/ AB|\n[V:1]c>d cA|\n[V:1]F>G AG||\n[V:1]\"^last time\" F>G FE|\n[V:1]F4||\n",
+   "spans": [
+    [
+     60,
+     72
+    ],
+    [
+     75,
+     88
+    ],
+    [
+     115,
+     128
+    ],
+    [
+     153,
+     166
+    ],
+    [
+     169,
+     182
+    ],
+    [
+     209,
+     222
+    ],
+    [
+     255,
+     267
+    ],
+    [
+     270,
+     283
+    ],
+    [
+     310,
+     323
+    ],
+    [
+     348,
+     379
+    ]
+   ]
+  },
+  {
+   "id": "top4_01",
+   "motif": "0,-1,-1,1",
+   "tier": "top",
+   "rank": "rank 4",
+   "piece": 1,
+   "body_hits": 13,
+   "faithful": true,
+   "realization": ": eBeg fedc | B/c/B/A/ GA B2 BG",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:2/2\nK:Eb\nV:1\n[V:1](3Bcd|:\n[V:1]\"Eb\" eBeg fedc|\n[V:1]B/c/B/A/ GA B2 BG|\n[V:1]\"Ab\" Ac Ac Ac Ac|\n[V:1]\"Eb\" GB GB GB GB|\n[V:1]\"Eb\" eBeg fedc|\n[V:1]B/c/B/A/ GA B2 BG|\n[V:1]\"Ab\" AcBA\"Eb\" GEFD|1\n[V:1]\"Bb\" E/F/E ED\"Eb\" E2 (3Bcd:|2\n[V:1]\"Bb\" E/F/E ED\"Eb\" E2 GA||\n[V:1]\"Eb\" Bc BG cd ec|\n[V:1]B/c/B/A/ GA B2 BG|\n[V:1]\"Ab\" Ac Ac Ac Ac|\n[V:1]\"Eb\" GB GB GB GB|\n[V:1]\"Eb\" Bc BG cd ec|\n[V:1]B/c/B/A/ GA B2 BG|\n[V:1]\"Ab\" AcBA\"Eb\" GEFD|\n[V:1]\"Bb\" E/F/E ED\"Eb\" E2 GA|\n[V:1]\"Eb\" Bc BG cd ec|\n[V:1]B/c/B/A/ GA B2 BG|\n[V:1]\"Ab\" Ac Ac Ac Ac|\n[V:1]\"Eb\" GB GB GB GB|\n[V:1]\"Eb\" eBeg fedc|\n[V:1]B/c/B/A/ GA B2 BG|\n[V:1]\"Ab\" AcBA\"Eb\" GEFD|\n[V:1]\"Bb\" E/F/E ED\"Eb\" E2||\n",
+   "spans": [
+    [
+     65,
+     85
+    ],
+    [
+     156,
+     176
+    ],
+    [
+     222,
+     235
+    ],
+    [
+     257,
+     270
+    ],
+    [
+     308,
+     315
+    ],
+    [
+     401,
+     408
+    ],
+    [
+     453,
+     466
+    ],
+    [
+     503,
+     510
+    ],
+    [
+     581,
+     601
+    ],
+    [
+     646,
+     659
+    ]
+   ]
+  },
+  {
+   "id": "top4_44",
+   "motif": "0,-1,-1,1",
+   "tier": "top",
+   "rank": "rank 4",
+   "piece": 44,
+   "body_hits": 13,
+   "faithful": true,
+   "realization": "edc def",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nK:Abmix\nV:1\n[V:1]edc def|\n[V:1]edc d2 e|\n[V:1]fdd add|\n[V:1]fag fed|\n[V:1]edc def|\n[V:1]ea=g a2 b|\n[V:1]c'ba ba=g|1\n[V:1]a=ga fed:|2\n[V:1]a=ga baf||\n[V:1]eAA fed|\n[V:1]eAA f2 d|\n[V:1]eAA gfe|\n[V:1]dBG g2 f|\n[V:1]eAA fed|\n[V:1]eAA a2 b|\n[V:1]c'ba ba=g|\n[V:1]a=ga baf|\n[V:1]eAA fed|\n[V:1]eAA f2 d|\n[V:1]eAA gfe|\n[V:1]dBG g2 f|\n[V:1]eAA fAA|\n[V:1]eAA a2 b|\n[V:1]c'ba ba=g|\n[V:1]a=ga fed|:\n[V:1]cAA dcd|\n[V:1]cAA ded|\n[V:1]cAA gfe|\n[V:1]dBg fed|\n[V:1]cAA dcd|1\n[V:1]cAA ded:|2\n[V:1]cAA a2 b||\n",
+   "spans": [
+    [
+     43,
+     48
+    ],
+    [
+     57,
+     63
+    ],
+    [
+     90,
+     105
+    ],
+    [
+     130,
+     148
+    ],
+    [
+     184,
+     195
+    ],
+    [
+     242,
+     253
+    ],
+    [
+     267,
+     284
+    ],
+    [
+     302,
+     313
+    ],
+    [
+     385,
+     402
+    ]
+   ]
+  },
+  {
+   "id": "top5_20",
+   "motif": "0,1,1,-1",
+   "tier": "top",
+   "rank": "rank 5",
+   "piece": 20,
+   "body_hits": 10,
+   "faithful": true,
+   "realization": "E2 B, E2 F | GFG AGA",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nK:E\nV:1\n[V:1]G|\n[V:1]E2 B, E2 F|\n[V:1]GFG AGA|\n[V:1]BcB AGF|\n[V:1]G2 E E2 G|\n[V:1]E2 B, E2 F|\n[V:1]GFG AGA|\n[V:1]BcB AGF|\n[V:1]G2 E E2::\n[V:1]G|\n[V:1]B2 G EFG|\n[V:1]A2 F FGA|\n[V:1]BcB ABG|\n[V:1]F2 B, B,2 G|\n[V:1]E2 B, E2 F|\n[V:1]GFG AGA|\n[V:1]BcB AGF|\n[V:1]G2 E E2:|\n",
+   "spans": [
+    [
+     53,
+     81
+    ],
+    [
+     114,
+     142
+    ],
+    [
+     198,
+     209
+    ],
+    [
+     244,
+     272
+    ]
+   ]
+  },
+  {
+   "id": "top5_14",
+   "motif": "0,1,1,-1",
+   "tier": "top",
+   "rank": "rank 5",
+   "piece": 14,
+   "body_hits": 9,
+   "faithful": true,
+   "realization": "F2 F FEF | GAG GFE",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nK:F\nV:1\n[V:1]c/B/|\n[V:1]AGF FEF|\n[V:1]GAG GFE|\n[V:1]FAc cBA|\n[V:1]G/A/BA G2 c/B/|\n[V:1]AGF FEF|\n[V:1]GAG GFE|\n[V:1]FAc BGE|\n[V:1]F/G/AG F2:|\n[V:1]| A/B/ \n[V:1]| cdc cdc \n[V:1]| BAB GAB \n[V:1]| cdc cBA \n[V:1]| G/A/BA G2 A/B/ \n[V:1]| \n[V:1]z0| \n[V:1]| BAB GAB \n[V:1]| cAF BGE \n[V:1]| F/G/AG F2 :\n",
+   "spans": [
+    [
+     56,
+     67
+    ],
+    [
+     92,
+     98
+    ],
+    [
+     119,
+     130
+    ],
+    [
+     155,
+     161
+    ],
+    [
+     176,
+     190
+    ],
+    [
+     209,
+     222
+    ],
+    [
+     235,
+     241
+    ],
+    [
+     242,
+     278
+    ],
+    [
+     308,
+     314
+    ]
+   ]
+  },
+  {
+   "id": "mid0_23",
+   "motif": "0,3,-1,-1",
+   "tier": "mid",
+   "rank": "rank 14",
+   "piece": 23,
+   "body_hits": 11,
+   "faithful": true,
+   "realization": "c2 ag f2 c>c",
+   "abc": "X:1\n%%score 1\nL:1/16\nM:2/4\nQ:1/4=60\nK:F\nV:1\n[V:1]c>c|\n[V:1]c2 A>B c2 A>B|\n[V:1]c2 ag f2 c>c|\n[V:1]c2 g>f e2d>e|\n[V:1]f6|\n[V:1]c>c|\n[V:1]c2 A>B c2 A>B|\n[V:1]c2 ag f2c>c|\n[V:1]c2 g>f e2d>e|\n[V:1]f6|\n[V:1]c2|\n[V:1]B2g>f e2c2|\n[V:1]c2ag f2c2|\n[V:1]B2gf e2c2|\n[V:1]c2ag f2|\n[V:1]c>c|\n[V:1]c2 A>B c2 A>B|\n[V:1]c2 ag f2c>c|\n[V:1]c2 g>f e2d>e|\n[V:1]f6 c>c|\n[V:1]c2 g>f e2d>e|\n[V:1]f2 z2 z4||\n",
+   "spans": [
+    [
+     79,
+     87
+    ],
+    [
+     88,
+     107
+    ],
+    [
+     156,
+     183
+    ],
+    [
+     211,
+     235
+    ],
+    [
+     244,
+     267
+    ],
+    [
+     304,
+     331
+    ],
+    [
+     344,
+     363
+    ]
+   ]
+  },
+  {
+   "id": "mid0_31",
+   "motif": "0,3,-1,-1",
+   "tier": "mid",
+   "rank": "rank 14",
+   "piece": 31,
+   "body_hits": 8,
+   "faithful": true,
+   "realization": ": D | B3/2 A/ G d",
+   "abc": "X:1\n%%score 1\nL:1/4\nM:4/4\nK:Gb\nV:1\n[V:1]|:D|\n[V:1]B3/2 A/ G d|\n[V:1]d3/2 c/ B A|\n[V:1]G F G B|\n[V:1]A/G/A/B/ A D|\n[V:1]B3/2 A/ G d|\n[V:1]d3/2 c/ B A|\n[V:1]G F G B|\n[V:1]G3::\n[V:1]D|\n[V:1]c3/2 B/ A e|\n[V:1]d3/2 c/ B d|\n[V:1]c B A G|\n[V:1]A/G/A/B/ A D|\n[V:1]c3/2 B/ A e|\n[V:1]d3/2 c/ B d|\n[V:1]c B A F|\n[V:1]G3:|\n",
+   "spans": [
+    [
+     42,
+     77
+    ],
+    [
+     111,
+     146
+    ],
+    [
+     179,
+     212
+    ],
+    [
+     248,
+     281
+    ]
+   ]
+  },
+  {
+   "id": "mid1_40",
+   "motif": "0,1,-1,1",
+   "tier": "mid",
+   "rank": "rank 15",
+   "piece": 40,
+   "body_hits": 23,
+   "faithful": true,
+   "realization": "A2 B A2 B",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nK:Db\nV:1\n[V:1]A2 B A2 B|\n[V:1]AAB A2 z|\n[V:1]AAB A2 B|\n[V:1]AAB A2 A/A/|\n[V:1]ABcdcB|\n[V:1]B2 A B2 z|\n[V:1]AAB A2 B|\n[V:1]AAB A2 B|\n[V:1]A2 A A2 B|\n[V:1]A2 B A2 A|\n[V:1]A2 B A2 B|\n[V:1]A2 B A2 B|\n[V:1]A2 BAAB|\n[V:1]A2 B A2 B|\n[V:1]AAB A2 B|\n[V:1]A2 B A2 z|]\n",
+   "spans": [
+    [
+     40,
+     106
+    ],
+    [
+     120,
+     276
+    ]
+   ]
+  },
+  {
+   "id": "mid1_33",
+   "motif": "0,1,-1,1",
+   "tier": "mid",
+   "rank": "rank 15",
+   "piece": 33,
+   "body_hits": 14,
+   "faithful": true,
+   "realization": "c2 e fef",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nK:E\nV:1\n[V:1]ef|\n[V:1]\"E\" g2 B BcB|\n[V:1]\"A\" c2 e\"B7\" fef|\n[V:1]\"E\" g2 B\"C#m\" BcB|\n[V:1]\"F#m\" cde\"B7\" fef|\n[V:1]\"E\" g2 B BcB|\n[V:1]\"A\" c2 e\"B7\" fef|\n[V:1]\"E\" g2 B\"B7\" BcB|\n[V:1]\"A\" ced\"E\" e2:|\n[V:1]B|\n[V:1]\"E\" e2 f g2 f|\n[V:1]\"A\" e2 d\"B7\" c2 B|\n[V:1]\"E\" e2 f g2 f|\n[V:1]\"F#m\" e2 g\"B7\" f3|\n[V:1]\"E\" e2 f g2 f|\n[V:1]\"A\" e2 d\"B7\" c2 B|\n[V:1]\"E\" e2 f\"C#m\" g2 f|\n[V:1]\"F#m\" e2 g\"B7\" f2||\n[V:1]f|\n[V:1]\"E\" g2 B BcB|\n[V:1]\"A\" c2 e\"B7\" fef|\n[V:1]\"E\" g2 B\"C#m\" BcB|\n[V:1]\"F#m\" cde\"B7\" fef|\n[V:1]\"E\" g2 B BcB|\n[V:1]\"A\" c2 e\"B7\" fef|\n[V:1]\"E\" g2 B\"B7\" BcB|\n[V:1]\"A\" ced\"E\" e2||\n",
+   "spans": [
+    [
+     55,
+     73
+    ],
+    [
+     74,
+     83
+    ],
+    [
+     97,
+     121
+    ],
+    [
+     122,
+     131
+    ],
+    [
+     145,
+     163
+    ],
+    [
+     164,
+     173
+    ],
+    [
+     187,
+     208
+    ],
+    [
+     429,
+     447
+    ],
+    [
+     448,
+     457
+    ],
+    [
+     471,
+     495
+    ],
+    [
+     496,
+     505
+    ],
+    [
+     519,
+     537
+    ],
+    [
+     538,
+     547
+    ],
+    [
+     561,
+     582
+    ]
+   ]
+  },
+  {
+   "id": "mid2_32",
+   "motif": "0,-1,-2,2",
+   "tier": "mid",
+   "rank": "rank 20",
+   "piece": 32,
+   "body_hits": 9,
+   "faithful": true,
+   "realization": "dfe dBB | def g2 e",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nK:Ebmin\nV:1\n[V:1]d|:\n[V:1]B2 E EFE|\n[V:1]BAB d2 e|\n[V:1]dBd AFA|\n[V:1]DED AFA|\n[V:1]B2 E EFE|\n[V:1]BAB d2 e|\n[V:1]dBd AFA|\n[V:1]BGE E2 A:|\n[V:1]B|\n[V:1]dfe dBB|\n[V:1]def g2 e|\n[V:1]dBd AFA|\n[V:1]DED AFA|\n[V:1]dfe dBB|\n[V:1]def g2 e|\n[V:1]dBd AFA|\n[V:1]BGE E2 B|\n[V:1]dfe dBB|\n[V:1]def g2 e|\n[V:1]dBd AFA|\n[V:1]DED AFA|\n[V:1]BAG AGF|\n[V:1]GFE gfe|\n[V:1]dBd AFA|\n[V:1]BGE E2 A|\n[V:1]E2 E||\n",
+   "spans": [
+    [
+     74,
+     85
+    ],
+    [
+     132,
+     143
+    ],
+    [
+     180,
+     193
+    ],
+    [
+     199,
+     210
+    ],
+    [
+     237,
+     250
+    ],
+    [
+     256,
+     267
+    ],
+    [
+     295,
+     308
+    ],
+    [
+     314,
+     325
+    ],
+    [
+     370,
+     381
+    ]
+   ]
+  },
+  {
+   "id": "mid2_14",
+   "motif": "0,-1,-2,2",
+   "tier": "mid",
+   "rank": "rank 20",
+   "piece": 14,
+   "body_hits": 8,
+   "faithful": true,
+   "realization": "c2 dB cBGB",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:4/4\nQ:1/8=180\nK:B\nV:1\n[V:1]cF F2 cBGB|\n[V:1]c2 dB cBGB|\n[V:1]cF F2 cBGB|\n[V:1]B2 eB cBGB:|\n[V:1]c2 fd e2 dB|\n[V:1]c2 dB cBGB|\n[V:1]c2 fd e2 dB|\n[V:1]cBeB cBGB|\n[V:1]c2 fd e2 dB|\n[V:1]cffd e2 de|\n[V:1]fdec dBcB|\n[V:1]GBeB cBGB||\n",
+   "spans": [
+    [
+     55,
+     59
+    ],
+    [
+     72,
+     76
+    ],
+    [
+     89,
+     93
+    ],
+    [
+     106,
+     110
+    ],
+    [
+     142,
+     146
+    ],
+    [
+     176,
+     180
+    ],
+    [
+     229,
+     240
+    ],
+    [
+     243,
+     247
+    ]
+   ]
+  },
+  {
+   "id": "mid3_15",
+   "motif": "0,2,-2,-1",
+   "tier": "mid",
+   "rank": "rank 27",
+   "piece": 15,
+   "body_hits": 10,
+   "faithful": true,
+   "realization": "ege dcd ege d2 c",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:12/8\nQ:1/8=180\nK:C\nV:1\n[V:1]d|\n[V:1]e2 g edc deg e2 d|\n[V:1]ege dcd ege d2 c|\n[V:1]e2 g edc deg e2 d|\n[V:1]ege d2 e c3 c2:|\n[V:1]G|\n[V:1]c2 c c2 d ege d2 e|\n[V:1]fef d2 f ege d2 G|\n[V:1]c2 c c2 d ege d2 e|\n[V:1]f2 d B2 d c3 c2:|\n[V:1]G|\n[V:1]c6- c6|]\n",
+   "spans": [
+    [
+     58,
+     65
+    ],
+    [
+     68,
+     75
+    ],
+    [
+     82,
+     87
+    ],
+    [
+     90,
+     96
+    ],
+    [
+     105,
+     112
+    ],
+    [
+     115,
+     122
+    ],
+    [
+     129,
+     135
+    ],
+    [
+     169,
+     175
+    ],
+    [
+     193,
+     199
+    ],
+    [
+     218,
+     224
+    ]
+   ]
+  },
+  {
+   "id": "mid3_28",
+   "motif": "0,2,-2,-1",
+   "tier": "mid",
+   "rank": "rank 27",
+   "piece": 28,
+   "body_hits": 10,
+   "faithful": true,
+   "realization": "F2 FG AccA | G2 GF GAFD",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:4/4\nK:F#\nV:1\n[V:1]F2 FG AccA|\n[V:1]G2 GF GAFD|\n[V:1]F2 FG AccA|\n[V:1]GFGA F3 z|\n[V:1]F2 FG AccA|\n[V:1]GBAF GDFD|\n[V:1]F2 FG AccA|\n[V:1]GFGA F3 z|:\n[V:1]f2 fc dffd|\n[V:1]c2 cA GAFD|\n[V:1]f2 fc dffd|1\n[V:1]cAGA F3 z|\n[V:1]f2 fc dffd|\n[V:1]cAAF GAFD|\n[V:1]F2 FG AccA|\n[V:1]GFGA F3 z:|2\n[V:1]cAGA FGAc|\n[V:1]f2 fc d2 fd|\n[V:1]cAAF GAFD|\n[V:1]F2 FG AccA|\n[V:1]GFGA F3 z||\n",
+   "spans": [
+    [
+     46,
+     59
+    ],
+    [
+     80,
+     92
+    ],
+    [
+     113,
+     125
+    ],
+    [
+     146,
+     158
+    ],
+    [
+     180,
+     193
+    ],
+    [
+     214,
+     227
+    ],
+    [
+     248,
+     260
+    ],
+    [
+     281,
+     293
+    ],
+    [
+     332,
+     345
+    ],
+    [
+     366,
+     378
+    ]
+   ]
+  },
+  {
+   "id": "m0333_19",
+   "motif": "0,3,3,3",
+   "tier": "tail",
+   "rank": "absent from training",
+   "piece": 19,
+   "body_hits": 4,
+   "faithful": true,
+   "realization": "E,A, E2 | Ae d2",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:2/4\nK:Db\nV:1\n[V:1]E,A, E2|\n[V:1]Ae d2|\n[V:1][AE]2 (3[BE]cd|\n[V:1]e [dA,]2 B|\n[V:1][AE,]2 [EA,]F|\n[V:1][GG,] F2 D|\n[V:1]E _C2 E|\n[V:1]DB, B,A,|\n[V:1]E,A, E2|\n[V:1]Ae d2|\n[V:1][AE]2 (3[BE]cd|\n[V:1]e [dA,]2 B|\n[V:1]Aa Ab|\n[V:1]_cb Ca|\n[V:1]Ga Eg|\n[V:1][aA,]4|]\n",
+   "spans": [
+    [
+     40,
+     56
+    ],
+    [
+     170,
+     186
+    ]
+   ]
+  },
+  {
+   "id": "m0333_42",
+   "motif": "0,3,3,3",
+   "tier": "tail",
+   "rank": "absent from training",
+   "piece": 42,
+   "body_hits": 2,
+   "faithful": true,
+   "realization": "E | AAe aae",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nK:Ab\nV:1\n[V:1]E|\n[V:1]AAe aae|\n[V:1]aae a2 b|\n[V:1]c'ba fec|\n[V:1]BcA F2 E|\n[V:1]AAe a2 e|\n[V:1]aae a2 b|\n[V:1]c'ba fec|\n[V:1]BcE A2::\n[V:1]e|\n[V:1]fef A2 A|\n[V:1]fef A2 a|\n[V:1]fec ecA|\n[V:1]BcA F2 e|\n[V:1]fef A2 A|\n[V:1]fef A2 B|\n[V:1]cfe cBA|\n[V:1]BcE A2:|\n",
+   "spans": [
+    [
+     40,
+     53
+    ],
+    [
+     99,
+     113
+    ]
+   ]
+  },
+  {
+   "id": "m0n3_40",
+   "motif": "0,-3,-3,-3",
+   "tier": "tail",
+   "rank": "absent from training",
+   "piece": 40,
+   "body_hits": 4,
+   "faithful": true,
+   "realization": ": gdd GGG | DDD G,2 D",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:6/8\nQ:1/4=110\nK:Bb\nV:1\n[V:1]d|:\n[V:1]\"Gm\" ggd GGG|\n[V:1]DDD G,2 D|\n[V:1]\"F\" DFF FDC|\n[V:1]DG,G, G,2 d|\n[V:1]\"Gm\" ggg dGG|\n[V:1]DDD G,2 G,|\n[V:1]\"F\" DFF FDC|1\n[V:1]\"Gm\" DG,G, G,2 d:|2\n[V:1]\"Gm\" DG,G, G,2 D|:\n[V:1]\"Gm\" DGG G2 G|\n[V:1]\"F\" FGF C2 C|\n[V:1]\"Gm\" DGG GAG|\n[V:1]\"F\" F2 F FGF|\n[V:1]\"Gm\" DGG G2 G|\n[V:1]\"F\" FGF C2 C|\n[V:1]\"Gm\" DGG GDC|1\n[V:1]\"Gm\" DG,G, G,2 D:|2\n[V:1]\"Gm\" DG,G, G,2 G|:\n[V:1]\"Cm\" Gcc cGG|\n[V:1]cdc c2 G|\n[V:1]\"Gm\" GBB BGG|\n[V:1]BGF G2 G|\n[V:1]\"Cm\" Gcc cGG|\n[V:1]cdc c2 c|1\n[V:1]\"Gm\" ddd dGB|\n[V:1]\"Cm\" c2 c c2 c:|2\n[V:1]\"Gm\" ddd dGB|\n[V:1]\"Cm\" c2 c c2 c|:\n[V:1]\"Gm\" BGG GBc|\n[V:1]d2 d d2 G|\n[V:1]\"F\" FFF FCD|\n[V:1]\"Gm\" B,G,G, G,3:|\n",
+   "spans": [
+    [
+     64,
+     85
+    ],
+    [
+     135,
+     156
+    ]
+   ]
+  },
+  {
+   "id": "m0n3_44",
+   "motif": "0,-3,-3,-3",
+   "tier": "tail",
+   "rank": "absent from training",
+   "piece": 44,
+   "body_hits": 4,
+   "faithful": true,
+   "realization": ": b | fB B/B/B B2 FB",
+   "abc": "X:1\n%%score 1\nL:1/8\nM:4/4\nQ:1/8=232\nK:Bb\nV:1\n[V:1]|:b|\n[V:1]fB B/B/B B2 FB|\n[V:1]ce dB cG Gb|\n[V:1]fB B/B/B B2 FB|\n[V:1]eg fe dB Bb|\n[V:1]fB B/B/B B2 FB|\n[V:1]ce dB cG Gb|\n[V:1]fB B/B/B B2 FB|\n[V:1]eg fe dB Bb|\n[V:1]d'b fb fb db|\n[V:1]ec' db c'g ge'|\n[V:1]d'b fb fb db|\n[V:1]eg fe dB Bb|\n[V:1]d'b fb fb db|\n[V:1]ec' db c'c ce|\n[V:1]dB de fg fe|\n[V:1]df bf dB B:|\n",
+   "spans": [
+    [
+     52,
+     73
+    ],
+    [
+     91,
+     112
+    ],
+    [
+     130,
+     151
+    ],
+    [
+     169,
+     190
+    ]
+   ]
+  }
+ ],
+ "stats": [
+  {
+   "motif": "0,-1,-1,-1",
+   "tier": "top",
+   "rank": "rank 1",
+   "body_rate": "49/50",
+   "faithful_rate": "49/50"
+  },
+  {
+   "motif": "0,1,1,1",
+   "tier": "top",
+   "rank": "rank 2",
+   "body_rate": "42/50",
+   "faithful_rate": "0/0"
+  },
+  {
+   "motif": "0,1,-1,-1",
+   "tier": "top",
+   "rank": "rank 3",
+   "body_rate": "49/50",
+   "faithful_rate": "50/50"
+  },
+  {
+   "motif": "0,-1,-1,1",
+   "tier": "top",
+   "rank": "rank 4",
+   "body_rate": "47/50",
+   "faithful_rate": "46/49"
+  },
+  {
+   "motif": "0,1,1,-1",
+   "tier": "top",
+   "rank": "rank 5",
+   "body_rate": "50/50",
+   "faithful_rate": "50/50"
+  },
+  {
+   "motif": "0,3,-1,-1",
+   "tier": "mid",
+   "rank": "rank 14",
+   "body_rate": "50/50",
+   "faithful_rate": "48/49"
+  },
+  {
+   "motif": "0,1,-1,1",
+   "tier": "mid",
+   "rank": "rank 15",
+   "body_rate": "48/50",
+   "faithful_rate": "47/50"
+  },
+  {
+   "motif": "0,-1,-2,2",
+   "tier": "mid",
+   "rank": "rank 20",
+   "body_rate": "46/50",
+   "faithful_rate": "49/49"
+  },
+  {
+   "motif": "0,2,-2,-1",
+   "tier": "mid",
+   "rank": "rank 27",
+   "body_rate": "47/50",
+   "faithful_rate": "48/50"
+  },
+  {
+   "motif": "0,3,3,3",
+   "tier": "tail",
+   "rank": "absent from training",
+   "body_rate": "5/49",
+   "faithful_rate": "2/18"
+  },
+  {
+   "motif": "0,-3,-3,-3",
+   "tier": "tail",
+   "rank": "absent from training",
+   "body_rate": "24/50",
+   "faithful_rate": "23/49"
+  }
+ ]
+}

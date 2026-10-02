@@ -1,0 +1,9 @@
+torch==2.8.0
+transformers==4.40.0
+numpy==1.26.4
+samplings==0.1.7
+safetensors==0.6.2
+pyparsing==3.2.1
+music21==9.7.1
+gradio==5.49.1
+spaces>=0.42.1,<1

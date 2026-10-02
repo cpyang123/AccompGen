@@ -16,3 +16,10 @@ PATCH_LENGTH = 1024                                             # Patch Length
 CHAR_NUM_LAYERS = 6                                             # Number of layers in the decoder
 PATCH_NUM_LAYERS = 20                                           # Number of layers in the encoder
 HIDDEN_SIZE = 1280                                               # Hidden Size
+
+# Backbone per level. "gpt2" reproduces the original NotaGen and loads legacy
+# checkpoints strict; see notagen_core.available_backbones() for alternatives.
+ENCODER_BACKBONE = "gpt2"
+DECODER_BACKBONE = "gpt2"
+MOTIF_ATTENTION_BIAS = 0.0                                       # no motif conditioning at plain inference
+PATCH_SAMPLING_BATCH_SIZE = 0

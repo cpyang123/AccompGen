@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 620" width="1560" height="620"><rect x="0" y="0" width="1560" height="620" fill="#ffffff"/>
+<text x="179" y="60" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#059669" font-weight="bold" text-anchor="middle" font-style="normal">step</text>
+<text x="173" y="92" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="20" fill="#059669" font-weight="bold" text-anchor="end" font-style="normal">±1</text>
+<text x="185" y="92" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#64748b" font-weight="normal" text-anchor="start" font-style="normal">=  2nd</text>
+<line x1="34" y1="152" x2="224" y2="152" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="162" x2="224" y2="162" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="172" x2="224" y2="172" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="182" x2="224" y2="182" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="192" x2="224" y2="192" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="97.80000000000001" y1="186.0" x2="97.80000000000001" y2="167.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="92" cy="187.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 92 187.0)"/>
+<text x="92" y="222" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">F</text>
+<line x1="171.8" y1="181.0" x2="171.8" y2="162.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="166" cy="182.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 166 182.0)"/>
+<text x="166" y="222" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">G</text>
+<path d="M 100,144 Q 129.0,116 158,144" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+<text x="280" y="170" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#059669" font-weight="bold" text-anchor="middle" font-style="normal">+1</text>
+<text x="280" y="196" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">2nd</text>
+<line x1="34" y1="280" x2="224" y2="280" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="290" x2="224" y2="290" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="300" x2="224" y2="300" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="310" x2="224" y2="310" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="320" x2="224" y2="320" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="97.80000000000001" y1="299.0" x2="97.80000000000001" y2="280.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="92" cy="300.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 92 300.0)"/>
+<text x="92" y="350" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">B</text>
+<line x1="171.8" y1="304.0" x2="171.8" y2="285.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="166" cy="305.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 166 305.0)"/>
+<text x="166" y="350" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">A</text>
+<path d="M 100,272 Q 129.0,244 158,272" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+<text x="280" y="298" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#059669" font-weight="bold" text-anchor="middle" font-style="normal">−1</text>
+<text x="280" y="324" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">2nd</text>
+<line x1="34" y1="408" x2="224" y2="408" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="418" x2="224" y2="418" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="428" x2="224" y2="428" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="438" x2="224" y2="438" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="34" y1="448" x2="224" y2="448" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="97.80000000000001" y1="442.0" x2="97.80000000000001" y2="423.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="92" cy="443.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 92 443.0)"/>
+<text x="92" y="478" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">F</text>
+<text x="150" y="444.0" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">♯</text>
+<line x1="171.8" y1="437.0" x2="171.8" y2="418.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="166" cy="438.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 166 438.0)"/>
+<text x="166" y="478" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">G♯</text>
+<path d="M 100,400 Q 129.0,372 158,400" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+<text x="280" y="426" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#059669" font-weight="bold" text-anchor="middle" font-style="normal">+1</text>
+<text x="280" y="452" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">aug 2nd</text>
+<line x1="344" y1="36" x2="344" y2="520" stroke="#e2e8f0" stroke-width="1.4" stroke-linecap="butt"/>
+<text x="509" y="60" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#2563eb" font-weight="bold" text-anchor="middle" font-style="normal">skip</text>
+<text x="503" y="92" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="20" fill="#2563eb" font-weight="bold" text-anchor="end" font-style="normal">±2</text>
+<text x="515" y="92" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#64748b" font-weight="normal" text-anchor="start" font-style="normal">=  3rd</text>
+<line x1="364" y1="152" x2="554" y2="152" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="162" x2="554" y2="162" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="172" x2="554" y2="172" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="182" x2="554" y2="182" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="192" x2="554" y2="192" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="427.79999999999995" y1="191.0" x2="427.79999999999995" y2="172.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="422" cy="192.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 422 192.0)"/>
+<text x="422" y="222" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">E</text>
+<line x1="501.79999999999995" y1="181.0" x2="501.79999999999995" y2="162.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="496" cy="182.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 496 182.0)"/>
+<text x="496" y="222" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">G</text>
+<path d="M 430,144 Q 459.0,116 488,144" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+<text x="610" y="170" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#2563eb" font-weight="bold" text-anchor="middle" font-style="normal">+2</text>
+<text x="610" y="196" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">3rd</text>
+<line x1="364" y1="280" x2="554" y2="280" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="290" x2="554" y2="290" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="300" x2="554" y2="300" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="310" x2="554" y2="310" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="320" x2="554" y2="320" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="427.79999999999995" y1="294.0" x2="427.79999999999995" y2="315.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="422" cy="295.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 422 295.0)"/>
+<text x="422" y="350" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">C</text>
+<line x1="501.79999999999995" y1="304.0" x2="501.79999999999995" y2="285.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="496" cy="305.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 496 305.0)"/>
+<text x="496" y="350" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">A</text>
+<path d="M 430,272 Q 459.0,244 488,272" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+<text x="610" y="298" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#2563eb" font-weight="bold" text-anchor="middle" font-style="normal">−2</text>
+<text x="610" y="324" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">3rd</text>
+<line x1="364" y1="408" x2="554" y2="408" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="418" x2="554" y2="418" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="428" x2="554" y2="428" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="438" x2="554" y2="438" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="364" y1="448" x2="554" y2="448" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="427.79999999999995" y1="442.0" x2="427.79999999999995" y2="423.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="422" cy="443.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 422 443.0)"/>
+<text x="422" y="478" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">F</text>
+<text x="480" y="439.0" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">♭</text>
+<line x1="501.79999999999995" y1="432.0" x2="501.79999999999995" y2="413.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="496" cy="433.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 496 433.0)"/>
+<text x="496" y="478" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">A♭</text>
+<path d="M 430,400 Q 459.0,372 488,400" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+<text x="610" y="426" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#2563eb" font-weight="bold" text-anchor="middle" font-style="normal">+2</text>
+<text x="610" y="452" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">min 3rd</text>
+<line x1="674" y1="36" x2="674" y2="520" stroke="#e2e8f0" stroke-width="1.4" stroke-linecap="butt"/>
+<text x="839" y="60" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#7c3aed" font-weight="bold" text-anchor="middle" font-style="normal">leap</text>
+<text x="833" y="92" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="20" fill="#7c3aed" font-weight="bold" text-anchor="end" font-style="normal">±3</text>
+<text x="845" y="92" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#64748b" font-weight="normal" text-anchor="start" font-style="normal">=  4th +</text>
+<line x1="694" y1="152" x2="884" y2="152" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="162" x2="884" y2="162" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="172" x2="884" y2="172" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="182" x2="884" y2="182" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="192" x2="884" y2="192" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="757.8" y1="191.0" x2="757.8" y2="172.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="752" cy="192.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 752 192.0)"/>
+<text x="752" y="222" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">E</text>
+<line x1="831.8" y1="176.0" x2="831.8" y2="157.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="826" cy="177.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 826 177.0)"/>
+<text x="826" y="222" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">A</text>
+<path d="M 760,144 Q 789.0,116 818,144" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+<text x="940" y="170" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#7c3aed" font-weight="bold" text-anchor="middle" font-style="normal">+3</text>
+<text x="940" y="196" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">4th</text>
+<line x1="694" y1="280" x2="884" y2="280" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="290" x2="884" y2="290" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="300" x2="884" y2="300" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="310" x2="884" y2="310" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="320" x2="884" y2="320" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="757.8" y1="309.0" x2="757.8" y2="290.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="752" cy="310.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 752 310.0)"/>
+<text x="752" y="350" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">G</text>
+<line x1="831.8" y1="289.0" x2="831.8" y2="310.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="826" cy="290.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 826 290.0)"/>
+<text x="826" y="350" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">D</text>
+<path d="M 760,272 Q 789.0,244 818,272" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+<text x="940" y="298" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#7c3aed" font-weight="bold" text-anchor="middle" font-style="normal">+3</text>
+<text x="940" y="324" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">5th</text>
+<line x1="694" y1="408" x2="884" y2="408" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="418" x2="884" y2="418" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="428" x2="884" y2="428" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="438" x2="884" y2="438" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="694" y1="448" x2="884" y2="448" stroke="#9ca3af" stroke-width="1.1" stroke-linecap="butt"/>
+<line x1="757.8" y1="412.0" x2="757.8" y2="433.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="752" cy="413.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 752 413.0)"/>
+<text x="752" y="478" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">E</text>
+<line x1="831.8" y1="437.0" x2="831.8" y2="418.0" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="826" cy="438.0" rx="6.4" ry="4.992000000000001" fill="#334155" transform="rotate(-18 826 438.0)"/>
+<text x="826" y="478" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">G</text>
+<path d="M 760,400 Q 789.0,372 818,400" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+<text x="940" y="426" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#7c3aed" font-weight="bold" text-anchor="middle" font-style="normal">−3</text>
+<text x="940" y="452" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">6th</text>
+<text x="529" y="562" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal" text-anchor="middle" font-style="normal">+ up      − down</text>
+<text x="529" y="592" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#64748b" font-weight="italic" text-anchor="middle" font-style="normal">letter-name distance, not semitones</text>
+<text x="1330.0" y="52" font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#334155" font-weight="bold" text-anchor="middle" font-style="normal">training file</text>
+<path d="M 1130,76 L 1508,76 L 1530,98 L 1530,506 L 1130,506 Z" fill="#ffffff" stroke="#334155" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M 1508,76 L 1508,98 L 1530,98" fill="none" stroke="#334155" stroke-width="2.4" stroke-linejoin="round"/>
+<rect x="1144" y="98" width="372" height="118" rx="10" fill="#fef3c7" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1158" y="122" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#64748b" font-weight="normal" text-anchor="start" font-style="normal">%motif:v1:step_skip_leap:</text>
+<text x="1174" y="158" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="27" font-weight="normal" text-anchor="start"><tspan fill="#334155" font-weight="bold">0</tspan><tspan fill="#64748b" font-weight="normal">, </tspan><tspan fill="#059669" font-weight="bold">+1</tspan><tspan fill="#64748b" font-weight="normal">, </tspan><tspan fill="#2563eb" font-weight="bold">+2</tspan><tspan fill="#64748b" font-weight="normal">, </tspan><tspan fill="#7c3aed" font-weight="bold">−3</tspan></text>
+<text x="1158" y="194" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#64748b" font-weight="normal" text-anchor="start" font-style="normal">%motif:abc:</text>
+<text x="1268" y="196" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="19" font-weight="normal" text-anchor="start"><tspan fill="#334155" font-weight="bold">C2 </tspan><tspan fill="#059669" font-weight="bold">D2 </tspan><tspan fill="#2563eb" font-weight="bold">F2 </tspan><tspan fill="#7c3aed" font-weight="bold">C2</tspan></text>
+<text x="1158" y="244" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#64748b" font-weight="normal" text-anchor="start" font-style="normal">K:C  M:4/4</text>
+<text x="1158" y="278" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="19" font-weight="normal" text-anchor="start"><tspan fill="#64748b" font-weight="normal">[V:1] </tspan><tspan fill="#334155" font-weight="normal">G2 A2 B2 G2 |</tspan></text>
+<rect x="1144" y="294" width="372" height="30" rx="6" fill="#fef3c7" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1158" y="314" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="19" font-weight="normal" text-anchor="start"><tspan fill="#64748b" font-weight="normal">[V:1] </tspan><tspan fill="#334155" font-weight="bold">C2 </tspan><tspan fill="#059669" font-weight="bold">D2 </tspan><tspan fill="#2563eb" font-weight="bold">F2 </tspan><tspan fill="#7c3aed" font-weight="bold">C2 </tspan><tspan fill="#64748b" font-weight="normal">|</tspan></text>
+<text x="1158" y="350" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="19" font-weight="normal" text-anchor="start"><tspan fill="#64748b" font-weight="normal">[V:1] </tspan><tspan fill="#334155" font-weight="normal">E2 D2 C2 z2 |</tspan></text>
+<rect x="1144" y="366" width="372" height="30" rx="6" fill="#fef3c7" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1158" y="386" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="19" font-weight="normal" text-anchor="start"><tspan fill="#64748b" font-weight="normal">[V:1] </tspan><tspan fill="#334155" font-weight="bold">E2 </tspan><tspan fill="#059669" font-weight="bold">F2 </tspan><tspan fill="#2563eb" font-weight="bold">A2 </tspan><tspan fill="#7c3aed" font-weight="bold">E2 </tspan><tspan fill="#64748b" font-weight="normal">|</tspan></text>
+<text x="1158" y="422" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="19" font-weight="normal" text-anchor="start"><tspan fill="#64748b" font-weight="normal">[V:1] </tspan><tspan fill="#334155" font-weight="normal">G2 F2 E2 D2 |</tspan></text>
+<text x="1158" y="458" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="19" font-weight="normal" text-anchor="start"><tspan fill="#64748b" font-weight="normal">[V:1] </tspan><tspan fill="#334155" font-weight="normal">C6 z2 |]</tspan></text>
+<text x="1108" y="162" font-family="Helvetica, Arial, sans-serif" font-size="19" fill="#d97706" font-weight="bold" text-anchor="end" font-style="normal">motif</text>
+<line x1="1114" y1="156" x2="1121.6" y2="156.0" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="1128,156 1120.0,160.4 1120.0,151.6" fill="#d97706"/>
+<text x="1108" y="315" font-family="Helvetica, Arial, sans-serif" font-size="19" fill="#d97706" font-weight="bold" text-anchor="end" font-style="normal">realized</text>
+<line x1="1114" y1="309" x2="1121.6" y2="309.0" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="1128,309 1120.0,313.4 1120.0,304.6" fill="#d97706"/>
+<text x="1108" y="387" font-family="Helvetica, Arial, sans-serif" font-size="19" fill="#d97706" font-weight="bold" text-anchor="end" font-style="normal">transposed</text>
+<line x1="1114" y1="381" x2="1121.6" y2="381.0" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="1128,381 1120.0,385.4 1120.0,376.6" fill="#d97706"/></svg>

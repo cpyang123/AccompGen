@@ -1,0 +1,24 @@
+{
+  "source_filename": "weights_notagen_multilen4to10_rhythm_v1_bias4_syn2real5_p_size_16_p_length_1024_p_layers_20_c_layers_6_h_size_1280_lr_1e-05_batch_1.pth",
+  "source_modified_utc": "2026-09-24T05:45:16.948029+00:00",
+  "epoch": 3,
+  "phase": "real",
+  "best_epoch": 3,
+  "min_eval_loss": 0.1416706186737353,
+  "sha256": "bc779e4c455c2a91d8257f68785ab15c7c2a662fb2ab57015a56455526bda5b8",
+  "export_bytes": 952946335,
+  "export_filename": "model.safetensors.gz",
+  "export_dtype": "float16",
+  "compression": "gzip",
+  "architecture": {
+    "encoder_backbone": "gpt2",
+    "decoder_backbone": "gpt2",
+    "patch_num_layers": 20,
+    "char_num_layers": 6,
+    "hidden_size": 1280,
+    "patch_length": 1024,
+    "patch_size": 16,
+    "motif_attention_bias": 4.0,
+    "patch_sampling_batch_size": 0
+  }
+}

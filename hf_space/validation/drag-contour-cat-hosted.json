@@ -1,0 +1,12 @@
+{
+  "commit": "617394ded4485940ae4515cacf995b472259194e",
+  "status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+  "dragged_contour": "0,-2,3,-1",
+  "request_matches_contour": true,
+  "abstract_dropdowns": 0,
+  "duplicate_note_buttons": 0,
+  "staff_note_selection": true,
+  "cat_interval_ms": 180000,
+  "cat_moved_pixels": 105.87,
+  "page_errors": []
+}

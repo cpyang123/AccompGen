@@ -1,0 +1,705 @@
+{
+  "space": "cpyang/motigen",
+  "url": "https://huggingface.co/spaces/cpyang/motigen",
+  "private": true,
+  "deployment_commit": "468908397ecef6fb683584da5d580428688c3dcc",
+  "checkpoint_sha256": "b635f502e242dd2c376ab9876192e92cdfa655efc9dd3f5391d6456de848cc84",
+  "checkpoint_export_bytes": 952941836,
+  "local_checks": "Full browser suite passed: successful-result status hidden, score legend removed, candidate stats and exact prefill expandable under Generation details, highlighting/playback/exports preserved, and desktop/touch controls working. Two focused export/highlight tests passed.",
+  "runtime": "RUNNING",
+  "hardware": "zero-a10g",
+  "hosted_browser": {
+    "commit": "cef4f8324876b188d7d6f6c12a4380939b074507",
+    "abstract_status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+    "highlighted_elements": 6,
+    "audio_played": true,
+    "concrete_status": "No verified match after 12 attempts. No composition was accepted. Try more measures or a different style, then Generate again.",
+    "concrete_notes": [
+      [
+        "C4",
+        "1"
+      ],
+      [
+        "G4",
+        "1/2"
+      ],
+      [
+        "F4",
+        "1/2"
+      ],
+      [
+        "E4",
+        "2"
+      ],
+      [
+        "A4",
+        "0.5"
+      ]
+    ],
+    "concrete_request_matches_editor": true,
+    "page_errors": [],
+    "screenshots": [
+      "abstract-editor-hosted.png",
+      "concrete-editor-hosted.png"
+    ]
+  },
+  "initial_deployment_commit": "2332f1c511e58fbfd44356cceb92a96b65a289ba",
+  "initial_hosted_checks": [
+    {
+      "mode": "Abstract motif",
+      "status": "Finished 8 measures. Generated in 1.6s.",
+      "audio_seconds": 13.500045351473922,
+      "abc_bytes": 153,
+      "xml_bytes": 5127
+    },
+    {
+      "mode": "Concrete notes",
+      "status": "Finished 8 measures. Generated in 0.8s.",
+      "audio_seconds": 18.900045351473924,
+      "abc_bytes": 226,
+      "xml_bytes": 10074
+    }
+  ],
+  "hosted_verification_checks": {
+    "commit": "86c62951a4f97b65f14346d40afb4c62094451d0",
+    "results": [
+      {
+        "mode": "Abstract motif",
+        "status": "Motif verified \u00b7 4 matches \u00b7 attempt 1. Matching notes are highlighted in amber.",
+        "matches": 4,
+        "details": "Verified contour \u00b7 starting measure(s): 1, 2, 5, 6  \nAttempt 1 \u00b7 Seed: 0 \u00b7 Motif: `0,3,-1,-1`",
+        "updates": [
+          "Preparing the model\u2026",
+          "Attempt 1/12 \u00b7 composing\u2026",
+          "Attempt 1/12 \u00b7 composing \u00b7 0.5s",
+          "Attempt 1/12 \u00b7 composing \u00b7 0.9s",
+          "Attempt 1/12 \u00b7 composing \u00b7 1.3s",
+          "Attempt 1/12 \u00b7 composing \u00b7 1.7s",
+          "Attempt 1/12 \u00b7 checking the melody for your motif\u2026",
+          "Motif verified \u00b7 4 matches \u00b7 attempt 1",
+          "Preparing sheet music, downloads, and playback\u2026",
+          "Motif verified \u00b7 4 matches \u00b7 attempt 1. Matching notes are highlighted in amber."
+        ]
+      },
+      {
+        "mode": "Concrete notes",
+        "status": "No verified match after 12 attempts. No composition was accepted. Try more measures or a different style, then Generate again.",
+        "matches": 0,
+        "details": {
+          "__type__": "update"
+        },
+        "updates": [
+          "Preparing the model\u2026",
+          "Attempt 1/12 \u00b7 composing\u2026",
+          "Attempt 1/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 1/12 \u00b7 composing \u00b7 0.9s",
+          "Attempt 1/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 1: motif not found. Restarting with a new seed\u2026",
+          "Attempt 2/12 \u00b7 composing\u2026",
+          "Attempt 2/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 2/12 \u00b7 composing \u00b7 0.7s",
+          "Attempt 2/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 2: motif not found. Restarting with a new seed\u2026",
+          "Attempt 3/12 \u00b7 composing\u2026",
+          "Attempt 3/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 3/12 \u00b7 composing \u00b7 0.8s",
+          "Attempt 3/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 3: motif not found. Restarting with a new seed\u2026",
+          "Attempt 4/12 \u00b7 composing\u2026",
+          "Attempt 4/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 4/12 \u00b7 composing \u00b7 0.9s",
+          "Attempt 4/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 4: motif not found. Restarting with a new seed\u2026",
+          "Attempt 5/12 \u00b7 composing\u2026",
+          "Attempt 5/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 5/12 \u00b7 composing \u00b7 0.9s",
+          "Attempt 5/12 \u00b7 composing \u00b7 1.0s",
+          "Attempt 5/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 5: motif not found. Restarting with a new seed\u2026",
+          "Attempt 6/12 \u00b7 composing\u2026",
+          "Attempt 6/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 6/12 \u00b7 composing \u00b7 0.8s",
+          "Attempt 6/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 6: motif not found. Restarting with a new seed\u2026",
+          "Attempt 7/12 \u00b7 composing\u2026",
+          "Attempt 7/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 7/12 \u00b7 composing \u00b7 0.8s",
+          "Attempt 7/12 \u00b7 composing \u00b7 1.0s",
+          "Attempt 7/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 7: motif not found. Restarting with a new seed\u2026",
+          "Attempt 8/12 \u00b7 composing\u2026",
+          "Attempt 8/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 8/12 \u00b7 composing \u00b7 0.8s",
+          "Attempt 8/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 8: motif not found. Restarting with a new seed\u2026",
+          "Attempt 9/12 \u00b7 composing\u2026",
+          "Attempt 9/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 9/12 \u00b7 composing \u00b7 0.8s",
+          "Attempt 9/12 \u00b7 composing \u00b7 0.9s",
+          "Attempt 9/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 9: motif not found. Restarting with a new seed\u2026",
+          "Attempt 10/12 \u00b7 composing\u2026",
+          "Attempt 10/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 10/12 \u00b7 composing \u00b7 0.9s",
+          "Attempt 10/12 \u00b7 composing \u00b7 1.1s",
+          "Attempt 10/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 10: motif not found. Restarting with a new seed\u2026",
+          "Attempt 11/12 \u00b7 composing\u2026",
+          "Attempt 11/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 11/12 \u00b7 composing \u00b7 0.8s",
+          "Attempt 11/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 11: motif not found. Restarting with a new seed\u2026",
+          "Attempt 12/12 \u00b7 composing\u2026",
+          "Attempt 12/12 \u00b7 composing \u00b7 0.4s",
+          "Attempt 12/12 \u00b7 composing \u00b7 0.8s",
+          "Attempt 12/12 \u00b7 checking the melody for your motif\u2026",
+          "Attempt 12: motif not found. Retry limit reached.",
+          "No verified match after 12 attempts. No composition was accepted. Try more measures or a different style, then Generate again."
+        ]
+      }
+    ]
+  },
+  "retry_limits": {
+    "attempts": 12,
+    "generation_seconds": 105
+  },
+  "motif_verification_deployment_commit": "bea20febcaa9fe39db0d0408e4d0135f203e5135",
+  "previous_hosted_browser": {
+    "commit": "bea20febcaa9fe39db0d0408e4d0135f203e5135",
+    "generation_status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+    "input": "Abstract motif",
+    "pattern": "0,3,-1,-1",
+    "seed": 42,
+    "measures": 8,
+    "highlighted_svg_elements": 6,
+    "legend": "1 verified motif match \u00b7 highlighted in amber",
+    "audio_playing": true,
+    "audio_current_time": 0.64355,
+    "screenshot": "highlighted-hosted.png",
+    "page_errors": []
+  },
+  "visual_editors_deployment_commit": "cef4f8324876b188d7d6f6c12a4380939b074507",
+  "drag_contour_cat_hosted": {
+    "commit": "617394ded4485940ae4515cacf995b472259194e",
+    "status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+    "dragged_contour": "0,-2,3,-1",
+    "request_matches_contour": true,
+    "abstract_dropdowns": 0,
+    "duplicate_note_buttons": 0,
+    "staff_note_selection": true,
+    "cat_interval_ms": 180000,
+    "cat_moved_pixels": 105.87,
+    "page_errors": []
+  },
+  "drag_contour_cat_deployment_commit": "617394ded4485940ae4515cacf995b472259194e",
+  "chord_playback_hosted": {
+    "commit": "17537f24f095a9ab6d4061b106a347242045cae4",
+    "results": [
+      {
+        "style": "Romantic \u00b7 Chopin, Frederic \u00b7 Keyboard",
+        "status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+        "written_chord_members": 0,
+        "chord_labels": 0,
+        "playback_events": 18,
+        "accompaniment_events": 0,
+        "audio_seconds": 14.100045351473923,
+        "peak": 28834,
+        "xml_file": "/tmp/motigen-chord-hosted/b4539e43b8ebf4e10f3a243f7a2b7fa6b17fd6101db288d6d144ec98b65a0986/composition.xml",
+        "audio_file": "/tmp/motigen-chord-hosted/607f633705d1161df523421b0766f0d06afb7dc363f8778b08085be0bdd794ff/composition.wav"
+      }
+    ],
+    "scope": "Hosted generation/audio smoke check; this sampled score had no chord groups or labels. Chord-specific behavior is covered by the real export/audio regression tests."
+  },
+  "chord_playback_deployment_commit": "17537f24f095a9ab6d4061b106a347242045cae4",
+  "prefill_hosted": {
+    "commit": "8bc0baea60c417695d8aa980249efce6b4ba4880",
+    "results": [
+      {
+        "mode": "Abstract motif",
+        "status": "Motif verified \u00b7 1 match \u00b7 attempt 1. Matching notes are highlighted in amber.",
+        "prefill": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n",
+        "stream_samples_with_original_prefill": 7,
+        "inspectable_prompt_updates": 9,
+        "exported_motif_lines": [
+          "%motif:v1:step_skip_leap: 0,3,-1,-1",
+          "%motif:count: 3",
+          "%motif:abc: c2 c | f2 f | e d c",
+          "%motif:inversion_count: 0"
+        ]
+      },
+      {
+        "mode": "Concrete notes",
+        "status": "No verified match after 12 attempts. No composition was accepted. Try more measures or a different style, then Generate again.",
+        "prefill": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: =C2 =G =F =E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n",
+        "stream_samples_with_original_prefill": 57,
+        "inspectable_prompt_updates": 71,
+        "exported_motif_lines": []
+      }
+    ]
+  },
+  "prefill_deployment_commit": "8bc0baea60c417695d8aa980249efce6b4ba4880",
+  "barlines_hosted": {
+    "commit": "9accdd09a95ff4f0d022196667a7b9c13bacafb7",
+    "status": "No verified match after 12 attempts. No composition was accepted. Try more measures or a different style, then Generate again.",
+    "notes": [
+      [
+        "C4",
+        "1"
+      ],
+      [
+        "G4",
+        "1/2"
+      ],
+      [
+        "|",
+        ""
+      ],
+      [
+        "F4",
+        "1/2"
+      ],
+      [
+        "E4",
+        "2"
+      ],
+      [
+        "|",
+        ""
+      ]
+    ],
+    "request_matches_editor": true,
+    "prompt": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: =C2 =G | =F =E4 | \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n",
+    "page_errors": []
+  },
+  "barlines_deployment_commit": "9accdd09a95ff4f0d022196667a7b9c13bacafb7",
+  "keyboard_viewport_hosted": {
+    "commit": "075a516a6e004056e35216420e9a74152fcec4d7",
+    "click_then_arrow_keys": true,
+    "help_collapsed": true,
+    "standalone_cat_bottom": 900,
+    "embedded_positions": [
+      {
+        "scroll": 0,
+        "cat_bottom": 900,
+        "screen_bottom": 900
+      },
+      {
+        "scroll": 350,
+        "cat_bottom": 900,
+        "screen_bottom": 900
+      },
+      {
+        "scroll": 850,
+        "cat_bottom": 900,
+        "screen_bottom": 900
+      }
+    ],
+    "mobile_cat_bottom": 700,
+    "page_errors": [],
+    "embed_scope": "Hosted app inside a controlled cross-origin frame matching a tall Space embed"
+  },
+  "keyboard_viewport_deployment_commit": "075a516a6e004056e35216420e9a74152fcec4d7",
+  "candidate_selection": {
+    "candidates": 12,
+    "metric": "Distinct (MIDI pitch, sounding duration) pairs across written voices and chord tones",
+    "eligibility": "At least one verified input motif occurrence",
+    "tie_break": "Earlier candidate",
+    "time_budget_seconds": 105,
+    "partial_batch_result": false,
+    "ranking_order": [
+      "verified motif occurrence count",
+      "distinct pitch-duration pairs",
+      "earlier candidate"
+    ]
+  },
+  "ranking_hosted": {
+    "commit": "303453caed5e0e40c20d05dce2d227d13521cc92",
+    "results": [
+      {
+        "mode": "Abstract motif",
+        "status": "Selected candidate 5/12 \u00b7 18 note types \u00b7 4 motif matches. Matching notes are highlighted in amber.",
+        "evaluated": [
+          {
+            "candidate": 1,
+            "note_types": 10,
+            "matches": 1
+          },
+          {
+            "candidate": 2,
+            "note_types": 7,
+            "matches": 2
+          },
+          {
+            "candidate": 3,
+            "note_types": 11,
+            "matches": 1
+          },
+          {
+            "candidate": 4,
+            "note_types": 13,
+            "matches": 1
+          },
+          {
+            "candidate": 5,
+            "note_types": 18,
+            "matches": 4
+          },
+          {
+            "candidate": 6,
+            "note_types": 18,
+            "matches": 1
+          },
+          {
+            "candidate": 7,
+            "note_types": 12,
+            "matches": 2
+          },
+          {
+            "candidate": 8,
+            "note_types": 14,
+            "matches": 4
+          },
+          {
+            "candidate": 9,
+            "note_types": 12,
+            "matches": 3
+          },
+          {
+            "candidate": 10,
+            "note_types": 12,
+            "matches": 4
+          },
+          {
+            "candidate": 11,
+            "note_types": 12,
+            "matches": 2
+          },
+          {
+            "candidate": 12,
+            "note_types": 10,
+            "matches": 4
+          }
+        ],
+        "winner": {
+          "candidate": 5,
+          "note_types": 18,
+          "matches": 4
+        }
+      },
+      {
+        "mode": "Concrete notes",
+        "status": "No verified match in 12 candidates. No composition was accepted. Try more measures or a different style, then Generate again.",
+        "evaluated": [
+          {
+            "candidate": 1,
+            "note_types": 17,
+            "matches": 0
+          },
+          {
+            "candidate": 2,
+            "note_types": 11,
+            "matches": 0
+          },
+          {
+            "candidate": 3,
+            "note_types": 10,
+            "matches": 0
+          },
+          {
+            "candidate": 4,
+            "note_types": 23,
+            "matches": 0
+          },
+          {
+            "candidate": 5,
+            "note_types": 19,
+            "matches": 0
+          },
+          {
+            "candidate": 6,
+            "note_types": 19,
+            "matches": 0
+          },
+          {
+            "candidate": 7,
+            "note_types": 23,
+            "matches": 0
+          },
+          {
+            "candidate": 8,
+            "note_types": 17,
+            "matches": 0
+          },
+          {
+            "candidate": 9,
+            "note_types": 13,
+            "matches": 0
+          },
+          {
+            "candidate": 10,
+            "note_types": 12,
+            "matches": 0
+          },
+          {
+            "candidate": 11,
+            "note_types": 8,
+            "matches": 0
+          },
+          {
+            "candidate": 12,
+            "note_types": 20,
+            "matches": 0
+          }
+        ],
+        "winner": null
+      }
+    ]
+  },
+  "ranking_deployment_commit": "303453caed5e0e40c20d05dce2d227d13521cc92",
+  "natural_prefill_hosted": {
+    "commit": "29c673de826ed7e9976c5ed2c11f9a83737c8c75",
+    "results": [
+      {
+        "mode": "Concrete notes",
+        "status": "No verified match in 12 candidates. No composition was accepted. Try more measures or a different style, then Generate again.",
+        "evaluated": [
+          {
+            "candidate": 1,
+            "note_types": 12,
+            "matches": 0
+          },
+          {
+            "candidate": 2,
+            "note_types": 8,
+            "matches": 0
+          },
+          {
+            "candidate": 3,
+            "note_types": 14,
+            "matches": 0
+          },
+          {
+            "candidate": 4,
+            "note_types": 11,
+            "matches": 0
+          },
+          {
+            "candidate": 5,
+            "note_types": 13,
+            "matches": 0
+          },
+          {
+            "candidate": 6,
+            "note_types": 12,
+            "matches": 0
+          },
+          {
+            "candidate": 7,
+            "note_types": 16,
+            "matches": 0
+          },
+          {
+            "candidate": 8,
+            "note_types": 12,
+            "matches": 0
+          },
+          {
+            "candidate": 9,
+            "note_types": 20,
+            "matches": 0
+          },
+          {
+            "candidate": 10,
+            "note_types": 12,
+            "matches": 0
+          },
+          {
+            "candidate": 11,
+            "note_types": 20,
+            "matches": 0
+          },
+          {
+            "candidate": 12,
+            "note_types": 16,
+            "matches": 0
+          }
+        ],
+        "winner": null,
+        "prefill": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n%motif:count: 3 \n%motif:abc: C2 G F E4 \n%motif:inversion_count: 0 \n%%score 1\nL:1/8\nM:4/4\nK:C\nV:1\n"
+      }
+    ]
+  },
+  "natural_prefill_deployment_commit": "29c673de826ed7e9976c5ed2c11f9a83737c8c75",
+  "classical_hosted": {
+    "commit": "21e15adce830803486a96085a9c7c87d421b0e9e",
+    "status": "Selected candidate 5/12 \u00b7 18 note types \u00b7 4 motif matches. Matching notes are highlighted in amber.",
+    "desktop_theme": "ivory, ink, brass and serif headings",
+    "mobile_overflow": false,
+    "keyboard_and_barlines": true,
+    "score_paper_background": true,
+    "dark_preference_readable": true,
+    "page_errors": []
+  },
+  "classical_deployment_commit": "21e15adce830803486a96085a9c7c87d421b0e9e",
+  "art_song_hosted": {
+    "commit": "c730f511cd389272a469cf8f427194af93897997",
+    "choices": [
+      "Classical \u00b7 Beethoven, Ludwig van \u00b7 Art Song",
+      "Classical \u00b7 Paradis, Maria Theresia von \u00b7 Art Song",
+      "Classical \u00b7 Reichardt, Louise \u00b7 Art Song",
+      "Classical \u00b7 Schroter, Corona \u00b7 Art Song",
+      "Romantic \u00b7 Bizet, Georges \u00b7 Art Song",
+      "Romantic \u00b7 Boulanger, Lili \u00b7 Art Song",
+      "Romantic \u00b7 Boulton, Harold \u00b7 Art Song",
+      "Romantic \u00b7 Brahms, Johannes \u00b7 Art Song",
+      "Romantic \u00b7 Butterworth, George \u00b7 Art Song",
+      "Romantic \u00b7 Chaminade, Cecile \u00b7 Art Song",
+      "Romantic \u00b7 Chausson, Ernest \u00b7 Art Song",
+      "Romantic \u00b7 Chopin, Frederic \u00b7 Art Song",
+      "Romantic \u00b7 Cornelius, Peter \u00b7 Art Song",
+      "Romantic \u00b7 Debussy, Claude \u00b7 Art Song",
+      "Romantic \u00b7 Faisst, Clara \u00b7 Art Song",
+      "Romantic \u00b7 Faure, Gabriel \u00b7 Art Song",
+      "Romantic \u00b7 Franz, Robert \u00b7 Art Song",
+      "Romantic \u00b7 Gonzaga, Chiquinha \u00b7 Art Song",
+      "Romantic \u00b7 Grandval, Clemence de \u00b7 Art Song",
+      "Romantic \u00b7 Hensel, Fanny \u00b7 Art Song",
+      "Romantic \u00b7 Holmes, Augusta Mary Anne \u00b7 Art Song",
+      "Romantic \u00b7 Jaell, Marie \u00b7 Art Song",
+      "Romantic \u00b7 Kinkel, Johanna \u00b7 Art Song",
+      "Romantic \u00b7 Kralik, Mathilde \u00b7 Art Song",
+      "Romantic \u00b7 Lang, Josephine \u00b7 Art Song",
+      "Romantic \u00b7 Lehmann, Liza \u00b7 Art Song",
+      "Romantic \u00b7 Mendelssohn, Felix \u00b7 Art Song",
+      "Romantic \u00b7 Munktell, Helena \u00b7 Art Song",
+      "Romantic \u00b7 Ravel, Maurice \u00b7 Art Song",
+      "Romantic \u00b7 Satie, Erik \u00b7 Art Song",
+      "Romantic \u00b7 Schubert, Franz \u00b7 Art Song",
+      "Romantic \u00b7 Schumann, Clara \u00b7 Art Song",
+      "Romantic \u00b7 Schumann, Robert \u00b7 Art Song",
+      "Romantic \u00b7 Viardot, Pauline \u00b7 Art Song",
+      "Romantic \u00b7 Warlock, Peter \u00b7 Art Song",
+      "Romantic \u00b7 Wolf, Hugo \u00b7 Art Song",
+      "Romantic \u00b7 Zumsteeg, Emilie \u00b7 Art Song"
+    ],
+    "default": "Romantic \u00b7 Schubert, Franz \u00b7 Art Song",
+    "runtime": "RUNNING"
+  },
+  "art_song_deployment_commit": "c730f511cd389272a469cf8f427194af93897997",
+  "occurrence_ranking_hosted": {
+    "commit": "996055f1e287bd6915e4a13cf8bc7acdca37e182",
+    "results": [
+      {
+        "mode": "Abstract motif",
+        "status": "Selected candidate 1/12 \u00b7 4 motif matches \u00b7 12 note types. Matching notes are highlighted in amber.",
+        "evaluated": [
+          {
+            "candidate": 1,
+            "note_types": 12,
+            "matches": 4
+          },
+          {
+            "candidate": 2,
+            "note_types": 9,
+            "matches": 0
+          },
+          {
+            "candidate": 3,
+            "note_types": 10,
+            "matches": 2
+          },
+          {
+            "candidate": 4,
+            "note_types": 11,
+            "matches": 2
+          },
+          {
+            "candidate": 5,
+            "note_types": 10,
+            "matches": 2
+          },
+          {
+            "candidate": 6,
+            "note_types": 7,
+            "matches": 0
+          },
+          {
+            "candidate": 7,
+            "note_types": 15,
+            "matches": 0
+          },
+          {
+            "candidate": 8,
+            "note_types": 9,
+            "matches": 1
+          },
+          {
+            "candidate": 9,
+            "note_types": 8,
+            "matches": 2
+          },
+          {
+            "candidate": 10,
+            "note_types": 12,
+            "matches": 2
+          },
+          {
+            "candidate": 11,
+            "note_types": 15,
+            "matches": 0
+          },
+          {
+            "candidate": 12,
+            "note_types": 6,
+            "matches": 2
+          }
+        ],
+        "winner": {
+          "candidate": 1,
+          "note_types": 12,
+          "matches": 4
+        },
+        "prefill": "%Romantic\n%Schubert, Franz\n%Art Song\n%motif:v1:step_skip_leap: 0,3,-1,-1 \n"
+      }
+    ]
+  },
+  "occurrence_ranking_deployment_commit": "996055f1e287bd6915e4a13cf8bc7acdca37e182",
+  "clean_results_hosted": {
+    "commit": "468908397ecef6fb683584da5d580428688c3dcc",
+    "status_banner_visible": false,
+    "score_match_banner_present": false,
+    "diagnostics_collapsed": true,
+    "prompt_available": true,
+    "highlighted_elements": 18,
+    "diagnostic": "Generation details\n\nSelected candidate 5/12 \u00b7 4 motif matches \u00b7 18 note types \u00b7 Verified contour \u00b7 Measure(s): 1, 3, 5, 7 \u00b7 12 eligible \u00b7 Seed: 46 \u00b7 Motif: 0,3,-1,-1\n\nModel prompt used",
+    "mobile_overflow": false,
+    "page_errors": []
+  },
+  "vexflow_encoding_deployment": {
+    "commit": "983cc6994384c9d7b925f331c455eb8141f6bb5f",
+    "url": "https://huggingface.co/spaces/cpyang/motigen/commit/983cc6994384c9d7b925f331c455eb8141f6bb5f"
+  },
+  "vexflow_encoding_local_validation": {
+    "unit_tests": 89,
+    "browser_suite": "passed desktop, keyboard, touch, bar lines, VexFlow glyphs/fonts, generation/export/playback fixtures, viewport cat",
+    "training_tokenizer_cases": 12,
+    "bias_actual_attention_mask": 4.0
+  },
+  "realization_encoding_comparison": {
+    "before_commit": "468908397ecef6fb683584da5d580428688c3dcc",
+    "after_commit": "983cc6994384c9d7b925f331c455eb8141f6bb5f",
+    "mode": "Concrete notes",
+    "seed": 0,
+    "measures": 8,
+    "candidates": 12,
+    "before_eligible": 0,
+    "after_eligible": 7,
+    "winner": {
+      "candidate": 11,
+      "matches": 2,
+      "note_types": 12
+    },
+    "bias": 4.0,
+    "note": "One fixed-seed batch; not an estimate over all motifs. Exact pitches and durations verified independently; winner exports, audio, and highlights checked."
+  }
+}
